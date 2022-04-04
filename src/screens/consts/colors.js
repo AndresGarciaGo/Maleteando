@@ -8,4 +8,5 @@ const COLORS = {
   orange: '#f5a623',
 };
 
+
 export default COLORS;

@@ -16,17 +16,20 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import hotels from './consts/hotels';
-const {width} = Dimensions.get('screen');
+
+const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
+
   const categories = ['Todos', 'Popular', 'Mejor Calificado', 'Mapa'];
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
   const [activeCardIndex, setActiveCardIndex] = React.useState(0);
   const scrollX = React.useRef(new Animated.Value(0)).current;
 
-  const CategoryList = ({navigation}) => {
+  const CategoryList = ({ navigation }) => {
     return (
+
       <View style={style.categoryListContainer}>
         {categories.map((item, index) => (
           <TouchableOpacity
@@ -60,7 +63,7 @@ const HomeScreen = ({navigation}) => {
       </View>
     );
   };
-  const Card = ({hotel, index}) => {
+  const Card = ({ hotel, index }) => {
     const inputRange = [
       (index - 1) * cardWidth,
       index * cardWidth,
@@ -79,23 +82,23 @@ const HomeScreen = ({navigation}) => {
         disabled={activeCardIndex != index}
         activeOpacity={1}
         onPress={() => navigation.navigate('DetailsScreen', hotel)}>
-        <Animated.View style={{...style.card, transform: [{scale}]}}>
-          <Animated.View style={{...style.cardOverLay, opacity}} />
+        <Animated.View style={{ ...style.card, transform: [{ scale }] }}>
+          <Animated.View style={{ ...style.cardOverLay, opacity }} />
           <View style={style.priceTag}>
             <Text
-              style={{color: COLORS.white, fontSize: 20, fontWeight: 'bold'}}>
+              style={{ color: COLORS.white, fontSize: 20, fontWeight: 'bold' }}>
               ${hotel.price}
             </Text>
           </View>
           <Image source={hotel.image} style={style.cardImage} />
           <View style={style.cardDetails}>
             <View
-              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
               <View>
-                <Text style={{fontWeight: 'bold', fontSize: 17}}>
+                <Text style={{ fontWeight: 'bold', fontSize: 17 }}>
                   {hotel.name}
                 </Text>
-                <Text style={{color: COLORS.grey, fontSize: 12}}>
+                <Text style={{ color: COLORS.grey, fontSize: 12 }}>
                   {hotel.location}
                 </Text>
               </View>
@@ -107,21 +110,21 @@ const HomeScreen = ({navigation}) => {
                 justifyContent: 'space-between',
                 marginTop: 10,
               }}>
-              <View style={{flexDirection: 'row'}}>
+              <View style={{ flexDirection: 'row' }}>
                 <Icon name="star" size={15} color={COLORS.orange} />
                 <Icon name="star" size={15} color={COLORS.orange} />
                 <Icon name="star" size={15} color={COLORS.orange} />
                 <Icon name="star" size={15} color={COLORS.orange} />
                 <Icon name="star" size={15} color={COLORS.grey} />
               </View>
-              <Text style={{fontSize: 10, color: COLORS.grey}}>365reviews</Text>
+              <Text style={{ fontSize: 10, color: COLORS.grey }}>365reviews</Text>
             </View>
           </View>
         </Animated.View>
       </TouchableOpacity>
     );
   };
-  const TopHotelCard = ({hotel}) => {
+  const TopHotelCard = ({ hotel }) => {
     return (
       <View style={style.topHotelCard}>
         <View
@@ -133,14 +136,14 @@ const HomeScreen = ({navigation}) => {
             flexDirection: 'row',
           }}>
           <Icon name="star" size={15} color={COLORS.orange} />
-          <Text style={{color: COLORS.white, fontWeight: 'bold', fontSize: 15}}>
+          <Text style={{ color: COLORS.white, fontWeight: 'bold', fontSize: 15 }}>
             5.0
           </Text>
         </View>
         <Image style={style.topHotelCardImage} source={hotel.image} />
-        <View style={{paddingVertical: 5, paddingHorizontal: 10}}>
-          <Text style={{fontSize: 10, fontWeight: 'bold'}}>{hotel.name}</Text>
-          <Text style={{fontSize: 7, fontWeight: 'bold', color: COLORS.grey}}>
+        <View style={{ paddingVertical: 5, paddingHorizontal: 10 }}>
+          <Text style={{ fontSize: 10, fontWeight: 'bold' }}>{hotel.name}</Text>
+          <Text style={{ fontSize: 7, fontWeight: 'bold', color: COLORS.grey }}>
             {hotel.location}
           </Text>
         </View>
@@ -149,16 +152,16 @@ const HomeScreen = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.white}}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <View style={style.header}>
-        <View style={{paddingBottom: 15}}>
-          <Text style={{fontSize: 30, fontWeight: 'bold'}}>
+        <View style={{ paddingBottom: 15 }}>
+          <Text style={{ fontSize: 30, fontWeight: 'bold' }}>
             Encuentra tu hotel
           </Text>
-          <View style={{flexDirection: 'row'}}>
-            <Text style={{fontSize: 30, fontWeight: 'bold'}}>en </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>en </Text>
             <Text
-              style={{fontSize: 30, fontWeight: 'bold', color: COLORS.primary}}>
+              style={{ fontSize: 30, fontWeight: 'bold', color: COLORS.primary }}>
               Malinalco
             </Text>
           </View>
@@ -167,10 +170,10 @@ const HomeScreen = ({navigation}) => {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={style.searchInputContainer}>
-          <Icon name="search" size={30} style={{marginLeft: 20}} />
+          <Icon name="search" size={30} style={{ marginLeft: 20 }} />
           <TextInput
             placeholder="Buscar"
-            style={{fontSize: 20, paddingLeft: 10}}
+            style={{ fontSize: 20, paddingLeft: 10 }}
           />
         </View>
         <CategoryList />
@@ -182,8 +185,8 @@ const HomeScreen = ({navigation}) => {
               );
             }}
             onScroll={Animated.event(
-              [{nativeEvent: {contentOffset: {x: scrollX}}}],
-              {useNativeDriver: true},
+              [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+              { useNativeDriver: true },
             )}
             horizontal
             data={hotels}
@@ -193,7 +196,7 @@ const HomeScreen = ({navigation}) => {
               paddingRight: cardWidth / 2 - 40,
             }}
             showsHorizontalScrollIndicator={false}
-            renderItem={({item, index}) => <Card hotel={item} index={index} />}
+            renderItem={({ item, index }) => <Card hotel={item} index={index} />}
             snapToInterval={cardWidth}
           />
         </View>
@@ -203,10 +206,10 @@ const HomeScreen = ({navigation}) => {
             justifyContent: 'space-between',
             marginHorizontal: 20,
           }}>
-          <Text style={{fontWeight: 'bold', color: COLORS.grey}}>
+          <Text style={{ fontWeight: 'bold', color: COLORS.grey }}>
             Hoteles Top
           </Text>
-          <Text style={{color: COLORS.grey}}>Mostrar todos</Text>
+          <Text style={{ color: COLORS.grey }}>Mostrar todos</Text>
         </View>
         <FlatList
           data={hotels}
@@ -217,10 +220,11 @@ const HomeScreen = ({navigation}) => {
             marginTop: 20,
             paddingBottom: 30,
           }}
-          renderItem={({item}) => <TopHotelCard hotel={item} />}
+          renderItem={({ item }) => <TopHotelCard hotel={item} />}
         />
       </ScrollView>
     </SafeAreaView>
+
   );
 };
 
