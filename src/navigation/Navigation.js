@@ -4,18 +4,17 @@ import { } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Intro from './src/screens/Intro';
-import Menus from './src/screens/Menus';
+import Menus from './src/screens/MenuScreen/Menus';
 import InicioSesion from './src/screens/InicioSesion';
-import HomeScreen from './src/screens/Inicio2';
+import HomeScreen from './src/screens/MenuScreen/Inicio2';
 import DetailsScreen from './src/screens/DetailsScreen';
-import Historia from './src/screens/Historia';
-import AtractivosTuristicos from './src/screens/AtractivosTuristicos';
+import Historia from './src/screens/MenuScreen/Historia';
+import AtractivosTuristicos from './src/screens/MenuScreen/AtractivosTuristicos';
+//import Drawer from './src/DrawerNavigation'
 const Stack = createStackNavigator();
-const App = () => {
-  
+const Navigation = () => {
   return (
 
-    
     <NavigationContainer>
 
       <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -34,4 +33,6 @@ const App = () => {
   );
 };
 
-export default App;
+export default Navigation;
+
+//EL CODGIGO AVANZA CON APP.JS NO CON ESTA CARPETA

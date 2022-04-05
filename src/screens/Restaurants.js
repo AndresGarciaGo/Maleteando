@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {
   Dimensions,
@@ -176,7 +177,7 @@ const Restaurants = ({navigation}) => {
         <CategoryList />
         <View>
           <Animated.FlatList
-            onMomentumScrollEnd={(e) => {
+            onMomentumScrollEnd={e => {
               setActiveCardIndex(
                 Math.round(e.nativeEvent.contentOffset.x / cardWidth),
               );
