@@ -4,7 +4,8 @@ import { StackScreenProps } from '@react-navigation/stack';
 import sfondo from './assets/Images/segundo-fondo-app.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
-import hotel from './assets/hotel1.jpg'
+import hotel from './assets/hotel1.jpg';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props extends StackScreenProps<any, any> { };
 
@@ -12,6 +13,8 @@ export const Menus = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
 <ImageBackground source={sfondo} style={{width: '100%', height: '100%', alignContent:'center'}}>
+
+  
 <Text style={styles.subtitle}>
                 MALINALCO
             </Text>
@@ -87,9 +90,9 @@ subtitlee: {
   },
 
   img: {
-    width: "65%", 
+    width: 140, 
     height: 90, 
-    borderRadius:35,  
+    borderRadius: 90,  
     marginLeft: 20, 
 
 },
