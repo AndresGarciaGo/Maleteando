@@ -6,6 +6,7 @@ import { ImageBackground, Text, Image, View, StyleSheet } from 'react-native';
   return (
     <View style={styles.container}>
 
+<<<<<<< HEAD
       
 
       <Text style={styles.title}>MALETEANDO</Text >
@@ -13,6 +14,11 @@ import { ImageBackground, Text, Image, View, StyleSheet } from 'react-native';
 
 
 
+=======
+      <Text style={styles.title}>MALETEANDO</Text >
+      <Text style={styles.title}>POR MÉXICO</Text >
+
+>>>>>>> main
     </View>
   )
 }
