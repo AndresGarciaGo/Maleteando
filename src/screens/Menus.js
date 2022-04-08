@@ -45,7 +45,7 @@ export const Menus = ({ navigation }: Props) => {
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Home2')}>
+        onPress={() => navigation.navigate('Historia')}>
           <Image source={hotel} style={styles.img}/>
           <Text  style={styles.te}>GASTRONOMIA</Text>
       </TouchableOpacity>
