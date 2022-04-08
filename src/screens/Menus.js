@@ -1,26 +1,15 @@
 import React from 'react';
 import { ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-<<<<<<< HEAD
 import sfondo from './assets/Images/segundo-fondo-app.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
 import hotel from './assets/hotel1.jpg'
-=======
-import sfondo from './assets/Images/FondoB.png'
-import { SafeAreaView } from 'react-native-safe-area-context';
-import NavigationBar from 'react-native-navbar';
-import hotel from './assets/hotel1.jpg';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import COLORS from './consts/colors';
-import { ScrollView } from 'react-native-gesture-handler';
->>>>>>> main
 
 interface Props extends StackScreenProps<any, any> { };
 
 export const Menus = ({ navigation }: Props) => {
   return (
-<<<<<<< HEAD
     <View style={styles.container}>
 <ImageBackground source={sfondo} style={{width: '100%', height: '100%', alignContent:'center'}}>
 <Text style={styles.subtitle}>
@@ -42,37 +31,6 @@ export const Menus = ({ navigation }: Props) => {
         <ImageBackground source={hotel} style={styles.img}>
         <Text style={styles.te}>ATRACTIVOS TURISTICOS</Text>
         </ImageBackground>
-=======
- 
-  <ImageBackground source={sfondo} style={{width: '100%', height: '100%', alignContent:'center'}}>
-
-    <View style={styles.qr}>
-    <Icon name= "menu" size={51} color={COLORS.white}/>
-  </View>
-      <Text style={styles.subtitle}> MALINALCO </Text>
-      <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
-      
-      <View style={styles.searchInputContainer}>
-          <Icon name="search" size={35} style={{ marginLeft: 20 }} />
-          <TextInput
-            placeholder="Buscar"
-            style={{ fontSize: 20, paddingRight: 150 }}
-          />
-        </View>
-      
-        <ScrollView>
-      <TouchableOpacity style={styles.contB}
-        onPress={() => navigation.navigate('Historia')}>
-        <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>HISTORIA</Text>
-      </TouchableOpacity>
-        
-
-      <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('atractivos')}>
-        <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>ATRACTIVOS</Text>
->>>>>>> main
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
