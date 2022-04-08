@@ -188,7 +188,8 @@ const HomeScreen2 = ({ navigation }) => {
               [{ nativeEvent: { contentOffset: { x: scrollX } } }],
               { useNativeDriver: true },
             )}
-            horizontal
+            //direccion//
+            vertical
             data={hotels}
             contentContainerStyle={{
               paddingVertical: 30,
@@ -213,6 +214,7 @@ const HomeScreen2 = ({ navigation }) => {
         </View>
         <FlatList
           data={hotels}
+          //horizontal//
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
