@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageBackground, BackTextBoton, Text, Image, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import sfondo from './assets/Images/segundo-fondo-app.png'
+import sfondo from './assets/Images/FondoB.png'
 
 const Historia = () => {
     return (
@@ -10,6 +10,11 @@ const Historia = () => {
             <Text style={styles.title}>
                 HISTORIA
             </Text>
+
+            <Text style={styles.titlem}>
+                MALINALCO
+            </Text>
+
             <Text style={styles.subtitle}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
@@ -37,11 +42,18 @@ const styles = StyleSheet.create({
     subtitle: {
         fontSize: 22,
         color: 'black',
+        marginTop: 65,
     },
     title: {
         fontSize: 32,
         color: 'black',
-        marginTop: 100,
+        marginTop: 75,
+        paddingLeft: 120,
+    },
+    titlem: {
+        fontSize: 32,
+        color: 'black',
+        marginTop: 40,
         paddingLeft: 120,
     },
     carac: {

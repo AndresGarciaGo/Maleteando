@@ -6,12 +6,8 @@ import { ImageBackground, Text, Image, View, StyleSheet } from 'react-native';
   return (
     <View style={styles.container}>
 
-      
-
       <Text style={styles.title}>MALETEANDO</Text >
       <Text style={styles.title}>POR MÉXICO</Text >
-
-
 
     </View>
   )
