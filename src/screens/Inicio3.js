@@ -189,7 +189,7 @@ const HomeScreen2 = ({ navigation }) => {
               { useNativeDriver: true },
             )}
             //direccion//
-            vertical
+            horizontal
             data={hotels}
             contentContainerStyle={{
               paddingVertical: 30,
