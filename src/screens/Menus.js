@@ -19,7 +19,7 @@ export const Menus = ({ navigation }: Props) => {
     <View style={styles.qr}>
     <Icon name= "menu" size={51} color={COLORS.white}/>
   </View>
-      <Text style={styles.subtitle}> MALINALCO </Text>
+      <Text style={styles.subtitle}> MALINALCOOOOO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
       
       <View style={styles.searchInputContainer}>
