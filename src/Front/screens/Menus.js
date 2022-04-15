@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -8,18 +8,17 @@ import hotel from './assets/hotel1.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
+import Header from './Header';
+import { SlideFromRightIOS } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
+import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
 
 interface Props extends StackScreenProps<any, any> { };
 
 export const Menus = ({ navigation }: Props) => {
   return (
- 
-  <ImageBackground source={sfondo} style={{width: '100%', height: '100%', alignContent:'center'}}>
 
-    <View style={styles.qr}>
-    <Icon name= "menu" size={51} color={COLORS.white}/>
-  </View>
-      <Text style={styles.subtitle}> MALINALCO </Text>
+<View style={styles.p}>
+        <Text style={styles.subtitle}> MALINALCO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
       
       <View style={styles.searchInputContainer}>
@@ -65,13 +64,15 @@ export const Menus = ({ navigation }: Props) => {
       
     
     </ScrollView>
-  </ImageBackground>
-  
-
+</View>
   )
 }
 
 const styles = StyleSheet.create({
+
+  p:{
+    backgroundColor: '#9370db',
+  },
 
 subtitle: {
     fontSize: 32,
