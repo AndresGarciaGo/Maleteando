@@ -6,6 +6,11 @@ import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
 import hotel from './assets/hotel1.jpg';
+import ZonaA from './assets/ZonaA.jpg';
+import Convento from './assets/Convento.jpg';
+import CasaC from './assets/CasaC.jpg';
+import Museo from './assets/Museo.jpg';
+import Senderismo from './assets/Senderismo.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -16,9 +21,7 @@ export const Menus = ({ navigation }: Props) => {
   return (
  
   <ImageBackground source={sfondo} style={{width: '100%', height: '100%', alignContent:'center'}}>
-    <View style={styles.qr}>
-            <Icon name= "menu" size={51} color={COLORS.white}/>
-    </View>
+
       <Text style={styles.subtitle}> MALINALCO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
       
@@ -32,34 +35,34 @@ export const Menus = ({ navigation }: Props) => {
       
         <ScrollView>
       <TouchableOpacity style={styles.contB}
-        onPress={() => navigation.navigate('')}>
-        <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+        <Image source={ZonaA} style={styles.img}/>
+          <Text  style={styles.tex}>Ruinas</Text>
       </TouchableOpacity>
         
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('')}>
-        <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+        <Image source={Convento} style={styles.img}/>
+          <Text  style={styles.tex}>Convento</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Historia')}>
-          <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.te}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+          <Image source={CasaC} style={styles.img}/>
+          <Text  style={styles.te}>Cultura</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Home')}>
-          <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+          <Image source={Museo} style={styles.img}/>
+          <Text  style={styles.tex}>Museo</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Historia')}>
-          <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+          <Image source={Senderismo} style={styles.img}/>
+          <Text  style={styles.tex}>Senderismo</Text>
       </TouchableOpacity>
 
       

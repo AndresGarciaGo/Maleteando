@@ -8,6 +8,7 @@ import InicioSesion from "../screens/InicioSesion";
 import HomeScreen from '../screens/Inicio2';
 import HomeScreen2 from '../screens/Inicio3';
 import DetailsScreen from '../screens/DetailsScreen';
+import DetailsScreen2 from '../screens/DetailsScreen2';
 import Historia from '../screens/Historia';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
 
@@ -28,6 +29,7 @@ export function DrawerNavigation() {
     <Drawer.Screen name="Hoteles" component={HomeScreen} options={{drawerItemStyle:{display:"none"}}} />
     <Drawer.Screen name="Restaurantes" component={HomeScreen2} options={{drawerItemStyle:{display:"none"}}} />
     <Drawer.Screen name="DetailsScreen" component={DetailsScreen} options={{drawerItemStyle:{display:"none"}}} />
+    <Drawer.Screen name="Detalles" component={DetailsScreen2} options={{drawerItemStyle:{display:"none"}}} />
     
     </Drawer.Navigator>
 
