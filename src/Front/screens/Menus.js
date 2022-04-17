@@ -60,9 +60,7 @@ export const Menus = ({ navigation }: Props) => {
           <Image source={hotel} style={styles.img}/>
           <Text  style={styles.tex}>PAQUETES</Text>
       </TouchableOpacity>
-
       
-    
     </ScrollView>
 </View>
   )
