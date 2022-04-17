@@ -15,28 +15,12 @@ import AtractivosTuristicos from './src/Front/screens/AtractivosTuristicos';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 
-const Stack = createStackNavigator();
 const App = () => {
   
   return (
 
     
 
-    <NavigationContainer>
-
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-
-        <Stack.Screen name="InicioSesion" component={InicioSesion} />
-        <Stack.Screen name="Menus" component={Menus} />
-        <Stack.Screen name="Historia" component={Historia} />
-        <Stack.Screen name="atractivos" component={AtractivosTuristicos} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Home2" component={HomeScreen2} />
-        <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
-
-      </Stack.Navigator>
-
-    </NavigationContainer>
  <NavigationContainer>
    <DrawerNavigation/>
  </NavigationContainer>
