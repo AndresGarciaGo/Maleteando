@@ -14,7 +14,7 @@ import Historia from './src/Front/screens/Historia';
 import AtractivosTuristicos from './src/Front/screens/AtractivosTuristicos';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Stack = createStackNavigator();
+
 const App = () => {
   
   return (
@@ -22,6 +22,7 @@ const App = () => {
  <NavigationContainer>
    <DrawerNavigation/>
  </NavigationContainer>
+
 
   );
 };

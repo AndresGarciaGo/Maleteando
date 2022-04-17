@@ -38,19 +38,19 @@ export const Menus = ({ navigation }: Props) => {
         
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('atractivos')}>
+        onPress={() => navigation.navigate('Atractivos Turisticos')}>
         <Image source={hotel} style={styles.img}/>
           <Text  style={styles.tex}>ATRACTIVOS</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Home2')}>
+        onPress={() => navigation.navigate('Restaurantes')}>
           <Image source={hotel} style={styles.img}/>
           <Text  style={styles.te}>GASTRONOMIA</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Home')}>
+        onPress={() => navigation.navigate('Hoteles')}>
           <Image source={hotel} style={styles.img}/>
           <Text  style={styles.tex}>HOSPEDAJE</Text>
       </TouchableOpacity>
