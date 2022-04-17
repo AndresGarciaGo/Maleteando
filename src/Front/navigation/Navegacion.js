@@ -3,16 +3,16 @@ import 'react-native-gesture-handler';
 import { } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Intro from './src/screens/Intro';
-import Menus from './src/screens/MenuScreen/Menus';
-import InicioSesion from './src/screens/InicioSesion';
-import HomeScreen from './src/screens/MenuScreen/Inicio2';
-import DetailsScreen from './src/screens/DetailsScreen';
-import Historia from './src/screens/MenuScreen/Historia';
-import AtractivosTuristicos from './src/screens/MenuScreen/AtractivosTuristicos';
-//import Drawer from './src/DrawerNavigation'
+import Intro from './src/Front/screens/Intro';
+import Menus from './src/Front/screens/MenuScreen/Menus';
+import InicioSesion from './src/Front/screens/InicioSesion';
+import HomeScreen from './src/Front/screens/Inicio3';
+import DetailsScreen from './src/Frontscreens/DetailsScreen';
+import Historia from './src/Front/screens/MenuScreen/Historia';
+import AtractivosTuristicos from './src/Front/screens/MenuScreen/AtractivosTuristicos';
 const Stack = createStackNavigator();
-const Navigation = () => {
+
+const Navegacion = () => {
   return (
 
     <NavigationContainer>
@@ -24,6 +24,7 @@ const Navigation = () => {
         <Stack.Screen name="Historia" component={Historia} />
         <Stack.Screen name="atractivos" component={AtractivosTuristicos} />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home2" component={HomeScreen2} />
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
 
       </Stack.Navigator>
@@ -33,6 +34,6 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default Navegacion;
 
 //EL CODGIGO AVANZA CON APP.JS NO CON ESTA CARPETA

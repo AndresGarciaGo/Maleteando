@@ -1,22 +1,27 @@
+import 'react-native-gesture-handler'
 import React from 'react';
-import 'react-native-gesture-handler';
 import { } from 'react-native';
+import {DrawerNavigation} from './src/Front/navigation/DrawerNavigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Intro from './src/screens/Intro';
-import Menus from './src/screens/Menus';
-import InicioSesion from './src/screens/InicioSesion';
-import HomeScreen from './src/screens/Inicio2';
-import HomeScreen2 from './src/screens/Inicio3';
-import DetailsScreen from './src/screens/DetailsScreen';
-import Historia from './src/screens/Historia';
-import AtractivosTuristicos from './src/screens/AtractivosTuristicos';
+import Intro from './src/Front//screens/Intro';
+import Menus from './src/Front/screens/Menus';
+import InicioSesion from './src/Front/screens/InicioSesion';
+import HomeScreen from './src/Front/screens/Inicio2';
+import HomeScreen2 from './src/Front/screens/Inicio3';
+import DetailsScreen from './src/Front/screens/DetailsScreen';
+import Historia from './src/Front/screens/Historia';
+import AtractivosTuristicos from './src/Front/screens/AtractivosTuristicos';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+
 const Stack = createStackNavigator();
 const App = () => {
   
   return (
 
     
+
     <NavigationContainer>
 
       <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -32,6 +37,10 @@ const App = () => {
       </Stack.Navigator>
 
     </NavigationContainer>
+ <NavigationContainer>
+   <DrawerNavigation/>
+ </NavigationContainer>
+
 
   );
 };

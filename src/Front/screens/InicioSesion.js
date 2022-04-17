@@ -60,13 +60,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   subtitle: {
-    paddingStart: 155,
+    paddingStart: 120,
+    fontSize: 30
   },
   title: {
     fontSize: 45,
     color: 'purple',
     fontWeight: 'bold',
-    paddingStart: 40
+    paddingStart: 50
 
   },
   image2: {
@@ -74,8 +75,8 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     height: 150,
     width: 80,
-    marginLeft: 170,
-    marginTop: 60,
+    marginLeft: 160,
+    marginTop: 40,
 
   },
   image3: {
