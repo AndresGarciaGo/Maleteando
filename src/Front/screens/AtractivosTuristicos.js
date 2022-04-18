@@ -20,12 +20,8 @@ interface Props extends StackScreenProps<any, any> { };
 export const Menus = ({ navigation }: Props) => {
   return (
  
-<<<<<<< HEAD
-  <View style={styles.gagnam}>
-=======
   <View style={[styles.container,styles.p]}>
 
->>>>>>> df438a0ca972aceb5f70cf909f8221cf003e1deb
       <Text style={styles.subtitle}> MALINALCO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
       
