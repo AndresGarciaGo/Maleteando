@@ -23,7 +23,7 @@ export const Menus = ({ navigation }: Props) => {
   return (
 <View style={[styles.container,styles.p]}>
 
-        <Text style={styles.subtitle}> MALINALCO </Text>
+        <Text style={styles.subtitle}> MALINALCOO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
         <View style={styles.searchInputContainer}>
                   <Icon name="search" size={35} style={{ marginLeft: 20 }} />
