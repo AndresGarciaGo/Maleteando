@@ -166,7 +166,7 @@ const HomeScreen2 = ({ navigation }) => {
             </Text>
           </View>
         </View>
-        <Icon name="person-outline" size={38} color={COLORS.grey} />
+        <Icon name="local-restaurant" size={38} color={COLORS.grey} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={style.searchInputContainer}>

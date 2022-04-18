@@ -25,6 +25,14 @@ export function DrawerNavigation() {
 
 
     <Drawer.Navigator
+          screenOptions={{
+            drawerStyle: {
+              elevation: 0, // remove shadow on Android
+
+                  borderBottomWidth: 0, // Just in case.
+              backgroundColor: '#9370db',
+              width: 240,
+              }}}
         drawerContent = { (props) => <MenuItems  {...props } />}
     >
 
@@ -64,6 +72,7 @@ const MenuItems = ( {navigation} ) => {
 
 
             </TouchableOpacity>
+
 
         </DrawerContentScrollView>
     )

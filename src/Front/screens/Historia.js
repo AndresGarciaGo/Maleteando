@@ -37,16 +37,18 @@ const Historia = () => {
 </View>
             <View style={[styles.p]}>
 
-            <Text>
+            <Text style={ styles.lorem }>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
                 placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
             </Text>
-
+            <View style={ styles.carac }>
             <Text style={styles.carac}>
                 Caracteristicas
             </Text>
-            <Text style={styles.carad}>
+            <Icon name="info-outline" size={38} color={COLORS.primary} />
+            </View>
+            <Text style={styles.lorem}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
                 placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
       },
     headerImage: {
 
-        height: 300,
+        height: 400,
         borderBottomRightRadius: 40,
         borderBottomLeftRadius: 40,
         overflow: 'hidden',
@@ -105,8 +107,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     textAlign: 'left',
     justifyContent: 'space-between',
-    color: COLORS.primary
+    color: COLORS.primary,
+    marginHorizontal: 10,
     },
+        lorem: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginTop: 10,
+        marginBottom: 10,
+        flexDirection: 'row',
+        textAlign: 'left',
+        marginHorizontal: 15,
+        },
     carad: {
         fontSize: 18,
         color: 'black',

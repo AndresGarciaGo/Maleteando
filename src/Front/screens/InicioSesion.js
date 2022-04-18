@@ -4,18 +4,22 @@ import { StackScreenProps } from '@react-navigation/stack';
 import imagen1 from './assets/Images/fondof.jpg'
 import image2 from './assets/Images/logo.png'
 import image3 from './assets/Images/cupón.png'
+import { ScrollView } from 'react-native-gesture-handler';
 
 interface Props extends StackScreenProps<any, any> { };
 
 export const InicioSesion = ({ navigation }: Props) => {
   return (
+  <ScrollView>
     <View style={styles.container}>
 
       <ImageBackground source={imagen1} style={{width: '100%', height: '100%', alignContent:'center'}}>
+      <View style= {styles.centrado}>
         <Image 
         source={image2}
         style={styles.image2}
       />
+      </View>
         <Text style={styles.subtitle}>BIENVENIDO</Text >
         <Text style={styles.title}>INICIAR SESIÓN</Text >
 
@@ -43,15 +47,17 @@ export const InicioSesion = ({ navigation }: Props) => {
           onPress={() => navigation.navigate('Menus')}>
           <Text style={styles.tsaltar} >SALTAR</Text>
         </TouchableOpacity>
-
-        <Image /*Imagen de Maleta*/
+        <View style= {styles.centrado}>
+        <Image /*Imagen de cupon*/
       
         source={image3}
         style={styles.image3}
       /> 
-      </ImageBackground>
 
+        </View>
+        </ImageBackground>
     </View>
+    </ScrollView>
   )
 }
 
@@ -60,22 +66,26 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   subtitle: {
-    paddingStart: 120,
+    textAlign: 'center',
     fontSize: 30
   },
   title: {
     fontSize: 45,
     color: 'purple',
     fontWeight: 'bold',
-    paddingStart: 50
+    textAlign: 'center',
 
+  },
+  centrado:{
+      justifyContent: 'center',
+      alignItems: 'center',
   },
   image2: {
 
-    flexDirection: "column",
     height: 150,
     width: 80,
-    marginLeft: 160,
+
+    /*marginLeft: 160,*/
     marginTop: 40,
 
   },
@@ -83,7 +93,7 @@ const styles = StyleSheet.create({
     height: 120,
     width: 400,
     marginTop: 40,
-    marginLeft:17,
+    marginHorizontal: 300,
   },
   mc: {
     fontSize: 12,

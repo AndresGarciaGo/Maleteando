@@ -160,6 +160,7 @@ subtitlee: {
     marginRight: 50,
     borderRadius: 30,
     marginTop: 20,
+    marginBottom: 15,
     borderBottomRightRadius: 30,
     flexDirection: 'row-reverse',
     alignItems: 'center',
