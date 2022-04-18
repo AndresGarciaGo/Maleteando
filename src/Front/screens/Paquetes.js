@@ -1,19 +1,12 @@
 import React from 'react';
 import { ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import logo from './assets/Images/logo.png';
-import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
-import hotel from './assets/hotel1.jpg';
-import ZonaA from './assets/ZonaA.jpg';
-import Convento from './assets/Convento.jpg';
-import CasaC from './assets/CasaC.jpg';
-import Museo from './assets/Museo.jpg';
-import Senderismo from './assets/Senderismo.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
+import hotel from './assets/Paq.jpg';
 
 interface Props extends StackScreenProps<any, any> { };
 
@@ -36,33 +29,33 @@ export const Menus = ({ navigation }: Props) => {
         <ScrollView>
       <TouchableOpacity style={styles.contB}
         onPress={() => navigation.navigate('Detalles', hotel)}>
-        <Image source={ZonaA} style={styles.img}/>
-          <Text  style={styles.tex}>Ruinas</Text>
+        <Image source={hotel} style={styles.img}/>
+          <Text  style={styles.tex}>Paquete 1</Text>
       </TouchableOpacity>
         
 
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Detalles', hotel)}>
-        <Image source={Convento} style={styles.img}/>
-          <Text  style={styles.tex}>Convento</Text>
+        <Image source={hotel} style={styles.img}/>
+          <Text  style={styles.tex}>Paquete 2</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Detalles', hotel)}>
-          <Image source={CasaC} style={styles.img}/>
-          <Text  style={styles.te}>Cultura</Text>
+          <Image source={hotel} style={styles.img}/>
+          <Text  style={styles.te}>Paquete 3</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Detalles', hotel)}>
-          <Image source={Museo} style={styles.img}/>
-          <Text  style={styles.tex}>Museo</Text>
+          <Image source={hotel} style={styles.img}/>
+          <Text  style={styles.tex}>Paquete 4</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Detalles', hotel)}>
-          <Image source={Senderismo} style={styles.img}/>
-          <Text  style={styles.tex}>Senderismo</Text>
+          <Image source={hotel} style={styles.img}/>
+          <Text  style={styles.tex}>Paquete 5</Text>
       </TouchableOpacity>
 
       

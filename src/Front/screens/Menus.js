@@ -5,47 +5,53 @@ import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
 import hotel from './assets/hotel1.jpg';
+import hotel2 from './assets/hotel2.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
 import Header from './Header';
 import { SlideFromRightIOS } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
 import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
+import CasaC from './assets/CasaC.jpg'
+import ZonaA from './assets/ZonaA.jpg';
+import Gastro from './assets/Gastro.jpg';
+import Paq from './assets/Paq.jpg';
 
 interface Props extends StackScreenProps<any, any> { };
 
 export const Menus = ({ navigation }: Props) => {
   return (
+<View style={[styles.container,styles.p]}>
 
-<View style={styles.p}>
         <Text style={styles.subtitle}> MALINALCO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
-      
-      <View style={styles.searchInputContainer}>
-          <Icon name="search" size={35} style={{ marginLeft: 20 }} />
-          <TextInput
-            placeholder="Buscar"
-            style={{ fontSize: 20, paddingRight: 150 }}
-          />
+        <View style={styles.searchInputContainer}>
+                  <Icon name="search" size={35} style={{ marginLeft: 20 }} />
+                  <TextInput
+                    placeholder="Buscar"
+                    style={{ fontSize: 20, paddingRight: 150 }}
+                  />
         </View>
+
       
         <ScrollView>
+
       <TouchableOpacity style={styles.contB}
         onPress={() => navigation.navigate('Historia')}>
-        <Image source={hotel} style={styles.img}/>
+        <Image source={CasaC} style={styles.img}/>
           <Text  style={styles.tex}>HISTORIA</Text>
       </TouchableOpacity>
         
 
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Atractivos Turisticos')}>
-        <Image source={hotel} style={styles.img}/>
+        <Image source={ZonaA} style={styles.img}/>
           <Text  style={styles.tex}>ATRACTIVOS</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Restaurantes')}>
-          <Image source={hotel} style={styles.img}/>
+          <Image source={Gastro} style={styles.img}/>
           <Text  style={styles.te}>GASTRONOMIA</Text>
       </TouchableOpacity>
 
@@ -56,14 +62,15 @@ export const Menus = ({ navigation }: Props) => {
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Historia')}>
-          <Image source={hotel} style={styles.img}/>
+        onPress={() => navigation.navigate('Paquetes')}>
+          <Image source={Paq} style={styles.img}/>
           <Text  style={styles.tex}>PAQUETES</Text>
       </TouchableOpacity>
 
       
     
     </ScrollView>
+
 </View>
   )
 }
@@ -71,19 +78,24 @@ export const Menus = ({ navigation }: Props) => {
 const styles = StyleSheet.create({
 
   p:{
+    flex:1,
     backgroundColor: '#9370db',
   },
 
 subtitle: {
+    marginTop:15,
     fontSize: 32,
-    color: 'black',
-    paddingLeft: 115,
-    marginTop: 33,
+    color: '#2B3030',
+    textAlign: 'center',
+    fontWeight: 'bold'
+
+
 },
 subtitlee: {
     fontSize: 19,
-    color: 'black',
-    paddingLeft: 115,
+    color: '#2B3030',
+    textAlign: 'center',
+    fontWeight: 'bold'
 },
   img: {
     width: 170, 
@@ -151,6 +163,7 @@ subtitlee: {
     marginRight: 50,
     borderRadius: 30,
     marginTop: 20,
+    marginBottom: 20,
     borderBottomRightRadius: 30,
     flexDirection: 'row-reverse',
     alignItems: 'center',

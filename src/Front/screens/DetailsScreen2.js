@@ -38,7 +38,7 @@ const DetailsScreen2 = ({navigation, route}) => {
             color={COLORS.white}
             onPress={navigation.goBack}
           />
-          <Icon name="bookmark-border" size={28} color={COLORS.white} />
+          <Icon name="bookmark-border" size={28} color={COLORS.primary} />
         </View>
       </ImageBackground>
       <View>
@@ -49,12 +49,13 @@ const DetailsScreen2 = ({navigation, route}) => {
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
           <Text
             style={{
-              fontSize: 12,
+              fontSize: 25,
               fontWeight: '400',
               color: COLORS.grey,
-              marginTop: 5,
+              textAlign: 'center',
+
             }}>
-            {item.location}
+            {item.location}Zona Arquelógica
           </Text>
           <View
             style={{
@@ -84,7 +85,6 @@ const DetailsScreen2 = ({navigation, route}) => {
         </View>
         <View
           style={{
-            marginTop: 20,
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingLeft: 20,
