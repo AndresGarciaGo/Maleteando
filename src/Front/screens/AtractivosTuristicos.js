@@ -64,16 +64,9 @@ export const Menus = ({ navigation }: Props) => {
           <Image source={Senderismo} style={styles.img}/>
           <Text  style={styles.tex}>Senderismo</Text>
       </TouchableOpacity>
-<<<<<<< HEAD
       </ScrollView>
   
     </View>
-=======
-
-      
-    
-    </ScrollView>
->>>>>>> df438a0ca972aceb5f70cf909f8221cf003e1deb
 
   
 </View>
