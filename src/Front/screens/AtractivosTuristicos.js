@@ -15,10 +15,7 @@ interface Props extends StackScreenProps<any, any> { };
 export const Menus = ({ navigation }: Props) => {
   return (
  
-  <ImageBackground source={sfondo} style={{width: '100%', height: '100%', alignContent:'center'}}>
-    <View style={styles.qr}>
-            <Icon name= "menu" size={51} color={COLORS.white}/>
-    </View>
+  <View style={styles.gagnam}>
       <Text style={styles.subtitle}> MALINALCO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
       
@@ -61,12 +58,9 @@ export const Menus = ({ navigation }: Props) => {
           <Image source={hotel} style={styles.img}/>
           <Text  style={styles.tex}>LUGAR</Text>
       </TouchableOpacity>
-
-      
-    
-    </ScrollView>
-  </ImageBackground>
+      </ScrollView>
   
+    </View>
 
   )
 }
@@ -91,6 +85,10 @@ subtitlee: {
     marginLeft: 4,
     marginTop: 4, 
 
+},
+
+gagnam: {
+  backgroundColor: '#9370db',
 },
 
   te: {
