@@ -13,6 +13,7 @@ import Historia from '../screens/Historia';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
 import Paquetes from '../screens/Paquetes';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import ScanScreen from "../screens/QR";
 
 
 
@@ -36,14 +37,16 @@ export function DrawerNavigation() {
         drawerContent = { (props) => <MenuItems  {...props } />}
     >
 
+
         <Drawer.Screen name = "Menus" component= {Menus} />
         <Drawer.Screen name = "Inicio Sesion" component= {InicioSesion} />
         <Drawer.Screen name="Historia" component={Historia}/>
         <Drawer.Screen name="Atractivos Turisticos" component={AtractivosTuristicos}/>
         <Drawer.Screen name="Paquetes" component={Paquetes}/>
         <Drawer.Screen name="Hoteles" component={HomeScreen}  />
-        <Drawer.Screen name="Restaurantes" component={HomeScreen2}  />
+        <Drawer.Screen name = "reader" component= {ScanScreen} />
         <Drawer.Screen name="DetailsScreen" component={DetailsScreen}  />
+        <Drawer.Screen name="Restaurantes" component={HomeScreen2}  />
         <Drawer.Screen name="Detalles" component={DetailsScreen2}  />
 
     </Drawer.Navigator>
@@ -72,6 +75,15 @@ const MenuItems = ( {navigation} ) => {
 
 
             </TouchableOpacity>
+                        <TouchableOpacity
+                                style = { styles.buttonContainer}
+                                onPress={() => navigation.navigate('reader')}>
+
+                                <Text><Icon name="login" size={15} style = {{ marginRight: 10 }}/> qr scaner </Text>
+
+
+
+                        </TouchableOpacity>
 
 
         </DrawerContentScrollView>
