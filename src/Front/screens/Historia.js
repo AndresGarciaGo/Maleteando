@@ -1,37 +1,62 @@
 import React from 'react';
-import { ImageBackground, BackTextBoton, Text, Image, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
+import { ImageBackground, BackTextBoton, StatusBar,Text, Image, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import sfondo from './assets/Images/FondoB.png'
+import CasaC from './assets/CasaC.jpg'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import COLORS from './consts/colors';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const Historia = () => {
     return (
+            <ScrollView >
         <View style={styles.container}>
-<ImageBackground source={sfondo} style={{width: '100%', height: '100%', alignContent:'center'}}>
-            <Text style={styles.title}>
-                HISTORIA
-            </Text>
+        <StatusBar
+                barStyle="light-content"
+                translucent
+                backgroundColor="rgba(0,0,0,0)"
+              />
+            <ImageBackground style={styles.headerImage} source={CasaC}>
+                    <View style={styles.header}>
+                    </View>
+            </ImageBackground>
 
-            <Text style={styles.titlem}>
-                MALINALCO
+        <View style={styles.header}>
+            <View style={{ paddingBottom: 15 }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold' }}>
+                Historia
+                </Text>
+            <View style={{ flexDirection: 'row' }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold' }}>de </Text>
+                <Text
+                style={{ fontSize: 30, fontWeight: 'bold', color: COLORS.primary }}>
+                Malinalco
             </Text>
-
-            <Text style={styles.subtitle}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
-                placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
-            </Text>
-
-            <Text style={styles.carac}>
-                CARACTERISTICAS
-            </Text>
-            <Text style={styles.carad}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
-                placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
-            </Text>
-
-        </ImageBackground>
+          </View>
         </View>
+        <Icon name="menu-book" size={38} color={COLORS.primary} />
+</View>
+            <View style={[styles.p]}>
+
+            <Text style={ styles.lorem }>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
+                placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
+            </Text>
+            <View style={ styles.carac }>
+            <Text style={styles.carac}>
+                Caracteristicas
+            </Text>
+            <Icon name="info-outline" size={38} color={COLORS.primary} />
+            </View>
+            <Text style={styles.lorem}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
+                placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
+            </Text>
+            </View>
+
+        </View>
+        </ScrollView>
     )
 }
 
@@ -39,6 +64,24 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
+      p:{
+        flex:1,
+      },
+    headerImage: {
+
+        height: 400,
+        borderBottomRightRadius: 40,
+        borderBottomLeftRadius: 40,
+        overflow: 'hidden',
+      },
+    header: {
+
+        marginTop: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginHorizontal: 20,
+        justifyContent: 'space-between',
+      },
     subtitle: {
         fontSize: 22,
         color: 'black',
@@ -57,11 +100,25 @@ const styles = StyleSheet.create({
         paddingLeft: 120,
     },
     carac: {
-        fontSize: 30,
-        color: 'black',
-        paddingLeft: 78,
-        marginTop: 25,
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 10,
+    marginBottom: 10,
+    flexDirection: 'row',
+    textAlign: 'left',
+    justifyContent: 'space-between',
+    color: COLORS.primary,
+    marginHorizontal: 10,
     },
+        lorem: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        marginTop: 10,
+        marginBottom: 10,
+        flexDirection: 'row',
+        textAlign: 'left',
+        marginHorizontal: 15,
+        },
     carad: {
         fontSize: 18,
         color: 'black',

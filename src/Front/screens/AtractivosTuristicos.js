@@ -6,6 +6,11 @@ import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
 import hotel from './assets/hotel1.jpg';
+import ZonaA from './assets/ZonaA.jpg';
+import Convento from './assets/Convento.jpg';
+import CasaC from './assets/CasaC.jpg';
+import Museo from './assets/Museo.jpg';
+import Senderismo from './assets/Senderismo.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -15,7 +20,12 @@ interface Props extends StackScreenProps<any, any> { };
 export const Menus = ({ navigation }: Props) => {
   return (
  
+<<<<<<< HEAD
   <View style={styles.gagnam}>
+=======
+  <View style={[styles.container,styles.p]}>
+
+>>>>>>> df438a0ca972aceb5f70cf909f8221cf003e1deb
       <Text style={styles.subtitle}> MALINALCO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
       
@@ -29,54 +39,70 @@ export const Menus = ({ navigation }: Props) => {
       
         <ScrollView>
       <TouchableOpacity style={styles.contB}
-        onPress={() => navigation.navigate('')}>
-        <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+        <Image source={ZonaA} style={styles.img}/>
+          <Text  style={styles.tex}>Ruinas</Text>
       </TouchableOpacity>
         
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('')}>
-        <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+        <Image source={Convento} style={styles.img}/>
+          <Text  style={styles.tex}>Convento</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Historia')}>
-          <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.te}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+          <Image source={CasaC} style={styles.img}/>
+          <Text  style={styles.te}>Cultura</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Home')}>
-          <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+          <Image source={Museo} style={styles.img}/>
+          <Text  style={styles.tex}>Museo</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Historia')}>
-          <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>LUGAR</Text>
+        onPress={() => navigation.navigate('Detalles', hotel)}>
+          <Image source={Senderismo} style={styles.img}/>
+          <Text  style={styles.tex}>Senderismo</Text>
       </TouchableOpacity>
+<<<<<<< HEAD
       </ScrollView>
   
     </View>
+=======
 
+      
+    
+    </ScrollView>
+>>>>>>> df438a0ca972aceb5f70cf909f8221cf003e1deb
+
+  
+</View>
   )
 }
 
 const styles = StyleSheet.create({
-
+p:{
+    flex:1,
+    backgroundColor: '#9370db',
+  },
 subtitle: {
+    marginTop:15,
     fontSize: 32,
-    color: 'black',
-    paddingLeft: 115,
-    marginTop: 33,
+    color: '#2B3030',
+    textAlign: 'center',
+    fontWeight: 'bold'
+
+
 },
 subtitlee: {
     fontSize: 19,
-    color: 'black',
-    paddingLeft: 115,
+    color: '#2B3030',
+    textAlign: 'center',
+    fontWeight: 'bold'
 },
   img: {
     width: 170, 
@@ -148,6 +174,7 @@ gagnam: {
     marginRight: 50,
     borderRadius: 30,
     marginTop: 20,
+    marginBottom: 15,
     borderBottomRightRadius: 30,
     flexDirection: 'row-reverse',
     alignItems: 'center',

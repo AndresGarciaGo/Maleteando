@@ -8,6 +8,11 @@ import {
   View,
 } from 'react-native';
 import COLORS from './consts/colors';
+import ZonaA from './assets/ZonaA.jpg';
+import Convento from './assets/Convento.jpg';
+import CasaC from './assets/CasaC.jpg';
+import Museo from './assets/Museo.jpg';
+import Senderismo from './assets/Senderismo.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const DetailsScreen2 = ({navigation, route}) => {
@@ -25,7 +30,7 @@ const DetailsScreen2 = ({navigation, route}) => {
         translucent
         backgroundColor="rgba(0,0,0,0)"
       />
-      <ImageBackground style={style.headerImage} source={item.image}>
+      <ImageBackground style={style.headerImage} source={ZonaA}>
         <View style={style.header}>
           <Icon
             name="arrow-back-ios"
@@ -33,7 +38,7 @@ const DetailsScreen2 = ({navigation, route}) => {
             color={COLORS.white}
             onPress={navigation.goBack}
           />
-          <Icon name="bookmark-border" size={28} color={COLORS.white} />
+          <Icon name="bookmark-border" size={28} color={COLORS.primary} />
         </View>
       </ImageBackground>
       <View>
@@ -44,12 +49,13 @@ const DetailsScreen2 = ({navigation, route}) => {
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
           <Text
             style={{
-              fontSize: 12,
+              fontSize: 25,
               fontWeight: '400',
               color: COLORS.grey,
-              marginTop: 5,
+              textAlign: 'center',
+
             }}>
-            {item.location}
+            {item.location}Zona Arquelógica
           </Text>
           <View
             style={{
@@ -79,14 +85,13 @@ const DetailsScreen2 = ({navigation, route}) => {
         </View>
         <View
           style={{
-            marginTop: 20,
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingLeft: 20,
             alignItems: 'center',
           }}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-            Precio por noche
+            Precio por actividad
           </Text>
           <View style={style.priceTag}>
             <Text
@@ -105,13 +110,13 @@ const DetailsScreen2 = ({navigation, route}) => {
                 color: COLORS.grey,
                 marginLeft: 5,
               }}>
-              + desayuno
+              500 Por Persona
             </Text>
           </View>
         </View>
         <View style={style.btn}>
           <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Reserva Ahora
+            Buscar paquete
           </Text>
         </View>
       </View>
