@@ -68,8 +68,6 @@ export const Menus = ({ navigation }: Props) => {
   
     </View>
 
-  
-</View>
   )
 }
 
