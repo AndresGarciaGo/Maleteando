@@ -51,7 +51,7 @@ export const Menus = ({ navigation }: Props) => {
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Restaurantes')}>
           <Image source={Gastro} style={styles.img}/>
-          <Text  style={styles.te}>GASTRONOMIA</Text>
+          <Text  style={styles.tex}>GASTRONOMIA</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
@@ -65,9 +65,7 @@ export const Menus = ({ navigation }: Props) => {
           <Image source={Paq} style={styles.img}/>
           <Text  style={styles.tex}>PAQUETES</Text>
       </TouchableOpacity>
-
       
-    
     </ScrollView>
 
 </View>
@@ -105,22 +103,12 @@ subtitlee: {
 
 },
 
-  te: {
-    height: 63,
-    width: 180,
-    marginLeft: 185,
-    color: 'black',
-    fontSize: 25,
-    alignContent:"center",
-    marginTop: -59
-  },
-
   tex:{
     height: 63,
     width: 180,
     marginLeft: 190,
-    color: 'black',
-    fontSize: 25,
+    fontWeight: 'bold',
+    fontSize: 20,
     alignContent:"center",
     marginTop: -59
 

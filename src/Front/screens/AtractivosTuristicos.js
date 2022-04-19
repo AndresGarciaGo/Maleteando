@@ -64,13 +64,10 @@ export const Menus = ({ navigation }: Props) => {
           <Image source={Senderismo} style={styles.img}/>
           <Text  style={styles.tex}>Senderismo</Text>
       </TouchableOpacity>
-
-      
-    
-    </ScrollView>
-
+      </ScrollView>
   
-</View>
+    </View>
+
   )
 }
 
@@ -101,6 +98,10 @@ subtitlee: {
     marginLeft: 4,
     marginTop: 4, 
 
+},
+
+gagnam: {
+  backgroundColor: '#9370db',
 },
 
   te: {

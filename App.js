@@ -19,8 +19,6 @@ const App = () => {
   
   return (
 
-    
-
  <NavigationContainer>
    <DrawerNavigation/>
  </NavigationContainer>
