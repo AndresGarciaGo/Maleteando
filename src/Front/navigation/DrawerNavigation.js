@@ -14,7 +14,7 @@ import AtractivosTuristicos from '../screens/AtractivosTuristicos';
 import Paquetes from '../screens/Paquetes';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
-
+import COLORS from '../screens/consts/colors';
 
 
 
@@ -70,7 +70,7 @@ const MenuItems = ( {navigation} ) => {
                     style = { styles.buttonContainer}
                     onPress={() => navigation.navigate('Inicio Sesion')}>
 
-                    <Text><Icon name="login" size={15} style = {{ marginRight: 10 }}/> Inicio Sesion </Text>
+                    <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10, }}/> Inicio Sesion </Text>
 
 
 
@@ -79,7 +79,7 @@ const MenuItems = ( {navigation} ) => {
                                 style = { styles.buttonContainer}
                                 onPress={() => navigation.navigate('reader')}>
 
-                                <Text><Icon name="login" size={15} style = {{ marginRight: 10 }}/> qr scaner </Text>
+                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> qr scaner </Text>
 
 
 
@@ -107,8 +107,10 @@ const styles = StyleSheet.create({
         borderRadius:15,
         marginBottom: 15,
         padding: 15,
+   },
 
-
-   }
+   t: {
+    color:COLORS.white
+   },
 
 })
