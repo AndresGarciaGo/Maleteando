@@ -9,7 +9,6 @@ import hotel2 from './assets/hotel2.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
-import Header from './Header';
 import { SlideFromRightIOS } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
 import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
 import CasaC from './assets/CasaC.jpg'
