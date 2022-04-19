@@ -37,11 +37,15 @@ const Historia = () => {
 </View>
             <View style={[styles.p]}>
 
-            <Text style={ styles.lorem }>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
-                placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
-            </Text>
+<Text style={ styles.lorem }>
+Es un Pueblo Mágico que te sorprenderá por todo lo que tiene para ofrecer y su excelente servicio. 
+Es un extraordinario valle lleno de abundante vegetación, una Zona Arqueológica llena de historia, calles empedradas que te invitarán a dar un paseo por este pueblo.
+haciéndote sentir fascinado con sus coloridas fachadas y sus establecimientos con grandiosas vistas únicas del Valle de Malinalco.
+</Text>
+<Text style={ styles.lorem }>
+Algunas de las fiestas típicas de Malinalco, que son un importante parte de la esencia de este Pueblo Mágico son: Semana Santa: Se celebra entre marzo y abril y se celebra con fiestas y procesiones. 
+Erección del Municipio: Se celebra el 5 de agosto. “Charreadas”, “Jaripeos ”, se realizan bailes, música, ballets folclóricos, orquestas, etc.</Text>
+
             <View style={ styles.carac }>
             <Text style={styles.carac}>
                 Caracteristicas
@@ -49,9 +53,13 @@ const Historia = () => {
             <Icon name="info-outline" size={38} color={COLORS.primary} />
             </View>
             <Text style={styles.lorem}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
-                placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
+            Algunos de los atractivos y productos turísticos que tiene este maravilloso Pueblo Mágico que no te puedes perder son:
+            •Zona Arqueológica de Cuauhtinchan.
+            •Parroquia y Antigua Convento del “Divino Salvador”.
+            •Dr. Museo Universitario Luis Mario Schneider.
+            •Los Bichos de Malinalco, Museo Vivo.
+            •Objetos artesanales tallados en madera.
+            •Objetos artesanales de rebozo.
             </Text>
             </View>
 
@@ -113,7 +121,6 @@ const styles = StyleSheet.create({
         lorem: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginTop: 10,
         marginBottom: 10,
         flexDirection: 'row',
         textAlign: 'left',
