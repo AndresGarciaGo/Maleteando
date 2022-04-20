@@ -27,7 +27,7 @@ export const Menus = ({ navigation }: Props) => {
         </View>
       
         <ScrollView>
-      <TouchableOpacity style={styles.contB}
+      <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Detalles', hotel)}>
         <Image source={hotel} style={styles.img}/>
           <Text  style={styles.tex}>Paquete 1</Text>
@@ -122,23 +122,12 @@ subtitlee: {
     borderWidth: 1,
     borderRadius: 15,
     backgroundColor: "white",
-    borderColor: "black",
+    borderColor: "#818181",
+    boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
     marginTop: 10,
     alignContent:"center",
     marginLeft: 25,
   },
-
-  contB: {
-    width: "90%",
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: "white",
-    borderColor: "black",
-    marginTop: 10,
-    alignContent:"center",
-    marginLeft: 25,
-  },
-
 
   qr: {
     marginLeft: 340,
