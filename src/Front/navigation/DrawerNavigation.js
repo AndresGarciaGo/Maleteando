@@ -85,6 +85,16 @@ const MenuItems = ( {navigation} ) => {
 
                         </TouchableOpacity>
 
+                         <TouchableOpacity
+                                style = { styles.buttonContainer}
+                                onPress={() => navigation.navigate('reader')}>
+
+                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Menus </Text>
+
+
+
+                        </TouchableOpacity>
+
 
         </DrawerContentScrollView>
     )

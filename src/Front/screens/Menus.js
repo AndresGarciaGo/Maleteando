@@ -35,7 +35,7 @@ export const Menus = ({ navigation }: Props) => {
       
         <ScrollView>
 
-      <TouchableOpacity style={styles.contB}
+      <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Historia')}>
         <Image source={CasaC} style={styles.img}/>
           <Text  style={styles.tex}>HISTORIA</Text>
@@ -119,7 +119,8 @@ subtitlee: {
     borderWidth: 1,
     borderRadius: 15,
     backgroundColor: "white",
-    borderColor: "black",
+    borderColor: "#818181",
+    boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
     marginTop: 10,
     alignContent:"center",
     marginLeft: 25,
