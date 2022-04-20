@@ -22,7 +22,7 @@ const Historia = () => {
 
         <View style={styles.header}>
             <View style={{ paddingBottom: 15 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold' }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', textAlign:"justify"}}>
                 Historia
                 </Text>
             <View style={{ flexDirection: 'row' }}>
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 10,
         flexDirection: 'row',
-        textAlign: 'left',
+        textAlign: 'justify',
         marginHorizontal: 15,
         },
     carad: {
