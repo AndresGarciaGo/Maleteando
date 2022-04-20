@@ -15,7 +15,7 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
-import hotels from './consts/restaurants';
+import hotels from './consts/restaurantes';
 
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;

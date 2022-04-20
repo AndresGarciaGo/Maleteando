@@ -28,7 +28,7 @@ const DetailsScreen2 = ({navigation, route}) => {
       <StatusBar
         barStyle="light-content"
         translucent
-        backgroundColor="rgba(0,0,0,0)"
+        backgroundColor="rgba(0,0,0,1)"
       />
       <ImageBackground style={style.headerImage} source={ZonaA}>
         <View style={style.header}>
