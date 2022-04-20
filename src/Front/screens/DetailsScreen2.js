@@ -46,7 +46,7 @@ const DetailsScreen2 = ({navigation, route}) => {
           <Icon name="place" color={COLORS.white} size={28} />
         </View>
         <View style={{marginTop: 20, paddingHorizontal: 20}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
+          <Text style={{fontSize: 40, fontWeight: 'bold'}}></Text>
           <Text
             style={{
               fontSize: 25,

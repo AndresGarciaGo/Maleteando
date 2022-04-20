@@ -5,7 +5,6 @@ import logo from './assets/Images/logo.png';
 import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
-import hotel from './assets/hotel1.jpg';
 import ZonaA from './assets/ZonaA.jpg';
 import Convento from './assets/Convento.jpg';
 import CasaC from './assets/CasaC.jpg';
@@ -35,32 +34,32 @@ export const Menus = ({ navigation }: Props) => {
       
         <ScrollView>
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
+        onPress={() => navigation.navigate('Detalles', ZonaA)}>
         <Image source={ZonaA} style={styles.img}/>
           <Text  style={styles.tex}>Ruinas</Text>
       </TouchableOpacity>
         
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
+        onPress={() => navigation.navigate('Detalles', Convento)}>
         <Image source={Convento} style={styles.img}/>
           <Text  style={styles.tex}>Convento</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
+        onPress={() => navigation.navigate('Detalles', CasaC)}>
           <Image source={CasaC} style={styles.img}/>
-          <Text  style={styles.te}>Cultura</Text>
+          <Text  style={styles.tex}>Cultura</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
+        onPress={() => navigation.navigate('Detalles', Museo)}>
           <Image source={Museo} style={styles.img}/>
           <Text  style={styles.tex}>Museo</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
+        onPress={() => navigation.navigate('Detalles', Senderismo)}>
           <Image source={Senderismo} style={styles.img}/>
           <Text  style={styles.tex}>Senderismo</Text>
       </TouchableOpacity>
@@ -104,26 +103,15 @@ gagnam: {
   backgroundColor: '#9370db',
 },
 
-  te: {
-    height: 63,
-    width: 180,
-    marginLeft: 190,
-    color: 'black',
-    fontSize: 25,
-    alignContent:"center",
-    marginTop: -59
-  },
-
-  tex:{
-    height: 63,
-    width: 180,
-    marginLeft: 190,
-    color: 'black',
-    fontSize: 25,
-    alignContent:"center",
-    marginTop: -59
-
-  },
+tex:{
+  height: 63,
+  width: 180,
+  marginLeft: 190,
+  fontWeight: 'bold',
+  fontSize: 30,
+  alignContent:"center",
+  marginTop: -59
+},
 
   cont: {
     width: "90%",
