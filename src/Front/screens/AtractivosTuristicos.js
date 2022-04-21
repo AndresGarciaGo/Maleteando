@@ -106,9 +106,9 @@ gagnam: {
 tex:{
   height: 63,
   width: 180,
-  marginLeft: 190,
+  marginLeft: 200,
   fontWeight: 'bold',
-  fontSize: 30,
+  fontSize: 22,
   alignContent:"center",
   marginTop: -59
 },
@@ -145,14 +145,14 @@ tex:{
 
   searchInputContainer: {
     height: 50,
-    width: "70%",
-    backgroundColor: COLORS.white,
-    marginRight: 50,
+    width:"88%",
+    backgroundColor: COLORS.light,
+    marginTop: 15,
     borderRadius: 30,
-    marginTop: 20,
-    marginBottom: 15,
-    borderBottomRightRadius: 30,
-    flexDirection: 'row-reverse',
+    marginLeft: 30,
+    borderTopLeftRadius: 30,
+    borderBottomLeftRadius: 30,
+    flexDirection: 'row',
     alignItems: 'center',
   },
 

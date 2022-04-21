@@ -24,12 +24,13 @@ export const Menus = ({ navigation }: Props) => {
 
         <Text style={styles.subtitle}> MALINALCO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
-        <View style={styles.searchInputContainer}>
-                  <Icon name="search" size={35} style={{ marginLeft: 20 }} />
-                  <TextInput
-                    placeholder="Buscar"
-                    style={{ fontSize: 20, paddingRight: 150 }}
-                  />
+       
+      <View style={styles.searchInputContainer}>
+          <Icon name="search" size={35} style={{ marginLeft: 20 }} />
+          <TextInput
+            placeholder="Buscar"
+            style={{ fontSize: 20, paddingRight: 150 }}
+          />
         </View>
 
       
@@ -146,14 +147,14 @@ subtitlee: {
 
   searchInputContainer: {
     height: 50,
-    width: "70%",
-    backgroundColor: COLORS.white,
-    marginRight: 50,
+    width:"88%",
+    backgroundColor: COLORS.light,
+    marginTop: 15,
     borderRadius: 30,
-    marginTop: 20,
-    marginBottom: 15,
-    borderBottomRightRadius: 30,
-    flexDirection: 'row-reverse',
+    marginLeft: 30,
+    borderTopLeftRadius: 30,
+    borderBottomLeftRadius: 30,
+    flexDirection: 'row',
     alignItems: 'center',
   },
 

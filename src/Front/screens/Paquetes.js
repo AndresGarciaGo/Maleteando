@@ -137,13 +137,14 @@ subtitlee: {
 
   searchInputContainer: {
     height: 50,
-    width: "70%",
-    backgroundColor: COLORS.white,
-    marginRight: 50,
+    width:"88%",
+    backgroundColor: COLORS.light,
+    marginTop: 15,
     borderRadius: 30,
-    marginTop: 20,
-    borderBottomRightRadius: 30,
-    flexDirection: 'row-reverse',
+    marginLeft: 30,
+    borderTopLeftRadius: 30,
+    borderBottomLeftRadius: 30,
+    flexDirection: 'row',
     alignItems: 'center',
   },
 

@@ -33,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
       <View style={style.categoryListContainer}>
         {categories.map((item, index) => (
           <TouchableOpacity
-            key={index}
+        
             activeOpacity={0.8}
             onPress={() => setSelectedCategoryIndex(index)}>
             <View>
@@ -86,7 +86,7 @@ const HomeScreen = ({ navigation }) => {
           <Animated.View style={{ ...style.cardOverLay, opacity }} />
           <View style={style.priceTag}>
             <Text
-              style={{ color: COLORS.white, fontSize: 20, fontWeight: 'bold' }}>
+              style={{ color: COLORS.white, fontSize: 20, fontWeight: 'bold', backgroundColor: COLORS.primary }}>
               ${hotel.price}
             </Text>
           </View>
@@ -168,7 +168,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
         <Icon name="hotel" size={38} color={COLORS.grey} />
       </View>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      
         <View style={style.searchInputContainer}>
           <Icon name="search" size={30} style={{ marginLeft: 20 }} />
           <TextInput
@@ -176,6 +176,7 @@ const HomeScreen = ({ navigation }) => {
             style={{ fontSize: 20, paddingLeft: 10 }}
           />
         </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
         <CategoryList />
         <View>
           <Animated.FlatList
@@ -250,6 +251,7 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
     marginHorizontal: 20,
     marginTop: 30,
+    
   },
   categoryListText: {
     fontSize: 17,
