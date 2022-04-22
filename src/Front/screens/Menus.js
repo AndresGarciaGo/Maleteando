@@ -115,10 +115,10 @@ subtitlee: {
     fontWeight: 'bold',
     fontSize: 20,
     alignContent:"center",
-    marginTop: -59
-
+    marginTop: -59,
   },
 
+  
   cont: {
     width: "90%",
     borderWidth: 1,
