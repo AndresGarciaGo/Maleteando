@@ -14,6 +14,7 @@ import CasaC from './assets/CasaC.jpg';
 import Museo from './assets/Museo.jpg';
 import Senderismo from './assets/Senderismo.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import DetallesT from './consts/DetallesTuristicos';
 
 const DetailsScreen2 = ({navigation, route}) => {
   const item = route.params;
@@ -30,13 +31,13 @@ const DetailsScreen2 = ({navigation, route}) => {
         translucent
         backgroundColor="rgba(0,0,0,1)"
       />
-      <ImageBackground style={style.headerImage} source={ZonaA}>
+      <ImageBackground style={style.headerImage} source={Museo}>
         <View style={style.header}>
           <Icon
             name="arrow-back-ios"
             size={28}
             color={COLORS.white}
-            onPress={navigation.goBack}
+            onPress={ () => navigation.goBack()}
           />
           <Icon name="bookmark-border" size={28} color={COLORS.primary} />
         </View>
@@ -55,7 +56,7 @@ const DetailsScreen2 = ({navigation, route}) => {
               textAlign: 'center',
 
             }}>
-            {item.location}Zona Arquelógica
+            {item.name}Zona Arquelógica
           </Text>
           <View
             style={{
