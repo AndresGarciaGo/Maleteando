@@ -23,7 +23,7 @@ const Paquetes = [
         name: ' HISTORIA Y VIDA',
         subname: 'Conviértete en un verdadero “tlacuilo” después de haber aprendido sobre los lugares más destacados de Malinalco.',
         Observaciones: 'DURACION 9 HORAS',
-        Características: 'ZONA LA ARQUEOLÓGICA CUAUHTINCHÁN.',
+        Características: 'ZONA LA ARQUEOLÓGICA CUAUHTINCHÁN. ',
       },
 
     {
