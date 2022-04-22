@@ -9,7 +9,6 @@ import hotel2 from './assets/hotel2.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
-import Header from './Header';
 import { SlideFromRightIOS } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
 import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
 import CasaC from './assets/CasaC.jpg'
@@ -35,13 +34,12 @@ export const Menus = ({ navigation }: Props) => {
 
       
         <ScrollView>
-
       <TouchableOpacity style={styles.contB}
         onPress={() => navigation.navigate('Historia')}>
         <Image source={CasaC} style={styles.img}/>
           <Text  style={styles.tex}>HISTORIA</Text>
       </TouchableOpacity>
-        
+
 
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Atractivos Turisticos')}>
@@ -52,7 +50,7 @@ export const Menus = ({ navigation }: Props) => {
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Restaurantes')}>
           <Image source={Gastro} style={styles.img}/>
-          <Text  style={styles.te}>GASTRONOMIA</Text>
+          <Text  style={styles.tex}>GASTRONOMIA</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.cont}
@@ -102,28 +100,21 @@ subtitlee: {
     height: 100, 
     borderRadius: 20,  
     marginLeft: 4,
-    marginTop: 4, 
+    marginTop: 4,
 
 },
 
-  te: {
-    height: 63,
-    width: 180,
-    marginLeft: 185,
-    color: 'black',
-    fontSize: 25,
-    alignContent:"center",
-    marginTop: -59
-  },
+
 
   tex:{
     height: 63,
     width: 180,
     marginLeft: 190,
     color: 'black',
-    fontSize: 25,
+    fontSize: 20,
     alignContent:"center",
-    marginTop: -59
+    marginTop: -59 ,
+    fontWeight: 'bold',
 
   },
 
