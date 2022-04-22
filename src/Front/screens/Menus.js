@@ -85,15 +85,19 @@ subtitle: {
     fontSize: 32,
     color: '#2B3030',
     textAlign: 'center',
-    fontWeight: 'bold'
-
+    fontWeight: 'bold',
+    justifyContent:"space-between",
+    flexDirection: "row",
 
 },
 subtitlee: {
     fontSize: 19,
     color: '#2B3030',
     textAlign: 'center',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    justifyContent:"space-between",
+    flexDirection: "row",
+
 },
   img: {
     width: 170, 
@@ -127,16 +131,6 @@ subtitlee: {
     marginLeft: 25,
   },
 
-  contB: {
-    width: "90%",
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: "white",
-    borderColor: "black",
-    marginTop: 10,
-    alignContent:"center",
-    marginLeft: 25,
-  },
 
 
   qr: {
