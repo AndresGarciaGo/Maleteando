@@ -8,7 +8,7 @@ import InicioSesion from "../screens/InicioSesion";
 import HomeScreen from '../screens/Inicio2';
 import HomeScreen2 from '../screens/Inicio3';
 import DetailsScreen from '../screens/DetailsScreen';
-import DetailsScreen2 from '../screens/DetailsScreen2';
+import DetallesPaquetes from '../screens/DetallesPaquetes';
 import Historia from '../screens/Historia';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
 import Paquetes from '../screens/Paquetes';
@@ -46,8 +46,9 @@ export function DrawerNavigation() {
         <Drawer.Screen name="Hoteles" component={HomeScreen}  />
         <Drawer.Screen name = "reader" component= {ScanScreen} />
         <Drawer.Screen name="DetailsScreen" component={DetailsScreen}  />
+        <Drawer.Screen name="DetallesPaquetes" component={DetallesPaquetes}  />
         <Drawer.Screen name="Restaurantes" component={HomeScreen2}  />
-        <Drawer.Screen name="Detalles" component={DetailsScreen2}  />
+        <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
 
     </Drawer.Navigator>
 

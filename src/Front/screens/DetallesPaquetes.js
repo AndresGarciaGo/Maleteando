@@ -8,15 +8,9 @@ import {
   View,
 } from 'react-native';
 import COLORS from './consts/colors';
-import ZonaA from './assets/ZonaA.jpg';
-import Convento from './assets/Convento.jpg';
-import CasaC from './assets/CasaC.jpg';
-import Museo from './assets/Museo.jpg';
-import Senderismo from './assets/Senderismo.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import DetallesT from './consts/DetallesTuristicos';
 
-const DetailsScreen2 = ({navigation, route}) => {
+const DetallesPaquetes = ({navigation, route}) => {
   const item = route.params;
 
   return (
@@ -29,17 +23,17 @@ const DetailsScreen2 = ({navigation, route}) => {
       <StatusBar
         barStyle="light-content"
         translucent
-        backgroundColor="rgba(0,0,0,1)"
+        backgroundColor="rgba(0,0,0,0)"
       />
-      <ImageBackground style={style.headerImage} source={Museo}>
+      <ImageBackground style={style.headerImage} source={item.image}>
         <View style={style.header}>
           <Icon
             name="arrow-back-ios"
             size={28}
             color={COLORS.white}
-            onPress={ () => navigation.goBack()}
+            onPress={navigation.goBack}
           />
-          <Icon name="bookmark-border" size={28} color={COLORS.primary} />
+          <Icon name="bookmark-border" size={28} color={COLORS.white} />
         </View>
       </ImageBackground>
       <View>
@@ -47,16 +41,14 @@ const DetailsScreen2 = ({navigation, route}) => {
           <Icon name="place" color={COLORS.white} size={28} />
         </View>
         <View style={{marginTop: 20, paddingHorizontal: 20}}>
-          <Text style={{fontSize: 40, fontWeight: 'bold'}}></Text>
-          <Text
-            style={{
-              fontSize: 25,
-              fontWeight: '400',
-              color: COLORS.grey,
-              textAlign: 'center',
-
+          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
+          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
             }}>
-            {item.name}Zona Arquelógica
+            {item.subname}
+          </Text>
+          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
+            }}>
+            {item.location}
           </Text>
           <View
             style={{
@@ -78,46 +70,18 @@ const DetailsScreen2 = ({navigation, route}) => {
             </View>
             <Text style={{fontSize: 13, color: COLORS.grey}}>365 reseñas</Text>
           </View>
-          <View style={{marginTop: 20}}>
-            <Text style={{lineHeight: 20, color: COLORS.grey}}>
-              {item.details}
-            </Text>
-          </View>
+          
         </View>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingLeft: 20,
-            alignItems: 'center',
-          }}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-            Precio por actividad
+        <View style={{marginTop: 20, paddingHorizontal: 20}}>
+        <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.dark, fontWeight: 'bold', 
+            }}>
+            {item.Características}
           </Text>
-          <View style={style.priceTag}>
-            <Text
-              style={{
-                fontSize: 16,
-                fontWeight: 'bold',
-                color: COLORS.grey,
-                marginLeft: 5,
-              }}>
-              ${item.price}
-            </Text>
-            <Text
-              style={{
-                fontSize: 12,
-                fontWeight: 'bold',
-                color: COLORS.grey,
-                marginLeft: 5,
-              }}>
-              500 Por Persona
-            </Text>
-          </View>
         </View>
+
         <View style={style.btn}>
           <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Buscar paquete
+            Reserva Ahora
           </Text>
         </View>
       </View>
@@ -173,4 +137,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default DetailsScreen2;
+export default DetallesPaquetes;

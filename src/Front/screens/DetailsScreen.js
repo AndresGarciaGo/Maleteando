@@ -42,12 +42,8 @@ const DetailsScreen = ({navigation, route}) => {
         </View>
         <View style={{marginTop: 20, paddingHorizontal: 20}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: '400',
-              color: COLORS.grey,
-              marginTop: 5,
+          
+          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
             }}>
             {item.location}
           </Text>

@@ -81,7 +81,7 @@ const Paquetes = ({ navigation }) => {
       <TouchableOpacity
         disabled={activeCardIndex != index}
         activeOpacity={1}
-        onPress={() => navigation.navigate('DetailsScreen', hotel)}>
+        onPress={() => navigation.navigate('DetallesPaquetes', hotel)}>
         <Animated.View style={{ ...style.card, transform: [{ scale }] }}>
           <Animated.View style={{ ...style.cardOverLay, opacity }} />
           <View style={style.priceTag}>
@@ -117,7 +117,7 @@ const Paquetes = ({ navigation }) => {
                 <Icon name="star" size={15} color={COLORS.orange} />
                 <Icon name="star" size={15} color={COLORS.grey} />
               </View>
-              <Text style={{ fontSize: 10, color: COLORS.grey }}>365reviews</Text>
+              <Text style={{ fontSize: 10, color: COLORS.grey }}>{hotel.Observaciones}</Text>
             </View>
           </View>
         </Animated.View>
@@ -156,7 +156,7 @@ const Paquetes = ({ navigation }) => {
       <View style={style.header}>
         <View style={{ paddingBottom: 15 }}>
           <Text style={{ fontSize: 30, fontWeight: 'bold' }}>
-            Encuentra tu hotel
+            Paquetes para ti
           </Text>
           <View style={{ flexDirection: 'row' }}>
             <Text style={{ fontSize: 30, fontWeight: 'bold' }}>en </Text>
