@@ -44,7 +44,7 @@ export const Menus = ({ navigation }: Props) => {
         
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Atractivos Turisticos')}>
+        onPress={() => navigation.navigate('AtractivosTuristicos')}>
         <Image source={ZonaA} style={styles.img}/>
           <Text  style={styles.tex}>ATRACTIVOS</Text>
       </TouchableOpacity>

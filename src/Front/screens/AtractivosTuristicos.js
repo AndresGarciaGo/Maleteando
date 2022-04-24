@@ -16,7 +16,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 
 interface Props extends StackScreenProps<any, any> { };
 
-export const Menus = ({ navigation }: Props) => {
+export const AtractivosTuristicos = ({ navigation }: Props) => {
   return (
  
   <View style={[styles.container,styles.p]}>
@@ -166,4 +166,4 @@ tex:{
 
 
 })
-export default Menus;
+export default AtractivosTuristicos;

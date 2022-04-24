@@ -41,7 +41,7 @@ export function DrawerNavigation() {
         <Drawer.Screen name = "Menus" component= {Menus} />
         <Drawer.Screen name = "Inicio Sesion" component= {InicioSesion} />
         <Drawer.Screen name="Historia" component={Historia}/>
-        <Drawer.Screen name="Atractivos Turisticos" component={AtractivosTuristicos}/>
+        <Drawer.Screen name="AtractivosTuristicos" component={AtractivosTuristicos}/>
         <Drawer.Screen name="Paquetes" component={Paquetes}/>
         <Drawer.Screen name="Hoteles" component={HomeScreen}  />
         <Drawer.Screen name = "reader" component= {ScanScreen} />
