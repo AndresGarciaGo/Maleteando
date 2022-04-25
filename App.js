@@ -13,8 +13,14 @@ import DetailsScreen from './src/Front/screens/DetailsScreen';
 import Historia from './src/Front/screens/Historia';
 import AtractivosTuristicos from './src/Front/screens/AtractivosTuristicos';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { Component } from 'react/cjs/react.production.min';
 
-
+/*ComponentDidMounts (){
+  fetch('')
+}
+.then(response => {
+  console.log(response);
+})*/
 const App = () => {
   
   return (

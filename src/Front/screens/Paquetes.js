@@ -98,8 +98,8 @@ const Paquetes = ({ navigation }) => {
                 <Text style={{ fontWeight: 'bold', fontSize: 17 }}>
                   {hotel.name}
                 </Text>
-                <Text style={{ color: COLORS.grey, fontSize: 12 }}>
-                  {hotel.location}
+                <Text style={{ color: COLORS.grey, fontSize: 12, marginTop: 3 }}>
+                  {hotel.con}
                 </Text>
               </View>
               <Icon name="bookmark-border" size={26} color={COLORS.primary} />
@@ -108,7 +108,7 @@ const Paquetes = ({ navigation }) => {
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                marginTop: 10,
+                marginTop: 7,
               }}>
               <View style={{ flexDirection: 'row' }}>
                 <Icon name="star" size={15} color={COLORS.orange} />
