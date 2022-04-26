@@ -18,6 +18,7 @@ import COLORS from '../screens/consts/colors';
 
 
 
+
 const Drawer = createDrawerNavigator()
 
 export function DrawerNavigation() {
@@ -49,6 +50,7 @@ export function DrawerNavigation() {
         <Drawer.Screen name="DetallesPaquetes" component={DetallesPaquetes}  />
         <Drawer.Screen name="Restaurantes" component={HomeScreen2}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
+       
 
     </Drawer.Navigator>
 
@@ -80,7 +82,7 @@ const MenuItems = ( {navigation} ) => {
                                 style = { styles.buttonContainer}
                                 onPress={() => navigation.navigate('reader')}>
 
-                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> qr scaner </Text>
+                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Qr scaner </Text>
 
 
 
@@ -90,7 +92,7 @@ const MenuItems = ( {navigation} ) => {
                                 style = { styles.buttonContainer}
                                 onPress={() => navigation.navigate('reader')}>
 
-                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Menus </Text>
+                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Mapa </Text>
 
 
 

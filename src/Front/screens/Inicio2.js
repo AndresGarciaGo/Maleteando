@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Dimensions,
   FlatList,
@@ -16,11 +16,20 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import hotels from './consts/hotels';
+import { _getPlacesByType } from '../../Api/Nuevoback';
 
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;
 
 const HomeScreen = ({ navigation }) => {
+  const [hooot, sethotels] = useState({});
+  useEffect(() => {
+    _getPlacesByType({ typePlace: 'hotel' }).then(data => {
+      sethotels(data);
+      Console.log(data)
+    });
+  }, [])
+
 
   const categories = ['Todos', 'Popular', 'Mejor Calificado', 'Mapa'];
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
@@ -33,7 +42,7 @@ const HomeScreen = ({ navigation }) => {
       <View style={style.categoryListContainer}>
         {categories.map((item, index) => (
           <TouchableOpacity
-        
+
             activeOpacity={0.8}
             onPress={() => setSelectedCategoryIndex(index)}>
             <View>
@@ -168,15 +177,15 @@ const HomeScreen = ({ navigation }) => {
         </View>
         <Icon name="hotel" size={38} color={COLORS.grey} />
       </View>
-      
-        <View style={style.searchInputContainer}>
-          <Icon name="search" size={30} style={{ marginLeft: 20 }} />
-          <TextInput
-            placeholder="Buscar"
-            style={{ fontSize: 20, paddingLeft: 10 }}
-          />
-        </View>
-        <ScrollView showsVerticalScrollIndicator={false}>
+
+      <View style={style.searchInputContainer}>
+        <Icon name="search" size={30} style={{ marginLeft: 20 }} />
+        <TextInput
+          placeholder="Buscar"
+          style={{ fontSize: 20, paddingLeft: 10 }}
+        />
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <CategoryList />
         <View>
           <Animated.FlatList
@@ -251,7 +260,7 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
     marginHorizontal: 20,
     marginTop: 30,
-    
+
   },
   categoryListText: {
     fontSize: 17,

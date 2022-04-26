@@ -1,7 +1,7 @@
 const Paquetes = [
     {
         id: '1',
-        name: ' HISTORIA Y VIDA1',
+        name: ' HISTORIA Y VIDA',
         con: 'Conoce más de este paquete',
         subname: 'Conviértete en un verdadero “tlacuilo” después de haber aprendido sobre los lugares más destacados de Malinalco.',
         Observaciones: 'DURACION 9 HORAS',

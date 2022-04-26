@@ -11,7 +11,9 @@ import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const DetallesPaquetes = ({navigation, route}) => {
-  const item = route.params;
+const item = route.params;
+
+const [ , ] = useState();
 
   return (
     <ScrollView

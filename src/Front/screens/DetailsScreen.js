@@ -6,13 +6,15 @@ import {
   StyleSheet,
   Text,
   View,
+
 } from 'react-native';
 import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const DetailsScreen = ({navigation, route}) => {
-  const item = route.params;
 
+const DetailsScreen = ({ navigation, route }) => {
+  const item = route.params;
+  
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -40,11 +42,12 @@ const DetailsScreen = ({navigation, route}) => {
         <View style={style.iconContainer}>
           <Icon name="place" color={COLORS.white} size={28} />
         </View>
-        <View style={{marginTop: 20, paddingHorizontal: 20}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
-          
-          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
-            }}>
+        <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{item.name}</Text>
+
+          <Text style={{
+            fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
+          }}>
             {item.location}
           </Text>
           <View
@@ -53,22 +56,22 @@ const DetailsScreen = ({navigation, route}) => {
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ flexDirection: 'row' }}>
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.grey} />
               </View>
-              <Text style={{fontWeight: 'bold', fontSize: 18, marginLeft: 5}}>
+              <Text style={{ fontWeight: 'bold', fontSize: 18, marginLeft: 5 }}>
                 4.0
               </Text>
             </View>
-            <Text style={{fontSize: 13, color: COLORS.grey}}>365 reseñas</Text>
+            <Text style={{ fontSize: 13, color: COLORS.grey }}>365 reseñas</Text>
           </View>
-          <View style={{marginTop: 20}}>
-            <Text style={{lineHeight: 20, color: COLORS.grey}}>
+          <View style={{ marginTop: 20 }}>
+            <Text style={{ lineHeight: 20, color: COLORS.grey }}>
               {item.details}
             </Text>
           </View>
@@ -81,7 +84,7 @@ const DetailsScreen = ({navigation, route}) => {
             paddingLeft: 20,
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
             Precio por noche
           </Text>
           <View style={style.priceTag}>
@@ -106,7 +109,7 @@ const DetailsScreen = ({navigation, route}) => {
           </View>
         </View>
         <View style={style.btn}>
-          <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
+          <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
             Reserva Ahora
           </Text>
         </View>
