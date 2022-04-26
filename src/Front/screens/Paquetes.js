@@ -20,6 +20,7 @@ import hotels from './consts/paquetes';
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;
 
+
 const Paquetes = ({ navigation }) => {
 
   const categories = ['Todos', 'Popular', 'Mejor Calificado', 'Mapa'];

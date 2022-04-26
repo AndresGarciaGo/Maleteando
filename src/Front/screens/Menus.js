@@ -150,6 +150,7 @@ subtitlee: {
     borderBottomLeftRadius: 30,
     flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: 15,
   },
 
 

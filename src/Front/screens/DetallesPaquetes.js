@@ -13,8 +13,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 const DetallesPaquetes = ({navigation, route}) => {
 const item = route.params;
 
-const [ , ] = useState();
-
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -75,8 +73,7 @@ const [ , ] = useState();
           
         </View>
         <View style={{marginTop: 20, paddingHorizontal: 20}}>
-        <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.dark, fontWeight: 'bold', 
-            }}>
+        <Text style={style.lorem}>
             {item.Características}
           </Text>
         </View>
@@ -136,6 +133,16 @@ const style = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 20,
     justifyContent: 'space-between',
+  },
+
+  
+    lorem:  {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    flexDirection: 'row',
+    textAlign: 'justify',
+    marginHorizontal: 15,
   },
 });
 
