@@ -22,7 +22,8 @@ const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;
 
 const HomeScreen = ({ navigation }) => {
-  const [hooot, sethotels] = useState({});
+
+  const [hote, sethotels] = useState([]);
   useEffect(() => {
     _getPlacesByType({ typePlace: 'hotel' }).then(data => {
       sethotels(data);
@@ -31,8 +32,8 @@ const HomeScreen = ({ navigation }) => {
   }, [])
 
 
-  const categories = ['Todos', 'Popular', 'Mejor Calificado', 'Mapa'];
-  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
+  const categories = [];
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
   const [activeCardIndex, setActiveCardIndex] = React.useState(0);
   const scrollX = React.useRef(new Animated.Value(0)).current;
 

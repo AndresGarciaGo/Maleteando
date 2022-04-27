@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Iconn from 'react-native-vector-icons/Feather';
 import COLORS from './consts/colors';
 import hotels from './consts/paquetes';
 
@@ -167,7 +168,7 @@ const Paquetes = ({ navigation }) => {
             </Text>
           </View>
         </View>
-        <Icon name="hotel" size={38} color={COLORS.grey} />
+        <Iconn name="package" size={38} color={COLORS.grey} />
       </View>
 
         <View style={style.searchInputContainer}>

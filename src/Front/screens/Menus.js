@@ -34,7 +34,8 @@ export const Menus = ({ navigation }: Props) => {
         </View>
 
       
-        <ScrollView>
+        <ScrollView
+        showsVerticalScrollIndicator={false}>
 
       <TouchableOpacity style={styles.cont}
         onPress={() => navigation.navigate('Historia')}>
