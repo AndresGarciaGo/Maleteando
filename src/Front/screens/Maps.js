@@ -1,34 +1,36 @@
 import React from 'react';
-import { ImageBackground, absoluteFillObject, Text, Image, View, StyleSheet } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
+import { Text, Image, View, StyleSheet } from 'react-native';
+import MapView from 'react-native-maps';
+
+export default function Map(){
+
+    return (
+
+        <View >
+        <Text>
+        Hola
+        </Text>
+  <MapView
+  style={styles.map}
+    initialRegion={{
+      latitude: 18.946448967924447,
+      longitude: -99.49747539486961,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    }}
+  />
+        </View>
+
+    );
+
+}
 
 const styles = StyleSheet.create({
- container: {
-   StyleSheet,
-   absoluteFillObject,
-   height: 400,
-   width: 400,
-   justifyContent: 'flex-end',
-   alignItems: 'center',
- },
- map: {
-   StyleSheet,
-   absoluteFillObject,
- },
+    map:{
+    width:'100%',
+    height:'100%',
+    }
+
+
 });
 
-export default () => (
-   <View style={styles.container}>
-     <MapView
-       provider={PROVIDER_GOOGLE} // remove if not using Google Maps
-       style={styles.map}
-       region={{
-         latitude: 37.78825,
-         longitude: -122.4324,
-         latitudeDelta: 0.015,
-         longitudeDelta: 0.0121,
-       }}
-     >
-     </MapView>
-   </View>
-);
