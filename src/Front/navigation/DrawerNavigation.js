@@ -15,7 +15,7 @@ import Paquetes from '../screens/Paquetes';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
 import COLORS from '../screens/consts/colors';
-
+import Mapa from '../screens/Maps';
 
 
 
@@ -50,6 +50,7 @@ export function DrawerNavigation() {
         <Drawer.Screen name="DetallesPaquetes" component={DetallesPaquetes}  />
         <Drawer.Screen name="Restaurantes" component={HomeScreen2}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
+        <Drawer.Screen name="Mapita" component={Mapa}  />
        
 
     </Drawer.Navigator>
@@ -90,7 +91,7 @@ const MenuItems = ( {navigation} ) => {
 
                          <TouchableOpacity
                                 style = { styles.buttonContainer}
-                                onPress={() => navigation.navigate('reader')}>
+                                onPress={() => navigation.navigate('Mapita')}>
 
                                 <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Mapa </Text>
 
