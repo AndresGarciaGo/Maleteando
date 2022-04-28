@@ -11,6 +11,7 @@ import DetailsScreen from '../screens/DetailsScreen';
 import DetallesPaquetes from '../screens/DetallesPaquetes';
 import Historia from '../screens/Historia';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
+import Mapa from "../screens/Mapa";
 import Paquetes from '../screens/Paquetes';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
@@ -50,8 +51,9 @@ export function DrawerNavigation() {
         <Drawer.Screen name="DetallesPaquetes" component={DetallesPaquetes}  />
         <Drawer.Screen name="Restaurantes" component={HomeScreen2}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
-       
-
+        <Drawer.Screen name = "Mapa" component={Mapa} />
+        
+        
     </Drawer.Navigator>
 
     )
@@ -90,7 +92,7 @@ const MenuItems = ( {navigation} ) => {
 
                          <TouchableOpacity
                                 style = { styles.buttonContainer}
-                                onPress={() => navigation.navigate('reader')}>
+                                onPress={() => navigation.navigate('Mapa')}>
 
                                 <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Mapa </Text>
 
