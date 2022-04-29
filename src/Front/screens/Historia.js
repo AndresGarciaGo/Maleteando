@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
 
-const Historia = () => {
+const Historia = ({navigation, route}) => {
     return (
             <ScrollView >
         <View style={styles.container}>
@@ -16,11 +16,21 @@ const Historia = () => {
                 backgroundColor="rgba(0,0,0,0)"
               />
             <ImageBackground style={styles.headerImage} source={CasaC}>
-                    <View style={styles.header}>
+                    <View style={styles.back}>
+
+                              <Icon
+                                name="arrow-back-ios"
+                                size={35}
+                                color={COLORS.primary}
+                                onPress={() => navigation.navigate('Menus')}
+                              />
+
+
                     </View>
             </ImageBackground>
 
         <View style={styles.header}>
+
             <View style={{ paddingBottom: 15 }}>
                 <Text style={{ fontSize: 30, fontWeight: 'bold', textAlign:"justify"}}>
                 Historia
@@ -54,11 +64,23 @@ Erección del Municipio: Se celebra el 5 de agosto. “Charreadas”, “Jaripeo
             </View>
             <Text style={styles.lorem}>
             Algunos de los atractivos y productos turísticos que tiene este maravilloso Pueblo Mágico que no te puedes perder son:
+            </Text>
+            <Text style={styles.lorem}>
             •Zona Arqueológica de Cuauhtinchan.
+            </Text>
+            <Text style={styles.lorem}>
             •Parroquia y Antigua Convento del “Divino Salvador”.
+            </Text>
+            <Text style={styles.lorem}>
             •Dr. Museo Universitario Luis Mario Schneider.
+            </Text>
+            <Text style={styles.lorem}>
             •Los Bichos de Malinalco, Museo Vivo.
+            </Text>
+            <Text style={styles.lorem}>
             •Objetos artesanales tallados en madera.
+            </Text>
+            <Text style={styles.lorem}>
             •Objetos artesanales de rebozo.
             </Text>
             </View>
@@ -81,6 +103,14 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 40,
         borderBottomLeftRadius: 40,
         overflow: 'hidden',
+      },
+
+    back: {
+    marginTop: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    justifyContent: 'space-between',
       },
     header: {
 

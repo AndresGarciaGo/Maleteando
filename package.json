@@ -19,7 +19,7 @@
     "react-native": "0.67.4",
     "react-native-camera": "^4.2.1",
     "react-native-gesture-handler": "^2.3.2",
-    "react-native-maps": "0.31.0",
+    "react-native-maps": "^0.31.0",
     "react-native-nav": "^2.0.2",
     "react-native-navbar": "^2.1.0",
     "react-native-navigation-bar": "^0.2.1",
