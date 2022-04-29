@@ -85,7 +85,7 @@ const DetailsScreen = ({ navigation, route }) => {
             alignItems: 'center',
           }}>
           <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
-            Precio por noche
+            Precio por persona
           </Text>
           <View style={style.priceTag}>
             <Text
@@ -104,13 +104,13 @@ const DetailsScreen = ({ navigation, route }) => {
                 color: COLORS.grey,
                 marginLeft: 5,
               }}>
-              + desayuno
+              aproximadamente
             </Text>
           </View>
         </View>
         <View style={style.btn}>
           <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
-            Reserva Ahora
+            Mas información
           </Text>
         </View>
       </View>

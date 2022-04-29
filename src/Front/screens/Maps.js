@@ -7,9 +7,7 @@ export default function Map(){
     return (
 
         <View >
-        <Text>
-        Hola
-        </Text>
+
   <MapView
   style={styles.map}
     initialRegion={{

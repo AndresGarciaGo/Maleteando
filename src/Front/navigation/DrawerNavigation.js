@@ -47,7 +47,7 @@ export function DrawerNavigation() {
         <Drawer.Screen name="AtractivosTuristicos" component={AtractivosTuristicos}/>
         <Drawer.Screen name="Paquetes" component={Paquetes}/>
         <Drawer.Screen name="Hoteles" component={Hoteles}  />
-        <Drawer.Screen name = "reader" component= {ScanScreen} />
+        <Drawer.Screen name = "Lector QR" component= {ScanScreen} />
         <Drawer.Screen name="DetallesHoteles" component={DetallesHoteles}  />
         <Drawer.Screen name="DetallesRest" component={DetallesRest}  />
         <Drawer.Screen name="DetallesPaquetes" component={DetallesPaquetes}  />
@@ -69,25 +69,25 @@ const MenuItems = ( {navigation} ) => {
         >
 
             <TouchableOpacity
-            onPress={() => navigation.navigate('Menus')}>
+            onPress={() => navigation.navigate('Inicio Sesion')}>
             <Icon name="account-circle" size={120} style = {{ marginLeft: 60 }}/>
             </TouchableOpacity>
 
 
             <TouchableOpacity
                     style = { styles.buttonContainer}
-                    onPress={() => navigation.navigate('Inicio Sesion')}>
+                    onPress={() => navigation.navigate('Menus')}>
 
-                    <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10, }}/> Inicio Sesion </Text>
+                    <Text style={styles.t}><Icon name="menu-book" size={15} style = {{ marginRight: 10, }}/> Menu </Text>
 
 
 
             </TouchableOpacity>
                         <TouchableOpacity
                                 style = { styles.buttonContainer}
-                                onPress={() => navigation.navigate('reader')}>
+                                onPress={() => navigation.navigate('Lector QR')}>
 
-                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Qr scaner </Text>
+                                <Text style={styles.t}><Icon name="qr-code-scanner" size={15} style = {{ marginRight: 10,}}/> Lector de QR </Text>
 
 
 
@@ -97,7 +97,7 @@ const MenuItems = ( {navigation} ) => {
                                 style = { styles.buttonContainer}
                                 onPress={() => navigation.navigate('Mapita')}>
 
-                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Mapa </Text>
+                                <Text style={styles.t}><Icon name="map" size={15} style = {{ marginRight: 10,}}/> Mapa de Malinalco </Text>
 
 
 

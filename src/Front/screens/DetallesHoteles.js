@@ -110,7 +110,7 @@ const DetailsScreen = ({ navigation, route }) => {
         </View>
         <View style={style.btn}>
           <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
-            Reserva Ahora
+            Crea tu propia aventura
           </Text>
         </View>
       </View>
