@@ -33,7 +33,7 @@ const DetailsScreen = ({ navigation, route }) => {
             name="arrow-back-ios"
             size={28}
             color={COLORS.white}
-            onPress={navigation.goBack}
+            onPress={() => navigation.navigate('Restaurantes')}
           />
           <Icon name="bookmark-border" size={28} color={COLORS.white} />
         </View>

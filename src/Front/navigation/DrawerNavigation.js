@@ -5,10 +5,12 @@ import { StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native'
 import { NavigationContainer } from "@react-navigation/native";
 import Menus from "../screens/Menus";
 import InicioSesion from "../screens/InicioSesion";
-import HomeScreen from '../screens/Inicio2';
-import HomeScreen2 from '../screens/Inicio3';
-import DetailsScreen from '../screens/DetailsScreen';
+import Hoteles from '../screens/Hoteles';
+import Restaurantes from '../screens/Restaurantes';
+import DetallesHoteles from '../screens/DetallesHoteles';
 import DetallesPaquetes from '../screens/DetallesPaquetes';
+import DetallesAtract from '../screens/DetallesAtract';
+import DetallesRest from '../screens/DetallesRest';
 import Historia from '../screens/Historia';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
 import Paquetes from '../screens/Paquetes';
@@ -44,11 +46,13 @@ export function DrawerNavigation() {
         <Drawer.Screen name="Historia" component={Historia}/>
         <Drawer.Screen name="AtractivosTuristicos" component={AtractivosTuristicos}/>
         <Drawer.Screen name="Paquetes" component={Paquetes}/>
-        <Drawer.Screen name="Hoteles" component={HomeScreen}  />
+        <Drawer.Screen name="Hoteles" component={Hoteles}  />
         <Drawer.Screen name = "reader" component= {ScanScreen} />
-        <Drawer.Screen name="DetailsScreen" component={DetailsScreen}  />
+        <Drawer.Screen name="DetallesHoteles" component={DetallesHoteles}  />
+        <Drawer.Screen name="DetallesRest" component={DetallesRest}  />
         <Drawer.Screen name="DetallesPaquetes" component={DetallesPaquetes}  />
-        <Drawer.Screen name="Restaurantes" component={HomeScreen2}  />
+        <Drawer.Screen name="DetallesAtract" component={DetallesAtract}  />
+        <Drawer.Screen name="Restaurantes" component={Restaurantes}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
         <Drawer.Screen name="Mapita" component={Mapa}  />
        
