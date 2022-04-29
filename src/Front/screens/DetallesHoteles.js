@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import {
   ImageBackground,
   ScrollView,
@@ -6,6 +7,7 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 
 } from 'react-native';
 import COLORS from './consts/colors';
@@ -108,11 +110,13 @@ const DetailsScreen = ({ navigation, route }) => {
             </Text>
           </View>
         </View>
+<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/lodging')}>
         <View style={style.btn}>
           <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
             Crea tu propia aventura
           </Text>
         </View>
+</TouchableOpacity>
       </View>
     </ScrollView>
   );

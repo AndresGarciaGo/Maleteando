@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import {
   ImageBackground,
   ScrollView,
@@ -6,6 +7,8 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
+
 } from 'react-native';
 import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -77,12 +80,13 @@ const item = route.params;
             {item.Características}
           </Text>
         </View>
-
+<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/home')}>
         <View style={style.btn}>
           <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
             Crea tu propia aventura
           </Text>
         </View>
+</TouchableOpacity>
       </View>
     </ScrollView>
   );

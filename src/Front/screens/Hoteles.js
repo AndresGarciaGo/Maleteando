@@ -136,6 +136,7 @@ const HomeScreen = ({ navigation }) => {
   };
   const TopHotelCard = ({ hotel }) => {
     return (
+    <TouchableOpacity>
       <View style={style.topHotelCard}>
         <View
           style={{
@@ -145,6 +146,7 @@ const HomeScreen = ({ navigation }) => {
             zIndex: 1,
             flexDirection: 'row',
           }}>
+
           <Icon name="star" size={15} color={COLORS.orange} />
           <Text style={{ color: COLORS.white, fontWeight: 'bold', fontSize: 15 }}>
             5.0
@@ -158,6 +160,7 @@ const HomeScreen = ({ navigation }) => {
           </Text>
         </View>
       </View>
+    </TouchableOpacity>
     );
   };
 
