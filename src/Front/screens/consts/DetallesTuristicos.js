@@ -55,35 +55,13 @@ const Dturisticos = [
 
     {
     id: '6',
-      name: 'Museo Universitario Dr. Luis Mario Schneider',
+      name: 'Museo Dr. Luis Mario Schneider',
       Observaciones: 'Se puede visitar a través de un recorrido virtual disponible en la página: http://web.uaemex.mx/dcultur/MUSEOS/museosv/mali/inicio.html Horario de 10:00-17:00.',
       location: 'Amajac, Agustín Melgar esquina, Malinalco, Méx.',
       Mediosdeacceso: 'Carretera México-Toluca, carretera Toluca-Chalma, das vuelta en avenida del Panteón en el barrio de San Juan Malinalco, a la Izquierda en avenida Morelos, después a la derecha en avenida Hidalgo, a la izquierda en Emilio Carranza y a la derecha en Amajac',
       Visitantes: '--',
       image: require('../assets/MuseoUniversitario.png'),
       Características: 'El museo difunde la cultura, las costumbres y tradiciones del municipio de Malinalco, está integrado por siete salas, temporales y de exposición permanente, dentro de esta última se ubican las salas de: fiestas, tiempo de lluvias, corte estratigráfico, inframundo, tiempo de secas y la del Cuauhcalli. ',
-    },
-
-    {
-      id: '7',
-      name: 'Zona Arqueológica de Malinalco',
-      Observaciones: 'Se encuentra abierta al público de martes a domingo, de 9:00 a 17:30 horas. Último acceso a las 15:00 horas. $70 entrada general',
-      location: 'Amajac s/n, Barrio Santa Monica, 52440 Malinalco, Méx.',
-      Mediosdeacceso: 'De la ciudad de Toluca está a 70 km, siguiendo la vía a Tenango- Jajalpa a 99 km de la CDMX',
-      Visitantes: 'Aproximado de 34,307 turistas (202 extranjeros) anuales',
-      image: require('../assets/ZonaArqDeMalinalco.png'),
-      Características: 'Podemos encontrar reminiscencias de la época prehistórica, y prueba de ello son las pinturas rupestres en sus más diversas modalidades desde dibujos de soles, escudos, personas, hasta las más extrañas e incomprensibles imágenes.',
-      },
-
-    {
-      id: '8',
-      name: 'Convento Agustino de la Transfiguración.',
-      Observaciones: ' Horario temporal debido a contingencia de 9:00 a 14:00',
-      location: 'Plaza Principal, Centro, 52440 Malinalco, Méx.',
-      Mediosdeacceso: 'Se encuentra a 70 km de la Ciudad de Toluca en la Plaza Principal por lo que se puede llegar en auto o en algún otro medio de transporte disponible en el área. Entre la calle Del Beso y Amajac. ',
-      Visitantes: '2433.6 habitantes mensuales promedio',
-      image: require('../assets/ConventoAgustino.png'),
-      Características: 'La fachada de la Iglesia es de estilo renacentista, conocido como plateresco, en donde sobresalen cabezas de ángeles, rosetones y conchas adosadas a las bases de pilastras o a los frisos. En el convento, podemos observar tres programas pictóricos, el primero es una extensión de huertos y jardines, el segundo de estilo renacentista y por último el mensaje Cristólogico con imágenes de la pasión',
     },
 
   ];
