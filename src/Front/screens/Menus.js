@@ -62,7 +62,7 @@ export const Menus = ({ navigation }: Props) => {
           <Text  style={styles.tex}>HOSPEDAJE</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.cont}
+      <TouchableOpacity style={styles.cont1}
         onPress={() => navigation.navigate('Paquetes')}>
           <Image source={Paq} style={styles.img}/>
           <Text  style={styles.tex}>PAQUETES</Text>
@@ -131,7 +131,18 @@ subtitlee: {
     alignContent:"center",
     marginLeft: 25,
   },
-
+  cont1: {
+    width: "90%",
+    borderWidth: 1,
+    borderRadius: 15,
+    backgroundColor: "white",
+    borderColor: "#818181",
+    boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
+    marginTop: 10,
+    alignContent:"center",
+    marginLeft: 25,
+    marginBottom: 10,
+  },
 
 
   qr: {

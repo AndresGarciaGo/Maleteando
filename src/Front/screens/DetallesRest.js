@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import {
   ImageBackground,
   ScrollView,
@@ -6,6 +7,8 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
+
 
 } from 'react-native';
 import COLORS from './consts/colors';
@@ -33,7 +36,7 @@ const DetailsScreen = ({ navigation, route }) => {
             name="arrow-back-ios"
             size={28}
             color={COLORS.white}
-            onPress={navigation.goBack}
+            onPress={() => navigation.navigate('Restaurantes')}
           />
           <Icon name="bookmark-border" size={28} color={COLORS.white} />
         </View>
@@ -85,7 +88,7 @@ const DetailsScreen = ({ navigation, route }) => {
             alignItems: 'center',
           }}>
           <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
-            Precio por noche
+            Precio por persona
           </Text>
           <View style={style.priceTag}>
             <Text
@@ -104,15 +107,17 @@ const DetailsScreen = ({ navigation, route }) => {
                 color: COLORS.grey,
                 marginLeft: 5,
               }}>
-              + desayuno
+              aproximadamente
             </Text>
           </View>
         </View>
+<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/home')}>
         <View style={style.btn}>
           <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
-            Reserva Ahora
+            Mas información
           </Text>
         </View>
+</TouchableOpacity>
       </View>
     </ScrollView>
   );

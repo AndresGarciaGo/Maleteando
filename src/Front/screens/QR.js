@@ -27,16 +27,12 @@ class ScanScreen extends Component {
         flashMode={RNCamera.Constants.FlashMode.torch}
         topContent={
           <Text style={styles.centerText}>
-            Go to{' '}
-            <Text style={styles.textBold}>wikipedia.org/wiki/QR_code</Text> on
-            your computer and scan the QR code.
+            Escanea el codigo QR de la  {' '}
+            <Text style={styles.textBold}>Atracción Turística </Text>
+             de la cual quieres infomación.
           </Text>
         }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}>
-            <Text style={styles.buttonText}>OK. Got it!</Text>
-          </TouchableOpacity>
-        }
+
       />
     );
   }
@@ -46,8 +42,8 @@ const styles = StyleSheet.create({
   centerText: {
     flex: 1,
     fontSize: 18,
-    padding: 32,
-    color: '#777'
+    padding: 15,
+    color: '#777',
   },
   textBold: {
     fontWeight: '500',
@@ -58,7 +54,7 @@ const styles = StyleSheet.create({
     color: 'rgb(0,122,255)'
   },
   buttonTouchable: {
-    padding: 16
+    padding: 5,
   }
 });
 

@@ -13,9 +13,10 @@ import {
 import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const DetallesPaquetes = ({navigation, route}) => {
-const item = route.params;
 
+const DetailsScreen = ({ navigation, route }) => {
+  const item = route.params;
+  
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -34,7 +35,7 @@ const item = route.params;
             name="arrow-back-ios"
             size={28}
             color={COLORS.white}
-            onPress={() => navigation.navigate('Paquetes')}
+            onPress={() => navigation.navigate('Hoteles')}
           />
           <Icon name="bookmark-border" size={28} color={COLORS.white} />
         </View>
@@ -43,14 +44,12 @@ const item = route.params;
         <View style={style.iconContainer}>
           <Icon name="place" color={COLORS.white} size={28} />
         </View>
-        <View style={{marginTop: 20, paddingHorizontal: 20}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
-          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
-            }}>
-            {item.subname}
-          </Text>
-          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
-            }}>
+        <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{item.name}</Text>
+
+          <Text style={{
+            fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
+          }}>
             {item.location}
           </Text>
           <View
@@ -59,30 +58,61 @@ const item = route.params;
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ flexDirection: 'row' }}>
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.grey} />
               </View>
-              <Text style={{fontWeight: 'bold', fontSize: 18, marginLeft: 5}}>
+              <Text style={{ fontWeight: 'bold', fontSize: 18, marginLeft: 5 }}>
                 4.0
               </Text>
             </View>
-            <Text style={{fontSize: 13, color: COLORS.grey}}>365 reseñas</Text>
+            <Text style={{ fontSize: 13, color: COLORS.grey }}>365 reseñas</Text>
           </View>
-          
+          <View style={{ marginTop: 20 }}>
+            <Text style={{ lineHeight: 20, color: COLORS.grey }}>
+              {item.details}
+            </Text>
+          </View>
         </View>
-        <View style={{marginTop: 20, paddingHorizontal: 20}}>
-        <Text style={style.lorem}>
-            {item.Características}
+        <View
+          style={{
+            marginTop: 20,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingLeft: 20,
+            alignItems: 'center',
+          }}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
+            Precio por noche
           </Text>
+          <View style={style.priceTag}>
+            <Text
+              style={{
+                fontSize: 16,
+                fontWeight: 'bold',
+                color: COLORS.grey,
+                marginLeft: 5,
+              }}>
+              ${item.price}
+            </Text>
+            <Text
+              style={{
+                fontSize: 12,
+                fontWeight: 'bold',
+                color: COLORS.grey,
+                marginLeft: 5,
+              }}>
+              + desayuno
+            </Text>
+          </View>
         </View>
-<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/home')}>
+<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/lodging')}>
         <View style={style.btn}>
-          <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
+          <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
             Crea tu propia aventura
           </Text>
         </View>
@@ -138,16 +168,6 @@ const style = StyleSheet.create({
     marginHorizontal: 20,
     justifyContent: 'space-between',
   },
-
-  
-    lorem:  {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    flexDirection: 'row',
-    textAlign: 'justify',
-    marginHorizontal: 15,
-  },
 });
 
-export default DetallesPaquetes;
+export default DetailsScreen;

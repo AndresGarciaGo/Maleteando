@@ -24,7 +24,7 @@ const cardWidth = width / 1.8;
 
 const Paquetes = ({ navigation }) => {
 
-  const categories = ['Todos', 'Popular', 'Mejor Calificado', 'Mapa'];
+  const categories = ['Todos'];
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
   const [activeCardIndex, setActiveCardIndex] = React.useState(0);
   const scrollX = React.useRef(new Animated.Value(0)).current;
@@ -89,15 +89,15 @@ const Paquetes = ({ navigation }) => {
           <View style={style.priceTag}>
             <Text
               style={{ color: COLORS.white, fontSize: 20, fontWeight: 'bold', backgroundColor: COLORS.primary }}>
-              ${hotel.price}
+              {hotel.price}
             </Text>
-          </View>
+          </View >
           <Image source={hotel.image} style={style.cardImage} />
           <View style={style.cardDetails}>
             <View
-              style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              style={{ flexDirection: 'row', justifyContent: 'space-between', }}>
               <View>
-                <Text style={{ fontWeight: 'bold', fontSize: 17 }}>
+                <Text style={{ fontWeight: 'bold', fontSize: 17}}>
                   {hotel.name}
                 </Text>
                 <Text style={{ color: COLORS.grey, fontSize: 12, marginTop: 3 }}>
@@ -210,9 +210,9 @@ const Paquetes = ({ navigation }) => {
             marginHorizontal: 20,
           }}>
           <Text style={{ fontWeight: 'bold', color: COLORS.grey }}>
-            Hoteles Top
+            Paquetes de temporada
           </Text>
-          <Text style={{ color: COLORS.grey }}>Mostrar todos</Text>
+          <Text style={{ color: COLORS.grey }}></Text>
         </View>
         <FlatList
           data={hotels}
@@ -293,6 +293,7 @@ const style = StyleSheet.create({
     bottom: 0,
     padding: 20,
     width: '100%',
+    marginBottom: 15,
   },
   cardOverLay: {
     height: 280,

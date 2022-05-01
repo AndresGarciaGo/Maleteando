@@ -5,10 +5,12 @@ import { StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native'
 import { NavigationContainer } from "@react-navigation/native";
 import Menus from "../screens/Menus";
 import InicioSesion from "../screens/InicioSesion";
-import HomeScreen from '../screens/Inicio2';
-import HomeScreen2 from '../screens/Inicio3';
-import DetailsScreen from '../screens/DetailsScreen';
+import Hoteles from '../screens/Hoteles';
+import Restaurantes from '../screens/Restaurantes';
+import DetallesHoteles from '../screens/DetallesHoteles';
 import DetallesPaquetes from '../screens/DetallesPaquetes';
+import DetallesAtract from '../screens/DetallesAtract';
+import DetallesRest from '../screens/DetallesRest';
 import Historia from '../screens/Historia';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
 import Mapa from "../screens/Mapa";
@@ -16,7 +18,7 @@ import Paquetes from '../screens/Paquetes';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
 import COLORS from '../screens/consts/colors';
-
+import Mapa from '../screens/Maps';
 
 
 
@@ -45,15 +47,23 @@ export function DrawerNavigation() {
         <Drawer.Screen name="Historia" component={Historia}/>
         <Drawer.Screen name="AtractivosTuristicos" component={AtractivosTuristicos}/>
         <Drawer.Screen name="Paquetes" component={Paquetes}/>
-        <Drawer.Screen name="Hoteles" component={HomeScreen}  />
-        <Drawer.Screen name = "reader" component= {ScanScreen} />
-        <Drawer.Screen name="DetailsScreen" component={DetailsScreen}  />
+        <Drawer.Screen name="Hoteles" component={Hoteles}  />
+        <Drawer.Screen name = "Lector QR" component= {ScanScreen} />
+        <Drawer.Screen name="DetallesHoteles" component={DetallesHoteles}  />
+        <Drawer.Screen name="DetallesRest" component={DetallesRest}  />
         <Drawer.Screen name="DetallesPaquetes" component={DetallesPaquetes}  />
-        <Drawer.Screen name="Restaurantes" component={HomeScreen2}  />
+        <Drawer.Screen name="DetallesAtract" component={DetallesAtract}  />
+        <Drawer.Screen name="Restaurantes" component={Restaurantes}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
+<<<<<<< HEAD
         <Drawer.Screen name = "Mapa" component={Mapa} />
         
         
+=======
+        <Drawer.Screen name="Mapita" component={Mapa}  />
+       
+
+>>>>>>> 98df434dbedd4b4634cebd62d461f318c8af8e53
     </Drawer.Navigator>
 
     )
@@ -66,25 +76,25 @@ const MenuItems = ( {navigation} ) => {
         >
 
             <TouchableOpacity
-            onPress={() => navigation.navigate('Menus')}>
+            onPress={() => navigation.navigate('Inicio Sesion')}>
             <Icon name="account-circle" size={120} style = {{ marginLeft: 60 }}/>
             </TouchableOpacity>
 
 
             <TouchableOpacity
                     style = { styles.buttonContainer}
-                    onPress={() => navigation.navigate('Inicio Sesion')}>
+                    onPress={() => navigation.navigate('Menus')}>
 
-                    <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10, }}/> Inicio Sesion </Text>
+                    <Text style={styles.t}><Icon name="menu-book" size={15} style = {{ marginRight: 10, }}/> Menu </Text>
 
 
 
             </TouchableOpacity>
                         <TouchableOpacity
                                 style = { styles.buttonContainer}
-                                onPress={() => navigation.navigate('reader')}>
+                                onPress={() => navigation.navigate('Lector QR')}>
 
-                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Qr scaner </Text>
+                                <Text style={styles.t}><Icon name="qr-code-scanner" size={15} style = {{ marginRight: 10,}}/> Lector de QR </Text>
 
 
 
@@ -92,9 +102,13 @@ const MenuItems = ( {navigation} ) => {
 
                          <TouchableOpacity
                                 style = { styles.buttonContainer}
+<<<<<<< HEAD
                                 onPress={() => navigation.navigate('Mapa')}>
+=======
+                                onPress={() => navigation.navigate('Mapita')}>
+>>>>>>> 98df434dbedd4b4634cebd62d461f318c8af8e53
 
-                                <Text style={styles.t}><Icon name="login" size={15} style = {{ marginRight: 10,}}/> Mapa </Text>
+                                <Text style={styles.t}><Icon name="map" size={15} style = {{ marginRight: 10,}}/> Mapa de Malinalco </Text>
 
 
 

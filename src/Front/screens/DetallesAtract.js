@@ -8,12 +8,11 @@ import {
   Text,
   View,
   TouchableOpacity,
-
 } from 'react-native';
 import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const DetallesPaquetes = ({navigation, route}) => {
+const DetallesAtract = ({navigation, route}) => {
 const item = route.params;
 
   return (
@@ -34,7 +33,7 @@ const item = route.params;
             name="arrow-back-ios"
             size={28}
             color={COLORS.white}
-            onPress={() => navigation.navigate('Paquetes')}
+            onPress={() => navigation.navigate('AtractivosTuristicos')}
           />
           <Icon name="bookmark-border" size={28} color={COLORS.white} />
         </View>
@@ -80,10 +79,11 @@ const item = route.params;
             {item.Características}
           </Text>
         </View>
-<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/home')}>
+<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/touristic-attractions')}>
         <View style={style.btn}>
-          <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Crea tu propia aventura
+          <Text
+          style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
+            Cotizar Ahora
           </Text>
         </View>
 </TouchableOpacity>
@@ -150,4 +150,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default DetallesPaquetes;
+export default DetallesAtract;
