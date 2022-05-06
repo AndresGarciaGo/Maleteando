@@ -1,7 +1,3 @@
 <resources>
-<<<<<<< HEAD
   <string name="Mapota" templateMergeStrategy="preserve" translatable="false">(AIzaSyDzIlo9o3CctosydSKWEdk4sEfnTEkRkmo)</string>
-=======
-  <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">(AIzaSyDzIlo9o3CctosydSKWEdk4sEfnTEkRkmo)</string>
->>>>>>> 98df434dbedd4b4634cebd62d461f318c8af8e53
 </resources>

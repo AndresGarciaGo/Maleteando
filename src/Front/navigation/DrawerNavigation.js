@@ -13,7 +13,6 @@ import DetallesAtract from '../screens/DetallesAtract';
 import DetallesRest from '../screens/DetallesRest';
 import Historia from '../screens/Historia';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
-import Mapa from "../screens/Mapa";
 import Paquetes from '../screens/Paquetes';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
@@ -55,15 +54,9 @@ export function DrawerNavigation() {
         <Drawer.Screen name="DetallesAtract" component={DetallesAtract}  />
         <Drawer.Screen name="Restaurantes" component={Restaurantes}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
-<<<<<<< HEAD
         <Drawer.Screen name = "Mapa" component={Mapa} />
         
         
-=======
-        <Drawer.Screen name="Mapita" component={Mapa}  />
-       
-
->>>>>>> 98df434dbedd4b4634cebd62d461f318c8af8e53
     </Drawer.Navigator>
 
     )
@@ -102,11 +95,7 @@ const MenuItems = ( {navigation} ) => {
 
                          <TouchableOpacity
                                 style = { styles.buttonContainer}
-<<<<<<< HEAD
                                 onPress={() => navigation.navigate('Mapa')}>
-=======
-                                onPress={() => navigation.navigate('Mapita')}>
->>>>>>> 98df434dbedd4b4634cebd62d461f318c8af8e53
 
                                 <Text style={styles.t}><Icon name="map" size={15} style = {{ marginRight: 10,}}/> Mapa de Malinalco </Text>
 

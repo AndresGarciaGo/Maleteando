@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Image, View, StyleSheet } from 'react-native';
 import MapView from 'react-native-maps';
 
-export default function Map(){
+export default function Maps(){
 
     return (
 
