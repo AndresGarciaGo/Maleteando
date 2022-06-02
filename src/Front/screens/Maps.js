@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, Image, View, StyleSheet } from 'react-native';
+<<<<<<< HEAD
 import MapView, { Marker } from 'react-native-maps';
 
    
@@ -20,6 +21,12 @@ export default function Maps(){
     longitude: -99.49536166252453,
   });
 
+=======
+import MapView from 'react-native-maps';
+
+export default function Maps(){
+
+>>>>>>> 00e416c91e12bcac6048f65d1b90df020367c37e
     return (
 
         <View >
@@ -27,6 +34,7 @@ export default function Maps(){
   <MapView
   style={styles.map}
     initialRegion={{
+<<<<<<< HEAD
       latitude: qr1.latitude,
       longitude: qr1.longitude,
       latitudeDelta: 0.0922,
@@ -54,6 +62,15 @@ export default function Maps(){
 
     
       </View>
+=======
+      latitude: 18.946448967924447,
+      longitude: -99.49747539486961,
+      latitudeDelta: 0.0922,
+      longitudeDelta: 0.0421,
+    }}
+  />
+        </View>
+>>>>>>> 00e416c91e12bcac6048f65d1b90df020367c37e
 
     );
 
@@ -65,5 +82,9 @@ const styles = StyleSheet.create({
     height:'100%',
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 00e416c91e12bcac6048f65d1b90df020367c37e
 });
 
