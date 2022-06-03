@@ -221,7 +221,7 @@ const HomeScreen = ({ navigation }) => {
             marginHorizontal: 20,
           }}>
           <Text style={{ fontWeight: 'bold', color: COLORS.grey }}>
-            Hoteles Top
+            Recomendados por nosotros
           </Text>
           <Text style={{ color: COLORS.grey }}>Mostrar todos</Text>
         </View>

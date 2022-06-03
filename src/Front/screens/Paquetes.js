@@ -210,7 +210,7 @@ const Paquetes = ({ navigation }) => {
             marginHorizontal: 20,
           }}>
           <Text style={{ fontWeight: 'bold', color: COLORS.grey }}>
-            Paquetes de temporada
+            Más Recomendados
           </Text>
           <Text style={{ color: COLORS.grey }}></Text>
         </View>

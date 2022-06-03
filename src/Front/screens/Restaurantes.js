@@ -208,7 +208,7 @@ const Restaurantes = ({ navigation }) => {
             marginHorizontal: 20,
           }}>
           <Text style={{ fontWeight: 'bold', color: COLORS.grey }}>
-            Restaurantes Top
+            Recomendados por nosotros
           </Text>
         </View>
         <FlatList
