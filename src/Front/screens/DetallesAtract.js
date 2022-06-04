@@ -87,6 +87,16 @@ const item = route.params;
           </Text>
         </View>
 </TouchableOpacity>
+
+<TouchableOpacity onPress={() => Linking.openURL(item.url)}>
+        <View style={style.btn}>
+          <Text
+          style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
+            Modelado 3D de esta zona
+          </Text>
+        </View>
+</TouchableOpacity>
+
       </View>
     </ScrollView>
   );

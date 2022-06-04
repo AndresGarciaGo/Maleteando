@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, View, StyleSheet } from 'react-native';
+import { Text, Image, View, StyleSheet,TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
 
@@ -20,6 +20,7 @@ export default function Maps() {
     longitude: -99.49536166252453,
   });
 
+
   return (
 
     <View >
@@ -38,6 +39,7 @@ export default function Maps() {
           description='Orientacion del primer codigo Qr'
           coordinate={qr1}
         >
+          
           <Image source={require('../screens/assets/Museo.jpg')} style={{ height: 35, width: 35 }} />
         </Marker>
 
@@ -46,6 +48,8 @@ export default function Maps() {
           description='Orientacion del primer codigo Qr'
           coordinate={qr2}
         >
+          <Image source={require('../screens/assets/Gastro.jpg')} style={{ height: 35, width: 35 }} />
+        
         </Marker>
 
         <Marker
@@ -53,6 +57,8 @@ export default function Maps() {
           description='Orientacion del primer codigo Qr'
           coordinate={qr3}
         >
+          <Image source={require('../screens/assets/Convento.jpg')} style={{ height: 35, width: 35 }} />
+        
         </Marker>
 
 

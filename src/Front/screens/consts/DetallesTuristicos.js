@@ -1,3 +1,5 @@
+import React from 'react';
+import { Linking } from 'react-native';
 const Dturisticos = [
     {
       id: '1',
@@ -8,17 +10,19 @@ const Dturisticos = [
       Visitantes: '479 en el mes de febrero 2022.', 
       image: require('../assets/CascadadelOberaje.png'),
       Características: 'Sitio natural conformado por tres caídas de agua cristalina acompañadas de un paisaje boscoso, dónde se puede practicar rápel en cascada y saltos en pozas de agua',
+      url: 'https://pano.autodesk.com/pano.html?mono=jpgs/995a9ce3-ab61-41e6-8ffc-dcf6d7fb4744&version=2',
     },
 
     {
       id: '2',
       name: 'Cañón garganta de la iguana',
-      Observaciones: 'Se recomienda levar buen calzado por la longitud de la caminata para evitar lesiones.', 
+      Observaciones: 'Se recomienda levarx buen calzado por la longitud de la caminata para evitar lesiones.', 
       location: 'San Pedro Chichicasco Malinalco.',
       Mediosdeacceso: 'Se encuentra a 40 minutos de centro de Malinalco a 30 minutos de la cabecera municipal de Malinalco',
       Visitantes: '--',
       image: require('../assets/Cañóngarganta.png'),
       Características: 'El Cañón garganta de la iguana, es una zona ecológica, que cuenta con dos toboganes naturales y pozas de alturas diferentes (entre dos y 17 metros de profundidad)',
+      url: 'https://pano.autodesk.com/pano.html?mono=jpgs/763c080d-0835-4251-bd85-196cea84834a&version=2',
     },
 
     {
@@ -30,6 +34,7 @@ const Dturisticos = [
       Visitantes: '--',
       image: require('../assets/Cerrodelosencinos.png'),
       Características: 'Este cerro cuenta con varios senderos para practicar trekkig, uno de los principales miradores es conocido como la mesita',
+      url: 'https://pano.autodesk.com/pano.html?mono=jpgs/a8b9529a-4628-4437-ae89-88a286538548&version=2',
     },
 
     {

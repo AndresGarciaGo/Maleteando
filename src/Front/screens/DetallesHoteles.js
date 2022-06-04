@@ -16,7 +16,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const DetailsScreen = ({ navigation, route }) => {
   const item = route.params;
-  
+
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -110,13 +110,13 @@ const DetailsScreen = ({ navigation, route }) => {
             </Text>
           </View>
         </View>
-<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/lodging')}>
-        <View style={style.btn}>
-          <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
-            Crea tu propia aventura
-          </Text>
-        </View>
-</TouchableOpacity>
+        <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
+          <View style={style.btn}>
+            <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
+              Crea tu propia aventura
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
