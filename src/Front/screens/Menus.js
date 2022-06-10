@@ -86,8 +86,12 @@ subtitle: {
     marginTop:15,
 =======
   subtitle: {
+<<<<<<< HEAD
     marginTop: 16,
 >>>>>>> 08254a8f5d44cd411b7ad996caec6ccda8e3dcb5
+=======
+    marginTop: 15,
+>>>>>>> af2baa8f67f8a9ea1104f33794ee3dd5b0d52188
     fontSize: 32,
     color: '#2B3030',
     textAlign: 'center',
