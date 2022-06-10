@@ -23,14 +23,6 @@ const cardWidth = width / 1.8;
 
 const HomeScreen = ({ navigation }) => {
 
-  const [hote, sethotels] = useState([]);
-  useEffect(() => {
-    _getPlacesByType({ typePlace: 'hotel' }).then(data => {
-      sethotels(data);
-      Console.log(data)
-    });
-  }, [])
-
 
   const categories = ['Todos'];
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
