@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
 
   p:{
     flex:1,
-    backgroundColor: '#9370db',
+    backgroundColor: 'white',
   },
 
 subtitle: {
@@ -124,7 +124,7 @@ subtitlee: {
     width: "90%",
     borderWidth: 1,
     borderRadius: 15,
-    backgroundColor: "white",
+    backgroundColor: "#9370db",
     borderColor: "#818181",
     boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
     marginTop: 10,
@@ -135,7 +135,7 @@ subtitlee: {
     width: "90%",
     borderWidth: 1,
     borderRadius: 15,
-    backgroundColor: "white",
+    backgroundColor: "#9370db",
     borderColor: "#818181",
     boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
     marginTop: 10,
