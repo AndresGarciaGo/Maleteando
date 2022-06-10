@@ -81,8 +81,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 
+<<<<<<< HEAD
 subtitle: {
     marginTop:15,
+=======
+  subtitle: {
+    marginTop: 16,
+>>>>>>> 08254a8f5d44cd411b7ad996caec6ccda8e3dcb5
     fontSize: 32,
     color: '#2B3030',
     textAlign: 'center',
