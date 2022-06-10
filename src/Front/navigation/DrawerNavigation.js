@@ -18,7 +18,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
 import COLORS from '../screens/consts/colors';
 import Mapa from '../screens/Maps';
-
+import { Linking } from 'react-native';
 
 
 const Drawer = createDrawerNavigator()
@@ -69,7 +69,7 @@ const MenuItems = ( {navigation} ) => {
         >
 
             <TouchableOpacity
-            onPress={() => navigation.navigate('Inicio Sesion')}>
+            onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/login')}>
             <Icon name="account-circle" size={120} style = {{ marginLeft: 60 }}/>
             </TouchableOpacity>
 

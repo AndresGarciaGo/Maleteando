@@ -75,7 +75,7 @@ export const Menus = ({ navigation, item }) => {
           <FlatList
           data={ boton }
           
-          keyExtractor={(item, index) => item.url}
+          keyExtractor={(item, index) => item.id}
           renderItem = {({item}) => 
           (<TouchableOpacity style={styles.cont}
           onPress={() => navigation.navigate(item.id)}>
