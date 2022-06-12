@@ -8,9 +8,11 @@ import {
   Text,
   View,
   TouchableOpacity,
+
 } from 'react-native';
 import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { FlatList } from 'react-native-gesture-handler';
 
 const DetallesAtract = ({navigation, route}) => {
 const item = route.params;
@@ -25,9 +27,9 @@ const item = route.params;
       <StatusBar
         barStyle="light-content"
         translucent
-        backgroundColor="rgba(0,0,0,0)"
+        backgroundColor="rgba(0,0,0,1)"
       />
-      <ImageBackground style={style.headerImage} source={item.image}>
+      <ImageBackground style={style.headerImage}  source={item.image}>
         <View style={style.header}>
           <Icon
             name="arrow-back-ios"

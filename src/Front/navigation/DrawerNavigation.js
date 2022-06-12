@@ -25,21 +25,23 @@ const Drawer = createDrawerNavigator()
 
 export function DrawerNavigation() {
 
+    
+
     return(
 
-
+        
     <Drawer.Navigator
           screenOptions={{
             drawerStyle: {
-              elevation: 0, // remove shadow on Android
+              elevation: 0, 
 
-                  borderBottomWidth: 0, // Just in case.
+                  borderBottomWidth: 0, 
               backgroundColor: '#9370db',
               width: 240,
               }}}
         drawerContent = { (props) => <MenuItems  {...props } />}
     >
-
+        
 
         <Drawer.Screen name = "Menus" component= {Menus} />
         <Drawer.Screen name = "Inicio Sesion" component= {InicioSesion} />

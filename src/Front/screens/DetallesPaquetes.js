@@ -26,7 +26,7 @@ const item = route.params;
       <StatusBar
         barStyle="light-content"
         translucent
-        backgroundColor="rgba(0,0,0,0)"
+        backgroundColor="rgba(0,0,0,1)"
       />
       <ImageBackground style={style.headerImage} source={item.image}>
         <View style={style.header}>

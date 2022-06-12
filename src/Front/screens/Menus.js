@@ -1,5 +1,5 @@
-import React from 'react';
-import { ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import React, { useState } from 'react';
+import { StatusBar, ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -15,8 +15,9 @@ import CasaC from './assets/CasaC.jpg'
 import ZonaA from './assets/ZonaA.jpg';
 import Gastro from './assets/Gastro.jpg';
 import Paq from './assets/Paq.jpg';
-
-
+import font from '../Font/Times New Roman/times_roman.ttf';
+import { SearchBar } from 'react-native-screens';
+import { Component } from 'react/cjs/react.production.min';
 
 const boton = [
   {
@@ -28,34 +29,60 @@ const boton = [
   {
     id: 'AtractivosTuristicos',
     name: 'ATRACTIVOS',
-    image: require('./assets/ZonaA.jpg'),  
+    image: require('./assets/ZonaA.jpg'),
   },
 
   {
     id: 'Restaurantes',
     name: 'GASTRONOMIA',
-    image: require('./assets/Gastro.jpg'),  
+    image: require('./assets/Gastro.jpg'),
   },
 
   {
     id: 'Hoteles',
     name: 'HOSPEDAJE',
-    image: require('./assets/hotel1.jpg'),  
+    image: require('./assets/hotel1.jpg'),
   },
   {
     id: 'Paquetes',
     name: 'PAQUETES',
-    image: require('./assets/Paq.jpg'),  
+    image: require('./assets/Paq.jpg'),
   },
 ]
 
 export const Menus = ({ navigation, item }) => {
 
-  
-  
-  
+
+  class Buscar extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        data: boton,
+        searchvalue: "",
+      }
+    }
+  }
+
+
+  const Item = ({ id, image, name }) => (
+    <View style={styles.p}>
+      <TouchableOpacity style={styles.cont}
+        onPress={() => navigation.navigate(id)}>
+        <Image source={image} style={styles.img} />
+        <Text style={styles.tex}>{name}</Text>
+      </TouchableOpacity>
+    </View>
+  );
+
+  const renderItem = ({item}) => (
+    <Item id={item.id}
+      image={item.image}
+      name={item.name}
+    />
+  );
+
   return (
-    
+
     <View style={[styles.container, styles.p]}>
 
       <Text style={styles.subtitle}> MALINALCO </Text>
@@ -65,26 +92,22 @@ export const Menus = ({ navigation, item }) => {
         <Icon name="search" size={35} style={{ marginLeft: 20 }} />
         <TextInput
           placeholder="Buscar"
+          onChangeText={(text) => filtro(text)}
           style={{ fontSize: 20, paddingRight: 150 }}
-          
-        />
-      </View>
 
-      
+        />
+
         
-          <FlatList
-          data={ boton }
-          
-          keyExtractor={(item, index) => item.id}
-          renderItem = {({item}) => 
-          (<TouchableOpacity style={styles.cont}
-          onPress={() => navigation.navigate(item.id)}>
-          <Image source={item.image} style={styles.img} />
-          <Text style={styles.tex}>{item.name}</Text>
-          </TouchableOpacity>)}
-          />     
-       
+
+      </View>
+      <FlatList
+        data={boton}
+        keyExtractor={item => item.id}
+        renderItem={renderItem}
+      />
+
     </View>
+
   )
 }
 
@@ -109,7 +132,7 @@ const styles = StyleSheet.create({
     fontSize: 19,
     color: '#2B3030',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily: 'times_italic',
     justifyContent: "space-between",
     flexDirection: "row",
 
@@ -127,7 +150,7 @@ const styles = StyleSheet.create({
     height: 63,
     width: 180,
     marginLeft: 190,
-    fontWeight: 'bold',
+    fontFamily: 'times_roman',
     fontSize: 20,
     alignContent: "center",
     marginTop: -59,
@@ -145,19 +168,6 @@ const styles = StyleSheet.create({
     alignContent: "center",
     marginLeft: 25,
   },
-  cont1: {
-    width: "90%",
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: "white",
-    borderColor: "#818181",
-    boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
-    marginTop: 10,
-    alignContent: "center",
-    marginLeft: 25,
-    marginBottom: 10,
-  },
-
 
   qr: {
     marginLeft: 340,
