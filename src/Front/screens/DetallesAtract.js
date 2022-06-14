@@ -29,7 +29,9 @@ const item = route.params;
         translucent
         backgroundColor="rgba(0,0,0,1)"
       />
+      
       <ImageBackground style={style.headerImage}  source={item.image}>
+      
         <View style={style.header}>
           <Icon
             name="arrow-back-ios"
@@ -40,6 +42,7 @@ const item = route.params;
           <Icon name="bookmark-border" size={28} color={COLORS.white} />
         </View>
       </ImageBackground>
+      
       <View>
         <View style={style.iconContainer}>
           <Icon name="place" color={COLORS.white} size={28} />
@@ -154,7 +157,7 @@ const style = StyleSheet.create({
   
     lorem:  {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'times_roman',
     marginBottom: 10,
     flexDirection: 'row',
     textAlign: 'justify',

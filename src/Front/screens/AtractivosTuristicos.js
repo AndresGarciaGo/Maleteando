@@ -226,7 +226,7 @@ const style = StyleSheet.create({
   },
   lorem: {
      fontSize: 20,
-     fontWeight: 'bold',
+     fontFamily: 'times_roman',
      marginBottom: 10,
      flexDirection: 'row',
      textAlign: 'justify',

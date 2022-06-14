@@ -18,6 +18,7 @@ import Paq from './assets/Paq.jpg';
 import font from '../Font/Times New Roman/times_roman.ttf';
 import { SearchBar } from 'react-native-screens';
 import { Component } from 'react/cjs/react.production.min';
+import filter from 'lodash.filter';
 
 const boton = [
   {
@@ -52,18 +53,6 @@ const boton = [
 
 export const Menus = ({ navigation, item }) => {
 
-
-  class Buscar extends Component {
-    constructor(props){
-      super(props);
-      this.state = {
-        data: boton,
-        searchvalue: "",
-      }
-    }
-  }
-
-
   const Item = ({ id, image, name }) => (
     <View style={styles.p}>
       <TouchableOpacity style={styles.cont}
@@ -80,6 +69,7 @@ export const Menus = ({ navigation, item }) => {
       name={item.name}
     />
   );
+  
 
   return (
 
@@ -92,7 +82,6 @@ export const Menus = ({ navigation, item }) => {
         <Icon name="search" size={35} style={{ marginLeft: 20 }} />
         <TextInput
           placeholder="Buscar"
-          onChangeText={(text) => filtro(text)}
           style={{ fontSize: 20, paddingRight: 150 }}
 
         />
@@ -102,7 +91,7 @@ export const Menus = ({ navigation, item }) => {
       </View>
       <FlatList
         data={boton}
-        keyExtractor={item => item.id}
+        keyExtractor= { (item, index)  => item.id}
         renderItem={renderItem}
       />
 
@@ -123,7 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 32,
     color: '#2B3030',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily: 'times_roman',
     justifyContent: "space-between",
     flexDirection: "row",
 
@@ -132,7 +121,7 @@ const styles = StyleSheet.create({
     fontSize: 19,
     color: '#2B3030',
     textAlign: 'center',
-    fontFamily: 'times_italic',
+    fontFamily: 'times_roman',
     justifyContent: "space-between",
     flexDirection: "row",
 
