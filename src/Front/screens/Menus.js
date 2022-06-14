@@ -18,7 +18,6 @@ import Paq from './assets/Paq.jpg';
 import font from '../Font/Times New Roman/times_roman.ttf';
 import { SearchBar } from 'react-native-screens';
 import { Component } from 'react/cjs/react.production.min';
-import filter from 'lodash.filter';
 
 const boton = [
   {
