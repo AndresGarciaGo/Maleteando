@@ -14,8 +14,12 @@ import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
+
+
 const DetailsScreen = ({ navigation, route }) => {
   const item = route.params;
+
+  
 
   return (
     <ScrollView
