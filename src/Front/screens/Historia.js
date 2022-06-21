@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ImageBackground, BackTextBoton, StatusBar, Text, Image, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
+import { ImageBackground,Dimensions, BackTextBoton, StatusBar, Text, Image, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import CasaC from './assets/CasaC.jpg'
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -12,21 +12,23 @@ const [images, setimages] = useState([
   require('./assets/pa2.png'),
   require('./assets/Cañóndelasbocas.png'),
   require('./assets/pa3.png'),
-  require('./assets/pa4.png'),
+  require('./assets/pa4.png')
 
 ])
 
 class Historia extends React.Component {
   render() {
+  let screenWidth = Dimensions.get('window').width
     return (
-      <ScrollView >
+      <ScrollView>
         <View style={styles.container}>
           <StatusBar
             barStyle="light-content"
             translucent
             backgroundColor="rgba(0,0,0,0)"
           />
-          <ScrollView
+          <ScrollView style= {{flex:1, width:screenWidth}}
+
            barStyle="light-content"
            translucent
             pagingEnabled
@@ -120,7 +122,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   headerImage: {
-
+    flex:1,
+    width:Dimensions.get('window').width,
     height: 400,
     borderBottomRightRadius: 40,
     borderBottomLeftRadius: 40,
