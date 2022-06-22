@@ -13,7 +13,6 @@ const [images, setimages] = useState([
   require('./assets/Cañóndelasbocas.png'),
   require('./assets/pa3.png'),
   require('./assets/pa4.png')
-
 ])
 
 class Historia extends React.Component {
