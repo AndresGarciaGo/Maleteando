@@ -1,111 +1,133 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Linking } from 'react-native';
 import {
-  ImageBackground,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
-
+  Dimensions,
+  Image
 } from 'react-native';
 import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { FlatList } from 'react-native-gesture-handler';
+import {   ScrollView, FlatList } from 'react-native-gesture-handler';
+
+const [images, setimages] = useState([
+  require('./assets/pa1.png'),
+  require('./assets/pa2.png'),
+  require('./assets/Cañóndelasbocas.png'),
+  require('./assets/pa3.png'),
+  require('./assets/pa4.png')
+])
+
 
 const DetallesAtract = ({navigation, route}) => {
+let screenWidth = Dimensions.get('window').width;
 const item = route.params;
-
   return (
-    <ScrollView
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={{
-        backgroundColor: COLORS.white,
-        paddingBottom: 20,
-      }}>
-      <StatusBar
-        barStyle="light-content"
-        translucent
-        backgroundColor="rgba(0,0,0,1)"
-      />
-      
-      <ImageBackground style={style.headerImage}  source={item.image}>
-      
-        <View style={style.header}>
-          <Icon
-            name="arrow-back-ios"
-            size={28}
-            color={COLORS.white}
-            onPress={() => navigation.navigate('AtractivosTuristicos')}
-          />
-          <Icon name="bookmark-border" size={28} color={COLORS.white} />
-        </View>
-      </ImageBackground>
-      
-      <View>
-        <View style={style.iconContainer}>
-          <Icon name="place" color={COLORS.white} size={28} />
-        </View>
-        <View style={{marginTop: 20, paddingHorizontal: 20}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
-          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
-            }}>
-            {item.subname}
-          </Text>
-          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
-            }}>
-            {item.location}
-          </Text>
-          <View
-            style={{
-              marginTop: 10,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-            }}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={{flexDirection: 'row'}}>
-                <Icon name="star" size={20} color={COLORS.orange} />
-                <Icon name="star" size={20} color={COLORS.orange} />
-                <Icon name="star" size={20} color={COLORS.orange} />
-                <Icon name="star" size={20} color={COLORS.orange} />
-                <Icon name="star" size={20} color={COLORS.grey} />
-              </View>
-              <Text style={{fontWeight: 'bold', fontSize: 18, marginLeft: 5}}>
-                4.0
-              </Text>
+
+    <ScrollView>
+            <View style={style.container}>
+              <StatusBar
+                barStyle="light-content"
+                translucent
+                backgroundColor="rgba(0,0,0,0)"
+              />
+              <ScrollView style= {{flex:1, width:screenWidth}}
+
+               barStyle="light-content"
+               translucent
+                pagingEnabled
+                horizontal
+                showsHorizontalScrollIndicator={true}
+
+              >{
+
+
+                  <FlatList
+                    data={images}
+                    key={"1"}
+                    numColumns={5}
+                    renderItem={({ item }) => (
+                      <Image
+                        source={item}
+                        style={style.headerImage}
+                        keyExtractor={(item) => item.id}
+                      />
+                    )}
+                  />
+                }
+              </ScrollView>
+
             </View>
-            <Text style={{fontSize: 13, color: COLORS.grey}}>365 reseñas</Text>
+
+          <View>
+                </View>
+
+                    <View style={{marginTop: 20, paddingHorizontal: 20}}>
+                        <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
+                        <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
+                            }}>
+                            {item.subname}
+                        </Text>
+                        <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
+                            }}>
+                            {item.location}
+                        </Text>
+                      <View
+                                style={{
+                                  marginTop: 10,
+                                  flexDirection: 'row',
+                                  justifyContent: 'space-between',
+                      }}>
+                            <View style={{flexDirection: 'row'}}>
+                              <View style={{flexDirection: 'row'}}>
+                                <Icon name="star" size={20} color={COLORS.orange} />
+                                <Icon name="star" size={20} color={COLORS.orange} />
+                                <Icon name="star" size={20} color={COLORS.orange} />
+                                <Icon name="star" size={20} color={COLORS.orange} />
+                                <Icon name="star" size={20} color={COLORS.grey} />
+                            </View>
+                              <Text style={{fontWeight: 'bold', fontSize: 18, marginLeft: 5}}>
+                                4.0
+                              </Text>
+                      </View>
+                        <Text style={{fontSize: 13, color: COLORS.grey}}>365 reseñas</Text>
+                    </View>
+
           </View>
-          
-        </View>
-        <View style={{marginTop: 20, paddingHorizontal: 20}}>
-        <Text style={style.lorem}>
-            {item.Características}
-          </Text>
-        </View>
-<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/touristic-attractions')}>
-        <View style={style.btn}>
-          <Text
-          style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Cotizar Ahora
-          </Text>
-        </View>
-</TouchableOpacity>
+                    <View style={{marginTop: 20, paddingHorizontal: 20}}>
+                      <Text style={style.lorem}>
+                        {item.Características}
+                      </Text>
+                    </View>
+                    <TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/touristic-attractions')}>
+                    <View style={style.btn}>
+                        <Text
+                            style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
+                            Cotizar Ahora
+                        </Text>
+                    </View>
+                    </TouchableOpacity>
 
-<TouchableOpacity onPress={() => Linking.openURL(item.url)}>
-        <View style={style.btn}>
-          <Text
-          style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Modelado 3D de esta zona
-          </Text>
-        </View>
-</TouchableOpacity>
+                <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
+                    <View style={style.btn}>
+                        <Text
+                        style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
+                        Modelado 3D de esta zona
+                        </Text>
+                    </View>
+                </TouchableOpacity>
 
-      </View>
+
+
+
+
     </ScrollView>
   );
 };
+
 
 const style = StyleSheet.create({
   btn: {
@@ -117,6 +139,17 @@ const style = StyleSheet.create({
     marginHorizontal: 20,
     borderRadius: 10,
   },
+    container: {
+      flex: 1,
+    },
+    headerImage: {
+      flex:1,
+      width:Dimensions.get('window').width,
+      height: 400,
+      borderBottomRightRadius: 40,
+      borderBottomLeftRadius: 40,
+      overflow: 'hidden',
+    },
 
   priceTag: {
     height: 40,
@@ -154,7 +187,7 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
   },
 
-  
+
     lorem:  {
     fontSize: 20,
     fontFamily: 'times_roman',
