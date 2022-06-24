@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { ScrollView } from 'react-native-gesture-handler';
 
-const Historia = () => {
+const Historia = ({navigation, route}) => {
     return (
             <ScrollView >
         <View style={styles.container}>
@@ -16,13 +16,23 @@ const Historia = () => {
                 backgroundColor="rgba(0,0,0,0)"
               />
             <ImageBackground style={styles.headerImage} source={CasaC}>
-                    <View style={styles.header}>
+                    <View style={styles.back}>
+
+                              <Icon
+                                name="arrow-back-ios"
+                                size={35}
+                                color={COLORS.primary}
+                                onPress={() => navigation.navigate('Menus')}
+                              />
+
+
                     </View>
             </ImageBackground>
 
         <View style={styles.header}>
+
             <View style={{ paddingBottom: 15 }}>
-                <Text style={{ fontSize: 30, fontWeight: 'bold' }}>
+                <Text style={{ fontSize: 30, fontWeight: 'bold', textAlign:"justify"}}>
                 Historia
                 </Text>
             <View style={{ flexDirection: 'row' }}>
@@ -37,11 +47,15 @@ const Historia = () => {
 </View>
             <View style={[styles.p]}>
 
-            <Text style={ styles.lorem }>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
-                placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
-            </Text>
+<Text style={ styles.lorem }>
+Es un Pueblo Mágico que te sorprenderá por todo lo que tiene para ofrecer y su excelente servicio. 
+Es un extraordinario valle lleno de abundante vegetación, una Zona Arqueológica llena de historia, calles empedradas que te invitarán a dar un paseo por este pueblo.
+haciéndote sentir fascinado con sus coloridas fachadas y sus establecimientos con grandiosas vistas únicas del Valle de Malinalco.
+</Text>
+<Text style={ styles.lorem }>
+Algunas de las fiestas típicas de Malinalco, que son un importante parte de la esencia de este Pueblo Mágico son: Semana Santa: Se celebra entre marzo y abril y se celebra con fiestas y procesiones. 
+Erección del Municipio: Se celebra el 5 de agosto. “Charreadas”, “Jaripeos ”, se realizan bailes, música, ballets folclóricos, orquestas, etc.</Text>
+
             <View style={ styles.carac }>
             <Text style={styles.carac}>
                 Caracteristicas
@@ -49,9 +63,25 @@ const Historia = () => {
             <Icon name="info-outline" size={38} color={COLORS.primary} />
             </View>
             <Text style={styles.lorem}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa
-                placerat duis ultricies lacus sed. Justo laoreet sit amet cursus site
+            Algunos de los atractivos y productos turísticos que tiene este maravilloso Pueblo Mágico que no te puedes perder son:
+            </Text>
+            <Text style={styles.lorem}>
+            •Zona Arqueológica de Cuauhtinchan.
+            </Text>
+            <Text style={styles.lorem}>
+            •Parroquia y Antigua Convento del “Divino Salvador”.
+            </Text>
+            <Text style={styles.lorem}>
+            •Dr. Museo Universitario Luis Mario Schneider.
+            </Text>
+            <Text style={styles.lorem}>
+            •Los Bichos de Malinalco, Museo Vivo.
+            </Text>
+            <Text style={styles.lorem}>
+            •Objetos artesanales tallados en madera.
+            </Text>
+            <Text style={styles.lorem}>
+            •Objetos artesanales de rebozo.
             </Text>
             </View>
 
@@ -73,6 +103,14 @@ const styles = StyleSheet.create({
         borderBottomRightRadius: 40,
         borderBottomLeftRadius: 40,
         overflow: 'hidden',
+      },
+
+    back: {
+    marginTop: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 20,
+    justifyContent: 'space-between',
       },
     header: {
 
@@ -113,10 +151,9 @@ const styles = StyleSheet.create({
         lorem: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginTop: 10,
         marginBottom: 10,
         flexDirection: 'row',
-        textAlign: 'left',
+        textAlign: 'justify',
         marginHorizontal: 15,
         },
     carad: {

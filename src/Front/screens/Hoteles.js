@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Dimensions,
   FlatList,
@@ -15,15 +15,25 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
-import hotels from './consts/restaurants';
+import hotels from './consts/hotels';
+import { _getPlacesByType } from '../../Api/Nuevoback';
 
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;
 
-const HomeScreen2 = ({ navigation }) => {
+const HomeScreen = ({ navigation }) => {
 
-  const categories = ['Todos', 'Popular', 'Mejor Calificado', 'Mapa'];
-  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
+  const [hote, sethotels] = useState([]);
+  useEffect(() => {
+    _getPlacesByType({ typePlace: 'hotel' }).then(data => {
+      sethotels(data);
+      Console.log(data)
+    });
+  }, [])
+
+
+  const categories = ['Todos'];
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
   const [activeCardIndex, setActiveCardIndex] = React.useState(0);
   const scrollX = React.useRef(new Animated.Value(0)).current;
 
@@ -33,7 +43,7 @@ const HomeScreen2 = ({ navigation }) => {
       <View style={style.categoryListContainer}>
         {categories.map((item, index) => (
           <TouchableOpacity
-            key={index}
+
             activeOpacity={0.8}
             onPress={() => setSelectedCategoryIndex(index)}>
             <View>
@@ -81,13 +91,13 @@ const HomeScreen2 = ({ navigation }) => {
       <TouchableOpacity
         disabled={activeCardIndex != index}
         activeOpacity={1}
-        onPress={() => navigation.navigate('DetailsScreen', hotel)}>
+        onPress={() => navigation.navigate('DetallesHoteles', hotel)}>
         <Animated.View style={{ ...style.card, transform: [{ scale }] }}>
           <Animated.View style={{ ...style.cardOverLay, opacity }} />
           <View style={style.priceTag}>
             <Text
-              style={{ color: COLORS.white, fontSize: 20, fontWeight: 'bold' }}>
-              ${hotel.price+" P/P"}
+              style={{ color: COLORS.white, fontSize: 20, fontWeight: 'bold', backgroundColor: COLORS.primary }}>
+              ${hotel.price}
             </Text>
           </View>
           <Image source={hotel.image} style={style.cardImage} />
@@ -126,6 +136,7 @@ const HomeScreen2 = ({ navigation }) => {
   };
   const TopHotelCard = ({ hotel }) => {
     return (
+    <TouchableOpacity>
       <View style={style.topHotelCard}>
         <View
           style={{
@@ -135,6 +146,7 @@ const HomeScreen2 = ({ navigation }) => {
             zIndex: 1,
             flexDirection: 'row',
           }}>
+
           <Icon name="star" size={15} color={COLORS.orange} />
           <Text style={{ color: COLORS.white, fontWeight: 'bold', fontSize: 15 }}>
             5.0
@@ -148,6 +160,7 @@ const HomeScreen2 = ({ navigation }) => {
           </Text>
         </View>
       </View>
+    </TouchableOpacity>
     );
   };
 
@@ -156,7 +169,7 @@ const HomeScreen2 = ({ navigation }) => {
       <View style={style.header}>
         <View style={{ paddingBottom: 15 }}>
           <Text style={{ fontSize: 30, fontWeight: 'bold' }}>
-            Encuentra tu Restaurant
+            Encuentra tu hotel
           </Text>
           <View style={{ flexDirection: 'row' }}>
             <Text style={{ fontSize: 30, fontWeight: 'bold' }}>en </Text>
@@ -166,16 +179,17 @@ const HomeScreen2 = ({ navigation }) => {
             </Text>
           </View>
         </View>
-        <Icon name="local-restaurant" size={38} color={COLORS.grey} />
+        <Icon name="hotel" size={38} color={COLORS.grey} />
+      </View>
+
+      <View style={style.searchInputContainer}>
+        <Icon name="search" size={30} style={{ marginLeft: 20 }} />
+        <TextInput
+          placeholder="Buscar"
+          style={{ fontSize: 20, paddingLeft: 10 }}
+        />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={style.searchInputContainer}>
-          <Icon name="search" size={30} style={{ marginLeft: 20 }} />
-          <TextInput
-            placeholder="Buscar"
-            style={{ fontSize: 20, paddingLeft: 10 }}
-          />
-        </View>
         <CategoryList />
         <View>
           <Animated.FlatList
@@ -188,7 +202,6 @@ const HomeScreen2 = ({ navigation }) => {
               [{ nativeEvent: { contentOffset: { x: scrollX } } }],
               { useNativeDriver: true },
             )}
-            //direccion//
             horizontal
             data={hotels}
             contentContainerStyle={{
@@ -208,13 +221,12 @@ const HomeScreen2 = ({ navigation }) => {
             marginHorizontal: 20,
           }}>
           <Text style={{ fontWeight: 'bold', color: COLORS.grey }}>
-            Restaurantes Top
+            Recomendados por nosotros
           </Text>
           <Text style={{ color: COLORS.grey }}>Mostrar todos</Text>
         </View>
         <FlatList
           data={hotels}
-          //horizontal//
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
@@ -252,6 +264,7 @@ const style = StyleSheet.create({
     justifyContent: 'space-between',
     marginHorizontal: 20,
     marginTop: 30,
+
   },
   categoryListText: {
     fontSize: 17,
@@ -316,4 +329,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default HomeScreen2;
+export default HomeScreen;

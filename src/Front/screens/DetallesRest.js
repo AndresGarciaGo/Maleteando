@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import {
   ImageBackground,
   ScrollView,
@@ -6,18 +7,17 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
+
+
 } from 'react-native';
 import COLORS from './consts/colors';
-import ZonaA from './assets/ZonaA.jpg';
-import Convento from './assets/Convento.jpg';
-import CasaC from './assets/CasaC.jpg';
-import Museo from './assets/Museo.jpg';
-import Senderismo from './assets/Senderismo.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const DetailsScreen2 = ({navigation, route}) => {
-  const item = route.params;
 
+const DetailsScreen = ({ navigation, route }) => {
+  const item = route.params;
+  
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -30,32 +30,28 @@ const DetailsScreen2 = ({navigation, route}) => {
         translucent
         backgroundColor="rgba(0,0,0,0)"
       />
-      <ImageBackground style={style.headerImage} source={ZonaA}>
+      <ImageBackground style={style.headerImage} source={item.image}>
         <View style={style.header}>
           <Icon
             name="arrow-back-ios"
             size={28}
             color={COLORS.white}
-            onPress={navigation.goBack}
+            onPress={() => navigation.navigate('Restaurantes')}
           />
-          <Icon name="bookmark-border" size={28} color={COLORS.primary} />
+          <Icon name="bookmark-border" size={28} color={COLORS.white} />
         </View>
       </ImageBackground>
       <View>
         <View style={style.iconContainer}>
           <Icon name="place" color={COLORS.white} size={28} />
         </View>
-        <View style={{marginTop: 20, paddingHorizontal: 20}}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
-          <Text
-            style={{
-              fontSize: 25,
-              fontWeight: '400',
-              color: COLORS.grey,
-              textAlign: 'center',
+        <View style={{ marginTop: 20, paddingHorizontal: 20 }}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{item.name}</Text>
 
-            }}>
-            {item.location}Zona Arquelógica
+          <Text style={{
+            fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
+          }}>
+            {item.location}
           </Text>
           <View
             style={{
@@ -63,35 +59,36 @@ const DetailsScreen2 = ({navigation, route}) => {
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>
-            <View style={{flexDirection: 'row'}}>
-              <View style={{flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ flexDirection: 'row' }}>
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.orange} />
                 <Icon name="star" size={20} color={COLORS.grey} />
               </View>
-              <Text style={{fontWeight: 'bold', fontSize: 18, marginLeft: 5}}>
+              <Text style={{ fontWeight: 'bold', fontSize: 18, marginLeft: 5 }}>
                 4.0
               </Text>
             </View>
-            <Text style={{fontSize: 13, color: COLORS.grey}}>365 reseñas</Text>
+            <Text style={{ fontSize: 13, color: COLORS.grey }}>365 reseñas</Text>
           </View>
-          <View style={{marginTop: 20}}>
-            <Text style={{lineHeight: 20, color: COLORS.grey}}>
+          <View style={{ marginTop: 20 }}>
+            <Text style={{ lineHeight: 20, color: COLORS.grey }}>
               {item.details}
             </Text>
           </View>
         </View>
         <View
           style={{
+            marginTop: 20,
             flexDirection: 'row',
             justifyContent: 'space-between',
             paddingLeft: 20,
             alignItems: 'center',
           }}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-            Precio por actividad
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>
+            Precio por persona
           </Text>
           <View style={style.priceTag}>
             <Text
@@ -110,15 +107,17 @@ const DetailsScreen2 = ({navigation, route}) => {
                 color: COLORS.grey,
                 marginLeft: 5,
               }}>
-              500 Por Persona
+              aproximadamente
             </Text>
           </View>
         </View>
+<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/home')}>
         <View style={style.btn}>
-          <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Buscar paquete
+          <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
+            Mas información
           </Text>
         </View>
+</TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -172,4 +171,4 @@ const style = StyleSheet.create({
   },
 });
 
-export default DetailsScreen2;
+export default DetailsScreen;

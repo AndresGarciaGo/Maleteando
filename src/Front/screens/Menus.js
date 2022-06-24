@@ -24,17 +24,25 @@ export const Menus = ({ navigation }: Props) => {
 
         <Text style={styles.subtitle}> MALINALCO </Text>
       <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
-        <View style={styles.searchInputContainer}>
-                  <Icon name="search" size={35} style={{ marginLeft: 20 }} />
-                  <TextInput
-                    placeholder="Buscar"
-                    style={{ fontSize: 20, paddingRight: 150 }}
-                  />
+       
+      <View style={styles.searchInputContainer}>
+          <Icon name="search" size={35} style={{ marginLeft: 20 }} />
+          <TextInput
+            placeholder="Buscar"
+            style={{ fontSize: 20, paddingRight: 150 }}
+          />
         </View>
 
       
+<<<<<<< HEAD
         <ScrollView>
       <TouchableOpacity style={styles.contB}
+=======
+        <ScrollView
+        showsVerticalScrollIndicator={false}>
+
+      <TouchableOpacity style={styles.cont}
+>>>>>>> b5deff8bf71ace6c0245d19db561ee14f5d6430c
         onPress={() => navigation.navigate('Historia')}>
         <Image source={CasaC} style={styles.img}/>
           <Text  style={styles.tex}>HISTORIA</Text>
@@ -42,7 +50,7 @@ export const Menus = ({ navigation }: Props) => {
 
 
       <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Atractivos Turisticos')}>
+        onPress={() => navigation.navigate('AtractivosTuristicos')}>
         <Image source={ZonaA} style={styles.img}/>
           <Text  style={styles.tex}>ATRACTIVOS</Text>
       </TouchableOpacity>
@@ -59,14 +67,12 @@ export const Menus = ({ navigation }: Props) => {
           <Text  style={styles.tex}>HOSPEDAJE</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.cont}
+      <TouchableOpacity style={styles.cont1}
         onPress={() => navigation.navigate('Paquetes')}>
           <Image source={Paq} style={styles.img}/>
           <Text  style={styles.tex}>PAQUETES</Text>
       </TouchableOpacity>
-
       
-    
     </ScrollView>
 
 </View>
@@ -85,15 +91,19 @@ subtitle: {
     fontSize: 32,
     color: '#2B3030',
     textAlign: 'center',
-    fontWeight: 'bold'
-
+    fontWeight: 'bold',
+    justifyContent:"space-between",
+    flexDirection: "row",
 
 },
 subtitlee: {
     fontSize: 19,
     color: '#2B3030',
     textAlign: 'center',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    justifyContent:"space-between",
+    flexDirection: "row",
+
 },
   img: {
     width: 170, 
@@ -104,40 +114,53 @@ subtitlee: {
 
 },
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> b5deff8bf71ace6c0245d19db561ee14f5d6430c
   tex:{
     height: 63,
     width: 180,
     marginLeft: 190,
+<<<<<<< HEAD
     color: 'black',
     fontSize: 20,
     alignContent:"center",
     marginTop: -59 ,
     fontWeight: 'bold',
 
+=======
+    fontWeight: 'bold',
+    fontSize: 20,
+    alignContent:"center",
+    marginTop: -59,
+>>>>>>> b5deff8bf71ace6c0245d19db561ee14f5d6430c
   },
 
+  
   cont: {
     width: "90%",
     borderWidth: 1,
     borderRadius: 15,
     backgroundColor: "white",
-    borderColor: "black",
+    borderColor: "#818181",
+    boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
     marginTop: 10,
     alignContent:"center",
     marginLeft: 25,
   },
-
-  contB: {
+  cont1: {
     width: "90%",
     borderWidth: 1,
     borderRadius: 15,
     backgroundColor: "white",
-    borderColor: "black",
+    borderColor: "#818181",
+    boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
     marginTop: 10,
     alignContent:"center",
     marginLeft: 25,
+    marginBottom: 10,
   },
 
 
@@ -149,15 +172,16 @@ subtitlee: {
 
   searchInputContainer: {
     height: 50,
-    width: "70%",
-    backgroundColor: COLORS.white,
-    marginRight: 50,
+    width:"88%",
+    backgroundColor: COLORS.light,
+    marginTop: 15,
     borderRadius: 30,
-    marginTop: 20,
-    marginBottom: 15,
-    borderBottomRightRadius: 30,
-    flexDirection: 'row-reverse',
+    marginLeft: 30,
+    borderTopLeftRadius: 30,
+    borderBottomLeftRadius: 30,
+    flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: 15,
   },
 
 
