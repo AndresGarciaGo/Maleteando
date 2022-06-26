@@ -29,6 +29,8 @@ const HomeScreen3 = ({ navigation }) => {
   const scrollX = React.useRef(new Animated.Value(0)).current;
 
   const CategoryList = ({ navigation }) => {
+
+
     return (
 
       <View style={style.categoryListContainer}>
@@ -115,6 +117,7 @@ const HomeScreen3 = ({ navigation }) => {
     );
   };
   const TopHotelCard = ({ hotel }) => {
+
     return (
       <View style={style.topHotelCard}>
         <View
