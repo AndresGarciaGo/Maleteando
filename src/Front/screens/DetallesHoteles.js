@@ -14,8 +14,12 @@ import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
+
+
 const DetailsScreen = ({ navigation, route }) => {
   const item = route.params;
+
+  
 
   return (
     <ScrollView
@@ -27,7 +31,7 @@ const DetailsScreen = ({ navigation, route }) => {
       <StatusBar
         barStyle="light-content"
         translucent
-        backgroundColor="rgba(0,0,0,0)"
+        backgroundColor="rgba(0,0,0,1)"
       />
       <ImageBackground style={style.headerImage} source={item.image}>
         <View style={style.header}>

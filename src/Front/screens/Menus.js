@@ -1,5 +1,5 @@
-import React from 'react';
-import { ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import React, { useState } from 'react';
+import { StatusBar, ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -8,31 +8,49 @@ import hotel from './assets/hotel1.jpg';
 import hotel2 from './assets/hotel2.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
-import { ScrollView } from 'react-native-gesture-handler';
+import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { SlideFromRightIOS } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
 import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
 import CasaC from './assets/CasaC.jpg'
 import ZonaA from './assets/ZonaA.jpg';
 import Gastro from './assets/Gastro.jpg';
 import Paq from './assets/Paq.jpg';
+import font from '../Font/Times New Roman/times_roman.ttf';
+import { SearchBar } from 'react-native-screens';
+import { Component } from 'react/cjs/react.production.min';
 
-interface Props extends StackScreenProps<any, any> { };
+const boton = [
+  {
+    id: 'Historia',
+    name: 'HISTORIA',
+    image: require('./assets/CasaC.jpg'),
+  },
 
-export const Menus = ({ navigation }: Props) => {
-  return (
-<View style={[styles.container,styles.p]}>
+  {
+    id: 'AtractivosTuristicos',
+    name: 'ATRACTIVOS',
+    image: require('./assets/ZonaA.jpg'),
+  },
 
-        <Text style={styles.subtitle}> MALINALCO </Text>
-      <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
-       
-      <View style={styles.searchInputContainer}>
-          <Icon name="search" size={35} style={{ marginLeft: 20 }} />
-          <TextInput
-            placeholder="Buscar"
-            style={{ fontSize: 20, paddingRight: 150 }}
-          />
-        </View>
+  {
+    id: 'Restaurantes',
+    name: 'GASTRONOMIA',
+    image: require('./assets/Gastro.jpg'),
+  },
 
+  {
+    id: 'Hoteles',
+    name: 'HOSPEDAJE',
+    image: require('./assets/hotel1.jpg'),
+  },
+  {
+    id: 'Paquetes',
+    name: 'PAQUETES',
+    image: require('./assets/Paq.jpg'),
+  },
+]
+
+<<<<<<< HEAD
       
 <<<<<<< HEAD
         <ScrollView>
@@ -40,80 +58,102 @@ export const Menus = ({ navigation }: Props) => {
 =======
         <ScrollView
         showsVerticalScrollIndicator={false}>
+=======
+export const Menus = ({ navigation, item }) => {
+>>>>>>> 2dfd7e6e8762b0a46037801263c7edf0a21dcfef
 
+  const Item = ({ id, image, name }) => (
+    <View style={styles.p}>
       <TouchableOpacity style={styles.cont}
+<<<<<<< HEAD
 >>>>>>> b5deff8bf71ace6c0245d19db561ee14f5d6430c
         onPress={() => navigation.navigate('Historia')}>
         <Image source={CasaC} style={styles.img}/>
           <Text  style={styles.tex}>HISTORIA</Text>
       </TouchableOpacity>
 
-
-      <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('AtractivosTuristicos')}>
-        <Image source={ZonaA} style={styles.img}/>
-          <Text  style={styles.tex}>ATRACTIVOS</Text>
+=======
+        onPress={() => navigation.navigate(id)}>
+        <Image source={image} style={styles.img} />
+        <Text style={styles.tex}>{name}</Text>
       </TouchableOpacity>
+    </View>
+  );
 
-      <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Restaurantes')}>
-          <Image source={Gastro} style={styles.img}/>
-          <Text  style={styles.tex}>GASTRONOMIA</Text>
-      </TouchableOpacity>
+  const renderItem = ({item}) => (
+    <Item id={item.id}
+      image={item.image}
+      name={item.name}
+    />
+  );
+  
+>>>>>>> 2dfd7e6e8762b0a46037801263c7edf0a21dcfef
 
-      <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Hoteles')}>
-          <Image source={hotel} style={styles.img}/>
-          <Text  style={styles.tex}>HOSPEDAJE</Text>
-      </TouchableOpacity>
+  return (
 
-      <TouchableOpacity style={styles.cont1}
-        onPress={() => navigation.navigate('Paquetes')}>
-          <Image source={Paq} style={styles.img}/>
-          <Text  style={styles.tex}>PAQUETES</Text>
-      </TouchableOpacity>
-      
-    </ScrollView>
+    <View style={[styles.container, styles.p]}>
 
-</View>
+      <Text style={styles.subtitle}> MALINALCO </Text>
+      <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
+
+      <View style={styles.searchInputContainer}>
+        <Icon name="search" size={35} style={{ marginLeft: 20 }} />
+        <TextInput
+          placeholder="Buscar"
+          style={{ fontSize: 20, paddingRight: 150 }}
+
+        />
+
+        
+
+      </View>
+      <FlatList
+        data={boton}
+        keyExtractor= { (item, index)  => item.id}
+        renderItem={renderItem}
+      />
+
+    </View>
+
   )
 }
 
 const styles = StyleSheet.create({
 
-  p:{
-    flex:1,
+  p: {
+    flex: 1,
     backgroundColor: '#9370db',
   },
 
-subtitle: {
-    marginTop:15,
+  subtitle: {
+    marginTop: 15,
     fontSize: 32,
     color: '#2B3030',
     textAlign: 'center',
-    fontWeight: 'bold',
-    justifyContent:"space-between",
+    fontFamily: 'times_roman',
+    justifyContent: "space-between",
     flexDirection: "row",
 
-},
-subtitlee: {
+  },
+  subtitlee: {
     fontSize: 19,
     color: '#2B3030',
     textAlign: 'center',
-    fontWeight: 'bold',
-    justifyContent:"space-between",
+    fontFamily: 'times_roman',
+    justifyContent: "space-between",
     flexDirection: "row",
 
-},
+  },
   img: {
-    width: 170, 
-    height: 100, 
-    borderRadius: 20,  
+    width: 170,
+    height: 100,
+    borderRadius: 20,
     marginLeft: 4,
     marginTop: 4,
 
-},
+  },
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
@@ -132,13 +172,20 @@ subtitlee: {
 
 =======
     fontWeight: 'bold',
+=======
+  tex: {
+    height: 63,
+    width: 180,
+    marginLeft: 190,
+    fontFamily: 'times_roman',
+>>>>>>> 2dfd7e6e8762b0a46037801263c7edf0a21dcfef
     fontSize: 20,
-    alignContent:"center",
+    alignContent: "center",
     marginTop: -59,
 >>>>>>> b5deff8bf71ace6c0245d19db561ee14f5d6430c
   },
 
-  
+
   cont: {
     width: "90%",
     borderWidth: 1,
@@ -147,22 +194,9 @@ subtitlee: {
     borderColor: "#818181",
     boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
     marginTop: 10,
-    alignContent:"center",
+    alignContent: "center",
     marginLeft: 25,
   },
-  cont1: {
-    width: "90%",
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: "white",
-    borderColor: "#818181",
-    boxShadow: '0px 0px 3.5px 0px rgba(0,0,0,0.2)',
-    marginTop: 10,
-    alignContent:"center",
-    marginLeft: 25,
-    marginBottom: 10,
-  },
-
 
   qr: {
     marginLeft: 340,
@@ -172,7 +206,7 @@ subtitlee: {
 
   searchInputContainer: {
     height: 50,
-    width:"88%",
+    width: "88%",
     backgroundColor: COLORS.light,
     marginTop: 15,
     borderRadius: 30,

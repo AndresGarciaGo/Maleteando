@@ -1,5 +1,7 @@
 import React from 'react';
 import { Linking } from 'react-native';
+
+
 const Dturisticos = [
     {
       id: '1',
@@ -20,7 +22,7 @@ const Dturisticos = [
       location: 'San Pedro Chichicasco Malinalco.',
       Mediosdeacceso: 'Se encuentra a 40 minutos de centro de Malinalco a 30 minutos de la cabecera municipal de Malinalco',
       Visitantes: '--',
-      image: require('../assets/Cañóngarganta.png'),
+      image: require('../assets/Cerrodelosencinos.png'),      
       Características: 'El Cañón garganta de la iguana, es una zona ecológica, que cuenta con dos toboganes naturales y pozas de alturas diferentes (entre dos y 17 metros de profundidad)',
       url: 'https://pano.autodesk.com/pano.html?mono=jpgs/763c080d-0835-4251-bd85-196cea84834a&version=2',
     },

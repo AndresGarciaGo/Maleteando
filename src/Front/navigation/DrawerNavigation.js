@@ -18,28 +18,30 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
 import COLORS from '../screens/consts/colors';
 import Mapa from '../screens/Maps';
-
+import { Linking } from 'react-native';
 
 
 const Drawer = createDrawerNavigator()
 
 export function DrawerNavigation() {
 
+    
+
     return(
 
-
+        
     <Drawer.Navigator
           screenOptions={{
             drawerStyle: {
-              elevation: 0, // remove shadow on Android
+              elevation: 0, 
 
-                  borderBottomWidth: 0, // Just in case.
+                  borderBottomWidth: 0, 
               backgroundColor: '#9370db',
               width: 240,
               }}}
         drawerContent = { (props) => <MenuItems  {...props } />}
     >
-
+        
 
         <Drawer.Screen name = "Menus" component= {Menus} />
         <Drawer.Screen name = "Inicio Sesion" component= {InicioSesion} />
@@ -69,7 +71,7 @@ const MenuItems = ( {navigation} ) => {
         >
 
             <TouchableOpacity
-            onPress={() => navigation.navigate('Inicio Sesion')}>
+            onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/login')}>
             <Icon name="account-circle" size={120} style = {{ marginLeft: 60 }}/>
             </TouchableOpacity>
 
