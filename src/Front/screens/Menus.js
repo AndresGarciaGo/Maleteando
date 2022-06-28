@@ -22,7 +22,7 @@ import { Component } from 'react/cjs/react.production.min';
 const boton = [
   {
     id: 'Historia',
-    name: 'HISTORIAa',
+    name: 'HISTORIA',
     image: require('./assets/CasaC.jpg'),
   },
 
