@@ -7,13 +7,13 @@ import COLORS from './consts/colors';
 import font from '../Font/Times New Roman/times_roman.ttf';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 
-const [images, setimages] = useState([
+const images =[
   require('./assets/pa1.png'),
   require('./assets/pa2.png'),
   require('./assets/Cañóndelasbocas.png'),
   require('./assets/pa3.png'),
   require('./assets/pa4.png')
-])
+]
 
 class Historia extends React.Component {
   render() {
