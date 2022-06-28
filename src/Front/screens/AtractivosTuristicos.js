@@ -1,179 +1,317 @@
 import React from 'react';
-import { ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
-import logo from './assets/Images/logo.png';
-import sfondo from './assets/Images/FondoB.png'
-import { SafeAreaView } from 'react-native-safe-area-context';
-import NavigationBar from 'react-native-navbar';
-import hotel from './assets/hotel1.jpg';
-import ZonaA from './assets/ZonaA.jpg';
-import Convento from './assets/Convento.jpg';
-import CasaC from './assets/CasaC.jpg';
-import Museo from './assets/Museo.jpg';
-import Senderismo from './assets/Senderismo.jpg';
+import {
+  Dimensions,
+  FlatList,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+  Image,
+  Animated,
+} from 'react-native';
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon2 from 'react-native-vector-icons/Foundation';
 import COLORS from './consts/colors';
-import { ScrollView } from 'react-native-gesture-handler';
+import hotels from './consts/DetallesTuristicos';
 
-interface Props extends StackScreenProps<any, any> { };
+const { width } = Dimensions.get('screen');
+const cardWidth = width / 1.8;
 
-export const Menus = ({ navigation }: Props) => {
+const HomeScreen3 = ({ navigation }) => {
+
+  const categories = ['Todos'];
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
+  const [activeCardIndex, setActiveCardIndex] = React.useState(0);
+  const scrollX = React.useRef(new Animated.Value(0)).current;
+
+  const CategoryList = ({ navigation }) => {
+
+
+    return (
+
+      <View style={style.categoryListContainer}>
+        {categories.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            activeOpacity={0.8}
+            onPress={() => setSelectedCategoryIndex(index)}>
+            <View>
+              <Text
+                style={{
+                  ...style.categoryListText,
+                  color:
+                    selectedCategoryIndex == index
+                      ? COLORS.primary
+                      : COLORS.grey,
+                }}>
+                {item}
+              </Text>
+              {selectedCategoryIndex == index && (
+                <View
+                  style={{
+                    height: 3,
+                    width: 30,
+                    backgroundColor: COLORS.primary,
+                    marginTop: 2,
+                  }}
+                />
+              )}
+            </View>
+          </TouchableOpacity>
+        ))}
+      </View>
+    );
+  };
+  const Card = ({ hotel, index }) => {
+    const inputRange = [
+      (index - 1) * cardWidth,
+      index * cardWidth,
+      (index + 1) * cardWidth,
+    ];
+    const opacity = scrollX.interpolate({
+      inputRange,
+      outputRange: [0.7, 0, 0.7],
+    });
+    const scale = scrollX.interpolate({
+      inputRange,
+      outputRange: [0.8, 1, 0.8],
+    });
+    return (
+      <TouchableOpacity
+        disabled={activeCardIndex != index}
+        activeOpacity={1}
+        onPress={() => navigation.navigate('DetallesAtract', hotel)}>
+        <Animated.View style={{ ...style.card, transform: [{ scale }] }}>
+          <Animated.View style={{ ...style.cardOverLay, opacity }} />
+
+          <Image source={hotel.image} style={style.cardImage} />
+          <View style={style.cardDetails}>
+            <View
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <View>
+                <Text style={{ fontWeight: 'bold', fontSize: 17 }}>
+                  {hotel.name}
+                </Text>
+                <Text style={{ color: COLORS.grey, fontSize: 12 }}>
+                  {hotel.location}
+                </Text>
+              </View>
+              <Icon name="bookmark-border" size={26} color={COLORS.primary} />
+            </View>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                marginTop: 10,
+              }}>
+
+
+            </View>
+          </View>
+        </Animated.View>
+      </TouchableOpacity>
+    );
+  };
+  const TopHotelCard = ({ hotel }) => {
+
+    return (
+      <View style={style.topHotelCard}>
+        <View
+          style={{
+            position: 'absolute',
+            top: 5,
+            right: 5,
+            zIndex: 1,
+            flexDirection: 'row',
+          }}>
+          <Icon name="star" size={15} color={COLORS.orange} />
+          <Text style={{ color: COLORS.white, fontWeight: 'bold', fontSize: 15 }}>
+            5.0
+          </Text>
+        </View>
+        <Image style={style.topHotelCardImage} source={hotel.image} />
+        <View style={{ paddingVertical: 5, paddingHorizontal: 10 }}>
+          <Text style={{ fontSize: 10, fontWeight: 'bold' }}>{hotel.name}</Text>
+          <Text style={{ fontSize: 7, fontWeight: 'bold', color: COLORS.grey }}>
+            {hotel.location}
+          </Text>
+        </View>
+      </View>
+    );
+  };
+
   return (
- 
-  <View style={[styles.container,styles.p]}>
-
-      <Text style={styles.subtitle}> MALINALCO </Text>
-      <Text style={styles.subtitlee}> ESTADO DE MÉXICO </Text>
-      
-      <View style={styles.searchInputContainer}>
-          <Icon name="search" size={35} style={{ marginLeft: 20 }} />
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+      <View style={style.header}>
+        <View style={{ paddingBottom: 15 }}>
+          <Text style={{ fontSize: 30, fontWeight: 'bold' }}>
+            Atractivos turisticos
+          </Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={{ fontSize: 30, fontWeight: 'bold' }}>en </Text>
+            <Text
+              style={{ fontSize: 30, fontWeight: 'bold', color: COLORS.primary }}>
+              Malinalco
+            </Text>
+          </View>
+        </View>
+        <Icon2 name="mountains" size={38} color={COLORS.grey} />
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={style.searchInputContainer}>
+          <Icon name="search" size={30} style={{ marginLeft: 20 }} />
           <TextInput
             placeholder="Buscar"
-            style={{ fontSize: 20, paddingRight: 150 }}
+            style={{ fontSize: 20, paddingLeft: 10 }}
           />
         </View>
-      
-        <ScrollView>
-      <TouchableOpacity style={styles.contB}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
-        <Image source={ZonaA} style={styles.img}/>
-          <Text  style={styles.tex}>Ruinas</Text>
-      </TouchableOpacity>
-        
+        <CategoryList />
+        <View>
+          <Animated.FlatList
+            onMomentumScrollEnd={(e) => {
+              setActiveCardIndex(
+                Math.round(e.nativeEvent.contentOffset.x / cardWidth),
+              );
+            }}
+            onScroll={Animated.event(
+              [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+              { useNativeDriver: true },
+            )}
+            //direccion//
+            horizontal
+            data={hotels}
+            contentContainerStyle={{
+              paddingVertical: 30,
+              paddingLeft: 20,
+              paddingRight: cardWidth / 2 - 40,
+            }}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => <Card hotel={item} index={index} />}
+            snapToInterval={cardWidth}
+          />
+        </View>
+        <View style={{ flexDirection: 'row' }}>
+        <Text
+        style={{ fontSize: 30, fontWeight: 'bold', color: COLORS.primary, marginBottom:15, marginLeft:15}}>
+        Atractivos turisticos
+        </Text>
+        <Icon name="info" size={38} color={COLORS.primary}
+        style={{ marginLeft:50 }}/>
+        </View>
+        <View style={[style.p]}>
 
-      <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
-        <Image source={Convento} style={styles.img}/>
-          <Text  style={styles.tex}>Convento</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
-          <Image source={CasaC} style={styles.img}/>
-          <Text  style={styles.te}>Cultura</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
-          <Image source={Museo} style={styles.img}/>
-          <Text  style={styles.tex}>Museo</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity style={styles.cont}
-        onPress={() => navigation.navigate('Detalles', hotel)}>
-          <Image source={Senderismo} style={styles.img}/>
-          <Text  style={styles.tex}>Senderismo</Text>
-      </TouchableOpacity>
-
-      
-    
+        <Text style={ style.lorem }>
+        Malinalco es un lugar en donde encuentra una belleza inigualable conformada por la imagen de un pueblo típico envuelto por la impresionante escenografía de sus montañas caracterizadas por sus peculiares formaciones.
+        </Text>
+        <Text style={ style.lorem }>
+        El caminar por sus calles empedradas hace que puedan respirar la tranquilidad de un pueblo colonial. Además podrá conocer sus tradiciones y costumbres que forman parte de la herencia de la grandeza de un pueblo que el día con el día cambia a este encantador lugar en una leyenda viva.
+        </Text>
+        </View>
     </ScrollView>
+    </SafeAreaView>
 
-  
-</View>
-  )
-}
+  );
+};
 
-const styles = StyleSheet.create({
-p:{
-    flex:1,
-    backgroundColor: '#9370db',
+const style = StyleSheet.create({
+  header: {
+    marginTop: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
   },
-subtitle: {
-    marginTop:15,
-    fontSize: 32,
-    color: '#2B3030',
-    textAlign: 'center',
-    fontWeight: 'bold'
-
-
-},
-subtitlee: {
-    fontSize: 19,
-    color: '#2B3030',
-    textAlign: 'center',
-    fontWeight: 'bold'
-},
-  img: {
-    width: 170, 
-    height: 100, 
-    borderRadius: 20,  
-    marginLeft: 4,
-    marginTop: 4, 
-
-},
-
-  te: {
-    height: 63,
-    width: 180,
-    marginLeft: 190,
-    color: 'black',
-    fontSize: 25,
-    alignContent:"center",
-    marginTop: -59
+  p:{
+          flex:1,
   },
-
-  tex:{
-    height: 63,
-    width: 180,
-    marginLeft: 190,
-    color: 'black',
-    fontSize: 25,
-    alignContent:"center",
-    marginTop: -59
-
+  lorem: {
+     fontSize: 20,
+     fontFamily: 'times_roman',
+     marginBottom: 10,
+     flexDirection: 'row',
+     textAlign: 'justify',
+     marginHorizontal: 15,
   },
-
-  cont: {
-    width: "90%",
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: "white",
-    borderColor: "black",
-    marginTop: 10,
-    alignContent:"center",
-    marginLeft: 25,
-  },
-
-  contB: {
-    width: "90%",
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: "white",
-    borderColor: "black",
-    marginTop: 10,
-    alignContent:"center",
-    marginLeft: 25,
-  },
-
-
-  qr: {
-    marginLeft: 340,
-    marginTop: 10
-
-  },
-
   searchInputContainer: {
     height: 50,
-    width: "70%",
-    backgroundColor: COLORS.white,
-    marginRight: 50,
-    borderRadius: 30,
-    marginTop: 20,
-    marginBottom: 15,
-    borderBottomRightRadius: 30,
-    flexDirection: 'row-reverse',
+    backgroundColor: COLORS.light,
+    marginTop: 15,
+    marginLeft: 20,
+    borderTopLeftRadius: 30,
+    borderBottomLeftRadius: 30,
+    flexDirection: 'row',
     alignItems: 'center',
   },
-
-  i: {
-    flexDirection: "column",
-    height: 60,
-    width: 30,
-    marginLeft: 2,
-    marginTop: 2,
+  categoryListContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginHorizontal: 20,
+    marginTop: 30,
   },
+  categoryListText: {
+    fontSize: 17,
+    fontWeight: 'bold',
+  },
+  card: {
+    height: 280,
+    width: cardWidth,
+    elevation: 15,
+    marginRight: 20,
+    borderRadius: 15,
+    backgroundColor: COLORS.white,
+  },
+  cardImage: {
+    height: 200,
+    width: '100%',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 15,
+  },
+  priceTag: {
+    height: 60,
+    width: 80,
+    backgroundColor: COLORS.primary,
+    position: 'absolute',
+    zIndex: 1,
+    right: 0,
+    borderTopRightRadius: 15,
+    borderBottomLeftRadius: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cardDetails: {
+    height: 100,
+    borderRadius: 15,
+    backgroundColor: COLORS.white,
+    position: 'absolute',
+    bottom: 0,
+    padding: 20,
+    width: '100%',
+  },
+  cardOverLay: {
+    height: 280,
+    backgroundColor: COLORS.white,
+    position: 'absolute',
+    zIndex: 100,
+    width: cardWidth,
+    borderRadius: 15,
+  },
+  topHotelCard: {
+    height: 120,
+    width: 120,
+    backgroundColor: COLORS.white,
+    elevation: 15,
+    marginHorizontal: 10,
+    borderRadius: 10,
+  },
+  topHotelCardImage: {
+    height: 80,
+    width: '100%',
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+  },
+});
 
-
-})
-export default Menus;
+export default HomeScreen3;

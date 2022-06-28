@@ -1,4 +1,5 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import {
   ImageBackground,
   ScrollView,
@@ -6,12 +7,14 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
+
 } from 'react-native';
 import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const DetailsScreen = ({navigation, route}) => {
-  const item = route.params;
+const DetallesPaquetes = ({navigation, route}) => {
+const item = route.params;
 
   return (
     <ScrollView
@@ -23,7 +26,7 @@ const DetailsScreen = ({navigation, route}) => {
       <StatusBar
         barStyle="light-content"
         translucent
-        backgroundColor="rgba(0,0,0,0)"
+        backgroundColor="rgba(0,0,0,1)"
       />
       <ImageBackground style={style.headerImage} source={item.image}>
         <View style={style.header}>
@@ -31,7 +34,7 @@ const DetailsScreen = ({navigation, route}) => {
             name="arrow-back-ios"
             size={28}
             color={COLORS.white}
-            onPress={navigation.goBack}
+            onPress={() => navigation.navigate('Paquetes')}
           />
           <Icon name="bookmark-border" size={28} color={COLORS.white} />
         </View>
@@ -42,12 +45,11 @@ const DetailsScreen = ({navigation, route}) => {
         </View>
         <View style={{marginTop: 20, paddingHorizontal: 20}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
-          <Text
-            style={{
-              fontSize: 12,
-              fontWeight: '400',
-              color: COLORS.grey,
-              marginTop: 5,
+          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
+            }}>
+            {item.subname}
+          </Text>
+          <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
             }}>
             {item.location}
           </Text>
@@ -71,49 +73,20 @@ const DetailsScreen = ({navigation, route}) => {
             </View>
             <Text style={{fontSize: 13, color: COLORS.grey}}>365 reseñas</Text>
           </View>
-          <View style={{marginTop: 20}}>
-            <Text style={{lineHeight: 20, color: COLORS.grey}}>
-              {item.details}
-            </Text>
-          </View>
+          
         </View>
-        <View
-          style={{
-            marginTop: 20,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingLeft: 20,
-            alignItems: 'center',
-          }}>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>
-            Precio por noche
+        <View style={{marginTop: 20, paddingHorizontal: 20}}>
+        <Text style={style.lorem}>
+            {item.Características}
           </Text>
-          <View style={style.priceTag}>
-            <Text
-              style={{
-                fontSize: 16,
-                fontWeight: 'bold',
-                color: COLORS.grey,
-                marginLeft: 5,
-              }}>
-              ${item.price}
-            </Text>
-            <Text
-              style={{
-                fontSize: 12,
-                fontWeight: 'bold',
-                color: COLORS.grey,
-                marginLeft: 5,
-              }}>
-              + desayuno
-            </Text>
-          </View>
         </View>
+<TouchableOpacity onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/home')}>
         <View style={style.btn}>
           <Text style={{color: COLORS.white, fontSize: 18, fontWeight: 'bold'}}>
-            Reserva Ahora
+            Crea tu propia aventura
           </Text>
         </View>
+</TouchableOpacity>
       </View>
     </ScrollView>
   );
@@ -165,6 +138,16 @@ const style = StyleSheet.create({
     marginHorizontal: 20,
     justifyContent: 'space-between',
   },
+
+  
+    lorem:  {
+    fontSize: 20,
+    fontFamily: 'times_roman',
+    marginBottom: 10,
+    flexDirection: 'row',
+    textAlign: 'justify',
+    marginHorizontal: 15,
+  },
 });
 
-export default DetailsScreen;
+export default DetallesPaquetes;
