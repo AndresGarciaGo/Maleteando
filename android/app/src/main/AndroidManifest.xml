@@ -2,11 +2,7 @@
   package="com.maleteando">
 
     <uses-permission android:name="android.permission.INTERNET" />
-<<<<<<< HEAD
     <uses-permission android:name="android.permission.VIBRATE"/>
-=======
-    <uses-permission android:name="android.permission.VIBRATE" />
->>>>>>> b5deff8bf71ace6c0245d19db561ee14f5d6430c
 
    
     <application
