@@ -15,6 +15,7 @@ import Icon2 from 'react-native-vector-icons/Foundation';
 import {   ScrollView, FlatList } from 'react-native-gesture-handler';
 
 const images = [
+  require('./assets/CascadadelOberaje.png'),
   require('./assets/pa1.png'),
   require('./assets/pa2.png'),
   
