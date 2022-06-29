@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {useState}  from 'react';
 import { Linking } from 'react-native';
 import {
   StatusBar,
@@ -17,14 +17,12 @@ import {   ScrollView, FlatList } from 'react-native-gesture-handler';
 const images = [
   require('./assets/pa1.png'),
   require('./assets/pa2.png'),
-  require('./assets/Cañóndelasbocas.png'),
-  require('./assets/pa3.png'),
-  require('./assets/pa4.png')
+  
 ]
 
 
-const DetallesAtract = ({navigation, route}) => {
-let screenWidth = Dimensions.get('window').width;
+function DetallesAtract  ({navigation, route}) {
+  let screenWidth = Dimensions.get('window').width
 const item = route.params;
   return (
 
@@ -33,9 +31,9 @@ const item = route.params;
               <StatusBar
                 barStyle="light-content"
                 translucent
-                backgroundColor="rgba(0,0,0,0)"
+                backgroundColor="rgba(0,0,0,1)"
               />
-              <ScrollView style= {{flex:1, width:screenWidth}}
+              <ScrollView style= {{flex:1, white:Dimensions.get('window').width}}
 
                barStyle="light-content"
                translucent
