@@ -16,7 +16,6 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import hotels from './consts/hotels';
-import { _getPlacesByType } from '../../Api/Nuevoback';
 
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;

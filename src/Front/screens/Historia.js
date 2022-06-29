@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ImageBackground,Dimensions, BackTextBoton, StatusBar, Text, Image, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import CasaC from './assets/CasaC.jpg'
@@ -24,7 +24,7 @@ class Historia extends React.Component {
           <StatusBar
             barStyle="light-content"
             translucent
-            backgroundColor="rgba(0,0,0,0)"
+            backgroundColor="rgba(0,0,0,1)"
           />
           <ScrollView style= {{flex:1, width:screenWidth}}
 
