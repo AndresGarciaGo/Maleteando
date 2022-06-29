@@ -41,8 +41,7 @@ const item = route.params;
                 pagingEnabled
                 horizontal
                 showsHorizontalScrollIndicator={true}
-
-              >{
+                >{
 
 
                   <FlatList
