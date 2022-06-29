@@ -176,12 +176,8 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  headerImage: {
-    height: 400,
-    borderBottomRightRadius: 40,
-    borderBottomLeftRadius: 40,
-    overflow: 'hidden',
-  },
+  
+
   header: {
     marginTop: 60,
     flexDirection: 'row',
@@ -189,7 +185,6 @@ const style = StyleSheet.create({
     marginHorizontal: 20,
     justifyContent: 'space-between',
   },
-
 
     lorem:  {
     fontSize: 20,
