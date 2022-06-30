@@ -13,18 +13,13 @@ import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {   ScrollView, FlatList } from 'react-native-gesture-handler';
 
-const [images, setimages] = useState([
-  require('./assets/pa1.png'),
-  require('./assets/pa2.png'),
-  require('./assets/Cañóndelasbocas.png'),
-  require('./assets/pa3.png'),
-  require('./assets/pa4.png')
-])
+
 
 
 const DetallesAtract = ({navigation, route}) => {
 let screenWidth = Dimensions.get('window').width;
 const item = route.params;
+const images = ([item.image,item.image1,item.image2,item.image3,])
   return (
 
     <ScrollView>
@@ -172,12 +167,6 @@ const style = StyleSheet.create({
     borderRadius: 30,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  headerImage: {
-    height: 400,
-    borderBottomRightRadius: 40,
-    borderBottomLeftRadius: 40,
-    overflow: 'hidden',
   },
   header: {
     marginTop: 60,
