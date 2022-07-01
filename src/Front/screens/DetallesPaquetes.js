@@ -22,6 +22,7 @@ const item = route.params;
 
 const [isloading, setloading] = useState(true);
   const [dato, setData] = useState([]);
+  const [name, setName] = useState([]);
 
   useEffect (() => {
     fetch(API)
@@ -29,12 +30,14 @@ const [isloading, setloading] = useState(true);
     .then((json) => setData(json.data))
     .catch((error) => alert(error))
     .finally(setloading(false));
+
      
   });
 
   return (
     <SafeAreaView>
-      { isloading ? <ActivityIndicator/> : 
+      { isloading ? (<ActivityIndicator/> 
+      ) :  
       <FlatList
       data= {dato}
       keyExtractor={({id}, index) => id }
