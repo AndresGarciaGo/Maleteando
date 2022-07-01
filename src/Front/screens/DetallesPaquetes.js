@@ -15,35 +15,11 @@ import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { FlatList } from 'react-native-gesture-handler';
 
-var API = 'https://maleteando-por-mexico.herokuapp.com/api/v1/get-places-by-type';
-
 const DetallesPaquetes = ({navigation, route}) => {
 const item = route.params;
 
-const [isloading, setloading] = useState(true);
-  const [dato, setData] = useState([]);
-  const [name, setName] = useState([]);
-
-  useEffect (() => {
-    fetch(API)
-    .then((response) => response.json())
-    .then((json) => setData(json.data))
-    .catch((error) => alert(error))
-    .finally(setloading(false));
-
-     
-  });
-
   return (
-    <SafeAreaView>
-      { isloading ? (<ActivityIndicator/> 
-      ) :  
-      <FlatList
-      data= {dato}
-      keyExtractor={({id}, index) => id }
-      renderItem={({ item })}
 
-/>}
     <ScrollView
       showsVerticalScrollIndicator={false}
       contentContainerStyle={{
@@ -116,7 +92,7 @@ const [isloading, setloading] = useState(true);
 </TouchableOpacity>
       </View>
     </ScrollView>
-    </SafeAreaView>
+    
   );
 };
 

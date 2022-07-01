@@ -13,6 +13,7 @@ import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon2 from 'react-native-vector-icons/Foundation';
 import {   ScrollView, FlatList } from 'react-native-gesture-handler';
+import API from '../../Api/APIRestau'
 
 const images = [
   require('./assets/CascadadelOberaje.png'),
