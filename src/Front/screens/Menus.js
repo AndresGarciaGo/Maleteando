@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StatusBar, ImageBackground, Text, Image, View, StyleSheet, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import sfondo from './assets/Images/FondoB.png'
@@ -19,7 +19,7 @@ import font from '../Font/Times New Roman/times_roman.ttf';
 import { SearchBar } from 'react-native-screens';
 import { Component } from 'react/cjs/react.production.min';
 
-var url = 'https://maleteando-por-mexico.herokuapp.com/api/v1/';
+var API = 'https://maleteando-por-mexico.herokuapp.com/api/v1/get-places-by-type';
 
 const boton = [
   {
@@ -52,7 +52,11 @@ const boton = [
   },
 ]
 
+
+
 export const Menus = ({ navigation, item }) => {
+
+  
 
   const Item = ({ id, image, name }) => (
     <View style={styles.p}>
