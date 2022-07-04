@@ -13,7 +13,8 @@ import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon2 from 'react-native-vector-icons/Foundation';
 import {   ScrollView, FlatList } from 'react-native-gesture-handler';
-import API from '../../Api/APIRestau'
+
+
 
 const images = [
   require('./assets/CascadadelOberaje.png'),
@@ -24,6 +25,21 @@ const images = [
 
 
 function DetallesAtract  ({navigation, route}) {
+
+  const APIAtract = () => {
+    return (
+      <View style={{ flex: 1, padding: 24 }}>
+        {isLoading ? <ActivityIndicator/> : (
+          <FlatList
+            data={data}
+            key={"144"}
+            keyExtractor={({ id }, index) => id}
+            renderItem={({ item })}
+          />
+        )}
+      </View>
+    );
+  }
   let screenWidth = Dimensions.get('window').width
 const item = route.params;
   return (

@@ -117,7 +117,7 @@ const DetailsScreen = ({ navigation, route }) => {
         <TouchableOpacity onPress={() => Linking.openURL(item.url)}>
           <View style={style.btn}>
             <Text style={{ color: COLORS.white, fontSize: 18, fontWeight: 'bold' }}>
-              Crea tu propia aventura
+              Reserva ahora!
             </Text>
           </View>
         </TouchableOpacity>
