@@ -15,8 +15,7 @@ const images =[
   require('./assets/pa4.png')
 ]
 
-class Historia extends React.Component {
-  render() {
+const Historia  = () => {
   let screenWidth = Dimensions.get('window').width
     return (
       <ScrollView>
@@ -111,7 +110,6 @@ class Historia extends React.Component {
         </View>
       </ScrollView>
     )
-  }
 }
 const styles = StyleSheet.create({
   container: {

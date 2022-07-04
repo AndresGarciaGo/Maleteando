@@ -11,7 +11,7 @@ import COLORS from './consts/colors';
 import { FlatList, ScrollView} from 'react-native-gesture-handler';
 import { SlideFromRightIOS } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
 import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
-import CasaC from './assets/CasaC.jpg'
+import CasaC from './assets/CasaC.jpg';
 import ZonaA from './assets/ZonaA.jpg';
 import Gastro from './assets/Gastro.jpg';
 import Paq from './assets/Paq.jpg';
@@ -19,7 +19,6 @@ import font from '../Font/Times New Roman/times_roman.ttf';
 import { SearchBar } from 'react-native-screens';
 import { Component } from 'react/cjs/react.production.min';
 
-var API = 'https://maleteando-por-mexico.herokuapp.com/api/v1/get-places-by-type';
 
 const boton = [
   {
