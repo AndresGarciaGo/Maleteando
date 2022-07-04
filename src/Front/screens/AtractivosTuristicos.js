@@ -17,6 +17,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon2 from 'react-native-vector-icons/Foundation';
 import COLORS from './consts/colors';
 import hotels from './consts/DetallesTuristicos';
+import APIAtract from '../../Api/APIAtract';
 
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;
