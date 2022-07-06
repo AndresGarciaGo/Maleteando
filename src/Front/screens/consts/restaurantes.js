@@ -5,6 +5,9 @@ const hotels = [
     location: 'a 5 minutos del centro',
     price: 2500,
     image: require('../assets/rst1.jpg'),
+    image1: require('../assets/rst1.jpg'),
+    image2: require('../assets/rst1.jpg'),
+    image3: require('../assets/rst1.jpg'),
     details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit`,
   },
   {
@@ -13,6 +16,9 @@ const hotels = [
     location: '20 minutos del centro',
     price: 2000,
     image: require('../assets/rst2.jpg'),
+    image1: require('../assets/rst2.jpg'),
+    image2: require('../assets/rst2.jpg'),
+    image3: require('../assets/rst2.jpg'),
     details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit`,
   },
   {
@@ -21,6 +27,9 @@ const hotels = [
     location: '5 minutos del centro',
     price: 1500,
     image: require('../assets/rst3.jpg'),
+    image1: require('../assets/rst3.jpg'),
+    image2: require('../assets/rst3.jpg'),
+    image3: require('../assets/rst3.jpg'),
     details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit`,
   },
   {
@@ -29,6 +38,9 @@ const hotels = [
     location: '15 min del centro',
     price: 10000,
     image: require('../assets/rst4.jpg'),
+    image1: require('../assets/rst4.jpg'),
+    image2: require('../assets/rst4.jpg'),
+    image3: require('../assets/rst4.jpg'),
     details: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Consequat nisl vel pretium lectus quam id leo. Velit euismod in pellentesque massa placerat duis ultricies lacus sed. Justo laoreet sit amet cursus sit`,
   },
 ];
