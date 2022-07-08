@@ -48,6 +48,11 @@ const boton = [
     name: 'PAQUETES',
     image: require('./assets/Paq.jpg'),
   },
+  {
+    id: 'Pruebas',
+    name: 'PRUEBAS',
+    image: require('./assets/Paq.jpg'),
+  },
 ]
 
 export const Menus = ({ navigation, item }) => {

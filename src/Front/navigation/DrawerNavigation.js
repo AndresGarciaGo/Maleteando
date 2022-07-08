@@ -14,6 +14,7 @@ import DetallesRest from '../screens/DetallesRest';
 import Historia from '../screens/Historia';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
 import Paquetes from '../screens/Paquetes';
+import Pruebas from '../screens/Pruebas';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
 import COLORS from '../screens/consts/colors';
@@ -57,6 +58,7 @@ export function DrawerNavigation() {
         <Drawer.Screen name="Restaurantes" component={Restaurantes}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
         <Drawer.Screen name = "Mapa" component={Mapa} />
+        <Drawer.Screen name = "Pruebas" component={Pruebas} />
         
         
     </Drawer.Navigator>
