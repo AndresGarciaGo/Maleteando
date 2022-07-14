@@ -169,7 +169,6 @@ const HomeScreen3 = ({ navigation }) => {
             style={{ fontSize: 20, paddingLeft: 10 }}
           />
         </View>
-        <CategoryList />
         <View>
           <Animated.FlatList
             onMomentumScrollEnd={(e) => {
