@@ -179,12 +179,7 @@ const Paquetes = ({ navigation }) => {
           />
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
-<<<<<<< HEAD
         
-||||||| 9eeb466
-        <CategoryList />
-=======
->>>>>>> df90f3d5169d3052d13abf372e24169181e6d5d0
         <View>
           <Animated.FlatList
             onMomentumScrollEnd={(e) => {
