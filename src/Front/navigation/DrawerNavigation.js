@@ -12,6 +12,7 @@ import DetallesPaquetes from '../screens/DetallesPaquetes';
 import DetallesAtract from '../screens/DetallesAtract';
 import DetallesRest from '../screens/DetallesRest';
 import Historia from '../screens/Historia';
+import Sumergete from '../screens/Inmersive';
 import AtractivosTuristicos from '../screens/AtractivosTuristicos';
 import Paquetes from '../screens/Paquetes';
 import Pruebas from '../screens/Pruebas';
@@ -58,6 +59,7 @@ export function DrawerNavigation() {
         <Drawer.Screen name="Restaurantes" component={Restaurantes}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
         <Drawer.Screen name = "Mapa" component={Mapa} />
+        <Drawer.Screen name = "Sumergete" component={Sumergete} />
         <Drawer.Screen name = "Pruebas" component={Pruebas} />
         
         
@@ -73,39 +75,10 @@ const MenuItems = ( {navigation} ) => {
         >
 
             <TouchableOpacity
-            onPress={() => Linking.openURL('https://maleteando-por-mexico.herokuapp.com/maleteando/login')}>
-            <Icon name="account-circle" size={120} style = {{ marginLeft: 60 }}/>
+            onPress={() => navigation.navigate('Menus')}>
+            <Icon name="home" size={80} style = {{ marginLeft: 60 }}/>
             </TouchableOpacity>
 
-
-            <TouchableOpacity
-                    style = { styles.buttonContainer}
-                    onPress={() => navigation.navigate('Menus')}>
-
-                    <Text style={styles.t}><Icon name="menu-book" size={15} style = {{ marginRight: 10, }}/> Menu </Text>
-
-
-
-            </TouchableOpacity>
-                        <TouchableOpacity
-                                style = { styles.buttonContainer}
-                                onPress={() => navigation.navigate('Lector QR')}>
-
-                                <Text style={styles.t}><Icon name="qr-code-scanner" size={15} style = {{ marginRight: 10,}}/> Lector de QR </Text>
-
-
-
-                        </TouchableOpacity>
-
-                         <TouchableOpacity
-                                style = { styles.buttonContainer}
-                                onPress={() => navigation.navigate('Mapa')}>
-
-                                <Text style={styles.t}><Icon name="map" size={15} style = {{ marginRight: 10,}}/> Mapa de Malinalco </Text>
-
-
-
-                        </TouchableOpacity>
 
 
         </DrawerContentScrollView>

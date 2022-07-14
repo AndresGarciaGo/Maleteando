@@ -4,21 +4,21 @@ import { StackScreenProps } from '@react-navigation/stack';
 import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
-import hotel from './assets/hotel1.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
 import { SlideFromRightIOS } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
 import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
-import CasaC from './assets/CasaC.jpg'
-import ZonaA from './assets/ZonaA.jpg';
-import Gastro from './assets/Gastro.jpg';
-import Paq from './assets/Paq.jpg';
 import font from '../Font/Times New Roman/times_roman.ttf';
 import { SearchBar } from 'react-native-screens';
 import { Component } from 'react/cjs/react.production.min';
 
 const boton = [
+  {
+    id: 'Sumergete',
+    name: 'SUMERGETE',
+    image: require('./assets/Tech.png'),
+  },
   {
     id: 'Historia',
     name: 'HISTORIA',
@@ -46,12 +46,7 @@ const boton = [
     id: 'Paquetes',
     name: 'PAQUETES',
     image: require('./assets/Paq.jpg'),
-  },
-  {
-    id: 'Pruebas',
-    name: 'PRUEBAS',
-    image: require('./assets/Paq.jpg'),
-  },
+  }
 ]
 
 export const Menus = ({ navigation, item }) => {
