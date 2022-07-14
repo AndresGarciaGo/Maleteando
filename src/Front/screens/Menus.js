@@ -5,7 +5,6 @@ import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
 import hotel from './assets/hotel1.jpg';
-import hotel2 from './assets/hotel2.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { FlatList, ScrollView } from 'react-native-gesture-handler';
