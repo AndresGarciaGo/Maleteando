@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Text, View } from 'react-native';
 
- const APIAtract = () => {
+ const prueba = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
 
-  const Atrac = async (typePlace = 'atractivo_turistico') => {
+  const Atrac = async (typePlace = 'hotel') => {
     const API = 'https://maleteando-por-mexico.herokuapp.com/api/v1'
     const type = '/get-places-by-type'
   
@@ -39,7 +39,7 @@ import { ActivityIndicator, FlatList, Text, View } from 'react-native';
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <Text>{item.nombre}, {item.domicilio}</Text>
+            <Text> {item.id}</Text>
         
           )}
         />
@@ -48,4 +48,4 @@ import { ActivityIndicator, FlatList, Text, View } from 'react-native';
   );
 };
 
-export default APIAtract;
+export default prueba;

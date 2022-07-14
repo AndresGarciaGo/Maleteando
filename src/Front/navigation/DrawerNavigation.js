@@ -18,6 +18,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScanScreen from "../screens/QR";
 import COLORS from '../screens/consts/colors';
 import Mapa from '../screens/Maps';
+import prueba from "../screens/prueba";
 import { Linking } from 'react-native';
 
 
@@ -57,6 +58,7 @@ export function DrawerNavigation() {
         <Drawer.Screen name="Restaurantes" component={Restaurantes}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
         <Drawer.Screen name = "Mapa" component={Mapa} />
+        <Drawer.Screen name = "prueba" component={prueba} />
         
         
     </Drawer.Navigator>

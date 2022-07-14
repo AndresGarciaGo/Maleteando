@@ -49,6 +49,12 @@ const boton = [
     name: 'PAQUETES',
     image: require('./assets/Paq.jpg'),
   },
+
+  {
+    id: 'prueba',
+    name: 'PRUEBAAA',
+    image: require('./assets/Paq.jpg'),
+  },
 ]
 
 
