@@ -4,23 +4,34 @@ import { StackScreenProps } from '@react-navigation/stack';
 import sfondo from './assets/Images/FondoB.png'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavigationBar from 'react-native-navbar';
-import hotel from './assets/hotel1.jpg';
-import hotel2 from './assets/hotel2.jpg';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import { FlatList, ScrollView} from 'react-native-gesture-handler';
 import { SlideFromRightIOS } from '@react-navigation/stack/lib/typescript/src/TransitionConfigs/TransitionPresets';
 import { render } from 'react-native/Libraries/Renderer/implementations/ReactNativeRenderer-prod';
+<<<<<<< HEAD
 import CasaC from './assets/CasaC.jpg';
 import ZonaA from './assets/ZonaA.jpg';
 import Gastro from './assets/Gastro.jpg';
 import Paq from './assets/Paq.jpg';
+||||||| 9eeb466
+import CasaC from './assets/CasaC.jpg'
+import ZonaA from './assets/ZonaA.jpg';
+import Gastro from './assets/Gastro.jpg';
+import Paq from './assets/Paq.jpg';
+=======
+>>>>>>> df90f3d5169d3052d13abf372e24169181e6d5d0
 import font from '../Font/Times New Roman/times_roman.ttf';
 import { SearchBar } from 'react-native-screens';
 import { Component } from 'react/cjs/react.production.min';
 
 
 const boton = [
+  {
+    id: 'Sumergete',
+    name: 'SUMERGETE',
+    image: require('./assets/Tech.png'),
+  },
   {
     id: 'Historia',
     name: 'HISTORIA',
@@ -48,6 +59,7 @@ const boton = [
     id: 'Paquetes',
     name: 'PAQUETES',
     image: require('./assets/Paq.jpg'),
+<<<<<<< HEAD
   },
 
   {
@@ -55,6 +67,11 @@ const boton = [
     name: 'PRUEBAAA',
     image: require('./assets/Paq.jpg'),
   },
+||||||| 9eeb466
+  },
+=======
+  }
+>>>>>>> df90f3d5169d3052d13abf372e24169181e6d5d0
 ]
 
 

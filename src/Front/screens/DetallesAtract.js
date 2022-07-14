@@ -14,6 +14,18 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon2 from 'react-native-vector-icons/Foundation';
 import {   ScrollView, FlatList } from 'react-native-gesture-handler';
 
+<<<<<<< HEAD
+||||||| 9eeb466
+const [images, setimages] = useState([
+  require('./assets/pa1.png'),
+  require('./assets/pa2.png'),
+  require('./assets/Cañóndelasbocas.png'),
+  require('./assets/pa3.png'),
+  require('./assets/pa4.png')
+])
+=======
+
+>>>>>>> df90f3d5169d3052d13abf372e24169181e6d5d0
 
 
 const images = [
@@ -42,6 +54,7 @@ function DetallesAtract  ({navigation, route}) {
   }
   let screenWidth = Dimensions.get('window').width
 const item = route.params;
+const images = ([item.image,item.image1,item.image2,item.image3,])
   return (
 
     <ScrollView>
@@ -192,8 +205,18 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+<<<<<<< HEAD
   
 
+||||||| 9eeb466
+  headerImage: {
+    height: 400,
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
+    overflow: 'hidden',
+  },
+=======
+>>>>>>> df90f3d5169d3052d13abf372e24169181e6d5d0
   header: {
     marginTop: 60,
     flexDirection: 'row',
