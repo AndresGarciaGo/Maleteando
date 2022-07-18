@@ -60,13 +60,8 @@ export function DrawerNavigation() {
         <Drawer.Screen name="Restaurantes" component={Restaurantes}  />
         <Drawer.Screen name="Detalles" component={DetallesPaquetes}  />
         <Drawer.Screen name = "Mapa" component={Mapa} />
-<<<<<<< HEAD
-        <Drawer.Screen name = "prueba" component={prueba} />
-||||||| 9eeb466
-=======
         <Drawer.Screen name = "Sumergete" component={Sumergete} />
         <Drawer.Screen name = "Pruebas" component={Pruebas} />
->>>>>>> df90f3d5169d3052d13abf372e24169181e6d5d0
         
         
     </Drawer.Navigator>

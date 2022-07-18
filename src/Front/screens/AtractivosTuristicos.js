@@ -172,13 +172,6 @@ const HomeScreen3 = ({ navigation }) => {
             style={{ fontSize: 20, paddingLeft: 10 }}
           />
         </View>
-<<<<<<< HEAD
-        
-        <CategoryList />
-||||||| 9eeb466
-        <CategoryList />
-=======
->>>>>>> df90f3d5169d3052d13abf372e24169181e6d5d0
         <View>
           <Animated.FlatList
             onMomentumScrollEnd={(e) => {
