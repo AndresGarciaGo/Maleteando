@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState}  from 'react';
 import { Linking } from 'react-native';
 import {
   StatusBar,
@@ -11,20 +11,38 @@ import {
 } from 'react-native';
 import COLORS from './consts/colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Icon2 from 'react-native-vector-icons/Foundation';
 import {   ScrollView, FlatList } from 'react-native-gesture-handler';
 
-const [images, setimages] = useState([
+
+
+const images = [
+  require('./assets/CascadadelOberaje.png'),
   require('./assets/pa1.png'),
   require('./assets/pa2.png'),
-  require('./assets/Cañóndelasbocas.png'),
-  require('./assets/pa3.png'),
-  require('./assets/pa4.png')
-])
+  
+]
 
 
-const DetallesAtract = ({navigation, route}) => {
-let screenWidth = Dimensions.get('window').width;
+function DetallesAtract  ({navigation, route}) {
+
+  const APIAtract = () => {
+    return (
+      <View style={{ flex: 1, padding: 24 }}>
+        {isLoading ? <ActivityIndicator/> : (
+          <FlatList
+            data={data}
+            key={"144"}
+            keyExtractor={({ id }, index) => id}
+            renderItem={({ item })}
+          />
+        )}
+      </View>
+    );
+  }
+  let screenWidth = Dimensions.get('window').width
 const item = route.params;
+const images = ([item.image,item.image1,item.image2,item.image3,])
   return (
 
     <ScrollView>
@@ -32,17 +50,16 @@ const item = route.params;
               <StatusBar
                 barStyle="light-content"
                 translucent
-                backgroundColor="rgba(0,0,0,0)"
+                backgroundColor="rgba(0,0,0,1)"
               />
-              <ScrollView style= {{flex:1, width:screenWidth}}
+              <ScrollView style= {{flex:1, white:Dimensions.get('window').width}}
 
                barStyle="light-content"
                translucent
                 pagingEnabled
                 horizontal
                 showsHorizontalScrollIndicator={true}
-
-              >{
+                >{
 
 
                   <FlatList
@@ -66,7 +83,10 @@ const item = route.params;
                 </View>
 
                     <View style={{marginTop: 20, paddingHorizontal: 20}}>
+                      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                         <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.name}</Text>
+                        <Icon2 name="mountains" size={38} color={COLORS.grey} />
+                        </View>
                         <Text style={{ fontSize: 12, fontWeight: '400', color: COLORS.grey, marginTop: 5,
                             }}>
                             {item.subname}
@@ -173,12 +193,18 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+<<<<<<< HEAD
+  
+
+||||||| 9eeb466
   headerImage: {
     height: 400,
     borderBottomRightRadius: 40,
     borderBottomLeftRadius: 40,
     overflow: 'hidden',
   },
+=======
+>>>>>>> df90f3d5169d3052d13abf372e24169181e6d5d0
   header: {
     marginTop: 60,
     flexDirection: 'row',
@@ -186,7 +212,6 @@ const style = StyleSheet.create({
     marginHorizontal: 20,
     justifyContent: 'space-between',
   },
-
 
     lorem:  {
     fontSize: 20,

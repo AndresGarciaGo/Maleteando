@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ImageBackground,Dimensions, BackTextBoton, StatusBar, Text, Image, View, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
 import CasaC from './assets/CasaC.jpg'
@@ -10,13 +10,11 @@ import { FlatList, ScrollView } from 'react-native-gesture-handler';
 const images =[
   require('./assets/pa1.png'),
   require('./assets/pa2.png'),
-  require('./assets/Cañóndelasbocas.png'),
   require('./assets/pa3.png'),
   require('./assets/pa4.png')
 ]
 
-class Historia extends React.Component {
-  render() {
+const Historia  = () => {
   let screenWidth = Dimensions.get('window').width
     return (
       <ScrollView>
@@ -24,7 +22,7 @@ class Historia extends React.Component {
           <StatusBar
             barStyle="light-content"
             translucent
-            backgroundColor="rgba(0,0,0,0)"
+            backgroundColor="rgba(0,0,0,1)"
           />
           <ScrollView style= {{flex:1, width:screenWidth}}
 
@@ -111,7 +109,6 @@ class Historia extends React.Component {
         </View>
       </ScrollView>
     )
-  }
 }
 const styles = StyleSheet.create({
   container: {

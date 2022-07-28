@@ -16,7 +16,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import COLORS from './consts/colors';
 import hotels from './consts/hotels';
-import { _getPlacesByType } from '../../Api/Nuevoback';
+import APIHotel from '../../Api/APIHotel'
 
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;
@@ -182,7 +182,6 @@ const HomeScreen = ({ navigation }) => {
         />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <CategoryList />
         <View>
           <Animated.FlatList
             onMomentumScrollEnd={(e) => {

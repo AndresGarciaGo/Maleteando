@@ -17,6 +17,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icon2 from 'react-native-vector-icons/Foundation';
 import COLORS from './consts/colors';
 import hotels from './consts/DetallesTuristicos';
+import APIAtract from '../../Api/APIAtract';
 
 const { width } = Dimensions.get('screen');
 const cardWidth = width / 1.8;
@@ -162,6 +163,8 @@ const HomeScreen3 = ({ navigation }) => {
         <Icon2 name="mountains" size={38} color={COLORS.grey} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
+
+        {/*Buscar por fetch*/ }
         <View style={style.searchInputContainer}>
           <Icon name="search" size={30} style={{ marginLeft: 20 }} />
           <TextInput
@@ -169,7 +172,6 @@ const HomeScreen3 = ({ navigation }) => {
             style={{ fontSize: 20, paddingLeft: 10 }}
           />
         </View>
-        <CategoryList />
         <View>
           <Animated.FlatList
             onMomentumScrollEnd={(e) => {
